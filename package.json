@@ -1,0 +1,11 @@
+{
+  "name": "app-dbd",
+  "private": true,
+  "description": "App de repaso DBD (Bases de Datos)",
+  "scripts": {
+    "dev": "npm run dev --prefix web",
+    "build": "npm run build --prefix web",
+    "typecheck": "npm run typecheck --prefix web",
+    "dev:clean": "npm run dev:clean --prefix web"
+  }
+}
