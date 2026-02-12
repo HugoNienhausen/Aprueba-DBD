@@ -46,7 +46,7 @@ export default function TestScreen() {
   const [phase, setPhase] = useState<Phase>("config");
   const [topics, setTopics] = useState<Topic[]>([]);
   const [failedCount, setFailedCount] = useState<number | null>(null);
-  const [kind, setKind] = useState<TestKind | null>(null);
+  const [kind, setKind] = useState<TestKind>("by_section");
   const [selectedSection, setSelectedSection] = useState<string>("");
   const [selectedTopicId, setSelectedTopicId] = useState<string>("");
   const [loading, setLoading] = useState(true);
@@ -192,13 +192,16 @@ export default function TestScreen() {
     const question = questions[currentIndex]!;
     const answered = selectedLetter !== null;
     const isLast = currentIndex === questions.length - 1;
+    const progress = ((currentIndex + 1) / questions.length) * 100;
 
     return (
-      <div>
-        <h1 className="page-title">Test de {questions.length} preguntas</h1>
-        <p className="muted mb-2">
+      <div className="test-running">
+        <div className="test-progress">
+          <div className="test-progress__bar" style={{ width: `${progress}%` }} />
+        </div>
+        <p className="test-progress__label">
           Pregunta {currentIndex + 1} de {questions.length}
-          {correctAt === "at_end" && " · Respuestas al final"}
+          {correctAt === "at_end" && " · Verás las respuestas al final"}
         </p>
 
         <QuestionCard
@@ -211,7 +214,7 @@ export default function TestScreen() {
 
         {answered && correctAt === "immediately" && (
           <div className="nav-questions">
-            <button type="button" className="btn btn--primary" onClick={goNext}>
+            <button type="button" className="btn btn--primary btn--large" onClick={goNext}>
               {isLast ? "Ver resultado" : "Siguiente →"}
             </button>
           </div>
@@ -222,116 +225,107 @@ export default function TestScreen() {
 
   if (loading) return <p className="muted">Cargando…</p>;
 
+  const canStart =
+    (kind === "by_section" && selectedSection) ||
+    (kind === "by_topic" && selectedTopicId) ||
+    kind === "random" ||
+    (kind === "failed" && (failedCount ?? 0) > 0);
+
   return (
-    <div>
+    <div className="test-config">
       <h1 className="page-title">Hacer test</h1>
-      <p className="muted mb-2">
-        Elige el modo del test de {TEST_SIZE} preguntas. Luego pulsa «Comenzar».
+      <p className="test-config__intro muted">
+        {TEST_SIZE} preguntas. Elige qué quieres practicar y pulsa Comenzar.
       </p>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <p className="section-heading">¿De dónde salen las preguntas?</p>
-
-        <label className="radio-label">
-          <input
-            type="radio"
-            name="kind"
-            checked={kind === "by_section"}
-            onChange={() => setKind("by_section")}
-          />
-          <span><strong>Por tema (sección)</strong> — 20 preguntas de un tema completo (ej. &quot;0 Introduction&quot;)</span>
-        </label>
+      <div className="test-options">
+        <button
+          type="button"
+          className={`test-option ${kind === "by_section" ? "test-option--active" : ""}`}
+          onClick={() => setKind("by_section")}
+        >
+          <span className="test-option__title">Un tema completo</span>
+          <span className="test-option__desc">Preguntas de una sección (ej. 0 Introduction)</span>
+        </button>
         {kind === "by_section" && (
-          <div style={{ marginLeft: "1.75rem" }} className="select-wrap">
-            <label>
-              Tema:{" "}
-              <select
-                value={selectedSection}
-                onChange={(e) => setSelectedSection(e.target.value)}
-                style={{ marginTop: "0.25rem" }}
-              >
-                {sections.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-            </label>
+          <div className="test-option__extra">
+            <label className="test-option__label">Elige el tema</label>
+            <select
+              value={selectedSection}
+              onChange={(e) => setSelectedSection(e.target.value)}
+              className="test-option__select"
+            >
+              {sections.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
           </div>
         )}
 
-        <label className="radio-label">
-          <input
-            type="radio"
-            name="kind"
-            checked={kind === "by_topic"}
-            onChange={() => setKind("by_topic")}
-          />
-          <span><strong>Por subtema</strong> — 20 preguntas de un subtema concreto (ej. &quot;Basic background&quot;)</span>
-        </label>
+        <button
+          type="button"
+          className={`test-option ${kind === "by_topic" ? "test-option--active" : ""}`}
+          onClick={() => setKind("by_topic")}
+        >
+          <span className="test-option__title">Un subtema</span>
+          <span className="test-option__desc">Preguntas de un tema concreto (ej. Basic background)</span>
+        </button>
         {kind === "by_topic" && (
-          <div style={{ marginLeft: "1.75rem" }} className="select-wrap">
-            <label>
-              Subtema:{" "}
-              <select
-                value={selectedTopicId}
-                onChange={(e) => setSelectedTopicId(e.target.value)}
-                style={{ marginTop: "0.25rem", minWidth: "20rem" }}
-              >
-                {topics.map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.section} – {t.title}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <div className="test-option__extra">
+            <label className="test-option__label">Elige el subtema</label>
+            <select
+              value={selectedTopicId}
+              onChange={(e) => setSelectedTopicId(e.target.value)}
+              className="test-option__select test-option__select--wide"
+            >
+              {topics.map((t) => (
+                <option key={t.id} value={t.id}>
+                  {t.section} – {t.title}
+                </option>
+              ))}
+            </select>
           </div>
         )}
 
-        <label className="radio-label">
-          <input
-            type="radio"
-            name="kind"
-            checked={kind === "random"}
-            onChange={() => setKind("random")}
-          />
-          <span><strong>Aleatorio</strong> — {TEST_SIZE} preguntas de todos los temas</span>
-        </label>
+        <button
+          type="button"
+          className={`test-option ${kind === "random" ? "test-option--active" : ""}`}
+          onClick={() => setKind("random")}
+        >
+          <span className="test-option__title">Aleatorio</span>
+          <span className="test-option__desc">Preguntas de todos los temas mezcladas</span>
+        </button>
 
-        <label className="radio-label">
-          <input
-            type="radio"
-            name="kind"
-            checked={kind === "failed"}
-            onChange={() => setKind("failed")}
-            disabled={(failedCount ?? 0) === 0}
-          />
-          <span>
-            <strong>Preguntas falladas</strong>
+        <button
+          type="button"
+          className={`test-option ${kind === "failed" ? "test-option--active" : ""} ${(failedCount ?? 0) === 0 ? "test-option--disabled" : ""}`}
+          onClick={() => (failedCount ?? 0) > 0 && setKind("failed")}
+          disabled={(failedCount ?? 0) === 0}
+        >
+          <span className="test-option__title">Preguntas falladas</span>
+          <span className="test-option__desc">
             {(failedCount ?? 0) === 0
-              ? " (no tienes ninguna aún)"
-              : ` (${Math.min(failedCount!, TEST_SIZE)} preguntas)`}
+              ? "Haz un test antes para acumular fallos"
+              : `${Math.min(failedCount!, TEST_SIZE)} preguntas para repasar`}
           </span>
-        </label>
-        {(failedCount ?? 0) > 0 && (
-          <p className="muted mt-2" style={{ marginLeft: "1.75rem" }}>
+        </button>
+        {(failedCount ?? 0) > 0 && kind === "failed" && (
+          <p className="test-option__link muted">
             <Link to="/review/failed" className="link-plain">Repasarlas en orden →</Link>
           </p>
         )}
       </div>
 
-      <div className="btn-group">
+      <div className="test-config__actions">
         <button
           type="button"
-          className="btn btn--primary"
+          className="btn btn--primary btn--large"
           onClick={startTest}
-          disabled={kind == null || (kind === "by_section" && !selectedSection) || (kind === "by_topic" && !selectedTopicId) || (kind === "failed" && (failedCount ?? 0) === 0)}
+          disabled={!canStart}
         >
           Comenzar test
         </button>
       </div>
-
-      <p className="mt-2">
-        <Link to="/topics" className="link-plain">← Volver a temas</Link>
-      </p>
     </div>
   );
 }

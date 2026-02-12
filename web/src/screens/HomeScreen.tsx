@@ -31,23 +31,27 @@ export default function HomeScreen() {
     );
   }
   return (
-    <div>
-      <h1 className="page-title">App DBD – Repaso</h1>
-      <p className="muted prose">
-        Repasa por temas o haz tests de 20 preguntas. Los temas están organizados por sección; puedes repasar una sección entera o un subtema.
+    <div className="home">
+      <h1 className="home__title">ApruebaDBD</h1>
+      <p className="home__subtitle">
+        Repasa por temas o haz un test de 20 preguntas.
       </p>
-      <p className="mb-1">
-        <strong>{result.topicCount}</strong> temas, <strong>{result.questionCount}</strong> preguntas.
-        {result.imported && " (Datos importados correctamente.)"}
-      </p>
-      <div className="btn-group">
-        <Link to="/topics" className="btn btn--primary">
-          Ver temas por sección
+      <div className="home__about">
+        <p>
+          Esta web sirve para practicar las preguntas del documento <strong>TestQuestions.pdf</strong> de la asignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la UPC FIB. Son las mismas preguntas que entran en los dos exámenes de la asignatura.
+        </p>
+      </div>
+      <div className="btn-group home__actions">
+        <Link to="/topics" className="btn btn--primary btn--large">
+          Ver temas
         </Link>
-        <Link to="/test" className="btn btn--secondary">
-          Hacer test de 20 preguntas
+        <Link to="/test" className="btn btn--secondary btn--large">
+          Hacer test
         </Link>
       </div>
+      <p className="home__meta muted">
+        {result.topicCount} temas · {result.questionCount} preguntas
+      </p>
     </div>
   );
 }
