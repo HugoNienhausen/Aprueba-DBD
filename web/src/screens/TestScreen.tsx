@@ -1,14 +1,13 @@
 /**
- * Test de 20 preguntas (Tarea 1.5).
- * Modos: por tema, aleatorio, falladas. Preferencia correctAt (al momento / al final).
+ * Test configurable: selección de temas, aleatorio o falladas.
+ * Número de preguntas configurable; si hay menos preguntas en la selección, se usan todas.
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   getTopics,
   getQuestionsByTopicId,
-  getQuestionsBySection,
   getQuestionsRandom,
   getFailedQuestionIds,
   getQuestionById,
@@ -21,8 +20,26 @@ import type { Topic, Question, OptionLetter, TestSessionMode } from "../types";
 import QuestionCard from "../components/QuestionCard";
 
 type TestMode = TestSessionMode;
-type TestKind = "by_section" | "by_topic" | "random" | "failed";
-const TEST_SIZE = 20;
+type TestKind = "by_selection" | "random" | "failed";
+
+const QUESTION_COUNT_OPTIONS = [10, 15, 20, 25, 30, 50] as const;
+
+function groupBySection(topics: Topic[]): { section: string; topics: Topic[] }[] {
+  const bySection = new Map<string, Topic[]>();
+  for (const t of topics) {
+    const list = bySection.get(t.section) ?? [];
+    list.push(t);
+    bySection.set(t.section, list);
+  }
+  return Array.from(bySection.entries())
+    .map(([section, list]) => ({ section, topics: list }))
+    .sort((a, b) => {
+      const na = parseInt(a.section, 10);
+      const nb = parseInt(b.section, 10);
+      if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;
+      return a.section.localeCompare(b.section);
+    });
+}
 
 function shuffle<T>(arr: T[]): T[] {
   const out = [...arr];
@@ -46,17 +63,27 @@ export default function TestScreen() {
   const [phase, setPhase] = useState<Phase>("config");
   const [topics, setTopics] = useState<Topic[]>([]);
   const [failedCount, setFailedCount] = useState<number | null>(null);
-  const [kind, setKind] = useState<TestKind>("by_section");
-  const [selectedSection, setSelectedSection] = useState<string>("");
-  const [selectedTopicId, setSelectedTopicId] = useState<string>("");
+  const [kind, setKind] = useState<TestKind>("random");
+  const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>([]);
+  const [questionCount, setQuestionCount] = useState<number>(20);
   const [loading, setLoading] = useState(true);
 
-  const sections = Array.from(new Set(topics.map((t) => t.section))).sort((a, b) => {
-    const na = parseInt(a, 10);
-    const nb = parseInt(b, 10);
-    if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;
-    return a.localeCompare(b);
-  });
+  const sectionsWithTopics = useMemo(() => groupBySection(topics), [topics]);
+
+  const toggleTopic = (topicId: string) => {
+    setSelectedTopicIds((prev) =>
+      prev.includes(topicId) ? prev.filter((id) => id !== topicId) : [...prev, topicId]
+    );
+  };
+
+  const toggleSection = (section: string) => {
+    const sectionTopics = sectionsWithTopics.find((s) => s.section === section)?.topics ?? [];
+    const ids = sectionTopics.map((t) => t.id);
+    const allSelected = ids.every((id) => selectedTopicIds.includes(id));
+    setSelectedTopicIds((prev) =>
+      allSelected ? prev.filter((id) => !ids.includes(id)) : [...new Set([...prev, ...ids])]
+    );
+  };
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [sessionId, setSessionId] = useState<string | null>(null);
@@ -70,44 +97,32 @@ export default function TestScreen() {
       .then(([t, ids]) => {
         setTopics(t);
         setFailedCount(ids.length);
-        if (t.length > 0) {
-          const secs = Array.from(new Set(t.map((x) => x.section))).sort((a, b) => {
-            const na = parseInt(a, 10);
-            const nb = parseInt(b, 10);
-            if (!Number.isNaN(na) && !Number.isNaN(nb)) return na - nb;
-            return a.localeCompare(b);
-          });
-          setSelectedSection((prev) => (prev ? prev : secs[0] ?? ""));
-          setSelectedTopicId((prev) => (prev ? prev : t[0].id));
-        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
   const startTest = async () => {
-    if (kind === "by_section" && !selectedSection) return;
-    if (kind === "by_topic" && !selectedTopicId) return;
+    if (kind === "by_selection" && selectedTopicIds.length === 0) return;
     if (kind === "failed" && (failedCount ?? 0) === 0) return;
 
     const prefs = await getPreferences();
     setCorrectAt(prefs.correctAt);
 
+    const n = Math.max(1, questionCount);
     let qs: Question[] = [];
     const mode: TestMode = kind === "random" ? "random" : kind === "failed" ? "failed" : "by_topic";
-    const topicIdForSession = kind === "by_topic" ? selectedTopicId : null;
 
-    if (kind === "by_section") {
-      const all = await getQuestionsBySection(selectedSection);
-      qs = shuffle(all).slice(0, TEST_SIZE);
-    } else if (kind === "by_topic") {
-      const all = await getQuestionsByTopicId(selectedTopicId);
-      qs = shuffle(all).slice(0, TEST_SIZE);
+    if (kind === "by_selection") {
+      const byTopic = await Promise.all(selectedTopicIds.map((id) => getQuestionsByTopicId(id)));
+      const merged = byTopic.flat().sort((a, b) => a.number - b.number);
+      const unique = Array.from(new Map(merged.map((q) => [q.id, q])).values());
+      qs = shuffle(unique).slice(0, n);
     } else if (kind === "random") {
-      qs = await getQuestionsRandom(TEST_SIZE);
+      qs = await getQuestionsRandom(n);
     } else {
       const ids = await getFailedQuestionIds();
-      const limited = ids.slice(0, TEST_SIZE);
+      const limited = ids.slice(0, n);
       const resolved = await Promise.all(limited.map((id) => getQuestionById(id)));
       qs = resolved.filter((q): q is Question => q != null);
     }
@@ -118,7 +133,7 @@ export default function TestScreen() {
 
     const sessionIdNew = await saveTestSession({
       mode,
-      topicId: topicIdForSession,
+      topicId: null,
       totalQuestions: qs.length,
       correctCount: 0,
       startedAt: new Date().toISOString(),
@@ -226,8 +241,7 @@ export default function TestScreen() {
   if (loading) return <p className="muted">Cargando…</p>;
 
   const canStart =
-    (kind === "by_section" && selectedSection) ||
-    (kind === "by_topic" && selectedTopicId) ||
+    (kind === "by_selection" && selectedTopicIds.length > 0) ||
     kind === "random" ||
     (kind === "failed" && (failedCount ?? 0) > 0);
 
@@ -235,58 +249,10 @@ export default function TestScreen() {
     <div className="test-config">
       <h1 className="page-title">Hacer test</h1>
       <p className="test-config__intro muted">
-        {TEST_SIZE} preguntas. Elige una opción y pulsa Comenzar.
+        Elige una opción y el número de preguntas. Si hay menos preguntas en la selección, se usarán todas.
       </p>
 
       <div className="test-options">
-        <button
-          type="button"
-          className={`test-option ${kind === "by_section" ? "test-option--active" : ""}`}
-          onClick={() => setKind("by_section")}
-        >
-          <span className="test-option__title">Tema</span>
-          <span className="test-option__desc">Una sección entera (ej. 0 Introduction)</span>
-        </button>
-        {kind === "by_section" && (
-          <div className="test-option__extra">
-            <label className="test-option__label">Tema</label>
-            <select
-              value={selectedSection}
-              onChange={(e) => setSelectedSection(e.target.value)}
-              className="test-option__select"
-            >
-              {sections.map((s) => (
-                <option key={s} value={s}>{s}</option>
-              ))}
-            </select>
-          </div>
-        )}
-
-        <button
-          type="button"
-          className={`test-option ${kind === "by_topic" ? "test-option--active" : ""}`}
-          onClick={() => setKind("by_topic")}
-        >
-          <span className="test-option__title">Subtema</span>
-          <span className="test-option__desc">Un tema concreto (ej. Basic background)</span>
-        </button>
-        {kind === "by_topic" && (
-          <div className="test-option__extra">
-            <label className="test-option__label">Subtema</label>
-            <select
-              value={selectedTopicId}
-              onChange={(e) => setSelectedTopicId(e.target.value)}
-              className="test-option__select test-option__select--wide"
-            >
-              {topics.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.section} – {t.title}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-
         <button
           type="button"
           className={`test-option ${kind === "random" ? "test-option--active" : ""}`}
@@ -298,6 +264,51 @@ export default function TestScreen() {
 
         <button
           type="button"
+          className={`test-option ${kind === "by_selection" ? "test-option--active" : ""}`}
+          onClick={() => setKind("by_selection")}
+        >
+          <span className="test-option__title">Selección de temas</span>
+          <span className="test-option__desc">Elige los temas o subtemas que quieras practicar</span>
+        </button>
+        {kind === "by_selection" && (
+          <div className="test-option__extra test-selection">
+            {sectionsWithTopics.map(({ section, topics: sectionTopics }) => {
+              const ids = sectionTopics.map((t) => t.id);
+              const allInSection = ids.every((id) => selectedTopicIds.includes(id));
+              return (
+                <div key={section} className="test-selection__section">
+                  <label className="test-selection__section-header">
+                    <input
+                      type="checkbox"
+                      checked={allInSection}
+                      onChange={() => toggleSection(section)}
+                      className="test-selection__checkbox"
+                    />
+                    <span className="test-selection__section-title">{section}</span>
+                  </label>
+                  <ul className="test-selection__list">
+                    {sectionTopics.map((t) => (
+                      <li key={t.id}>
+                        <label className="test-selection__item">
+                          <input
+                            type="checkbox"
+                            checked={selectedTopicIds.includes(t.id)}
+                            onChange={() => toggleTopic(t.id)}
+                            className="test-selection__checkbox"
+                          />
+                          <span>{t.title}</span>
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <button
+          type="button"
           className={`test-option ${kind === "failed" ? "test-option--active" : ""} ${(failedCount ?? 0) === 0 ? "test-option--disabled" : ""}`}
           onClick={() => (failedCount ?? 0) > 0 && setKind("failed")}
           disabled={(failedCount ?? 0) === 0}
@@ -306,7 +317,7 @@ export default function TestScreen() {
           <span className="test-option__desc">
             {(failedCount ?? 0) === 0
               ? "Haz antes un test para tener fallos"
-              : `${Math.min(failedCount!, TEST_SIZE)} para repasar`}
+              : `${Math.min(failedCount!, questionCount)} para repasar`}
           </span>
         </button>
         {(failedCount ?? 0) > 0 && kind === "failed" && (
@@ -314,6 +325,21 @@ export default function TestScreen() {
             <Link to="/review/failed" className="link-plain">Repasar en orden →</Link>
           </p>
         )}
+      </div>
+
+      <div className="test-config__preguntas">
+        <label className="test-config__preguntas-label">
+          Preguntas:{" "}
+          <select
+            value={questionCount}
+            onChange={(e) => setQuestionCount(Number(e.target.value))}
+            className="test-option__select"
+          >
+            {QUESTION_COUNT_OPTIONS.map((num) => (
+              <option key={num} value={num}>{num}</option>
+            ))}
+          </select>
+        </label>
       </div>
 
       <div className="test-config__actions">

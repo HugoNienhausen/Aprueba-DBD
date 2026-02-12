@@ -675,6 +675,81 @@ body {
   padding-left: 0.25rem;
 }
 
+.test-selection {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  padding: 0.5rem 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-bg);
+}
+
+.test-selection__section {
+  margin-bottom: 0.75rem;
+}
+
+.test-selection__section:last-child {
+  margin-bottom: 0;
+}
+
+.test-selection__section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.test-selection__section-title {
+  color: var(--text);
+}
+
+.test-selection__list {
+  list-style: none;
+  padding: 0 0 0 1.5rem;
+  margin: 0;
+}
+
+.test-selection__list li {
+  margin-bottom: 0.25rem;
+}
+
+.test-selection__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.test-selection__item span {
+  color: var(--text);
+}
+
+.test-selection__checkbox {
+  accent-color: var(--link);
+}
+
+.test-config__preguntas {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.test-config__preguntas-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.test-config__preguntas .test-option__select {
+  min-width: 4rem;
+}
+
 .test-config__actions {
   margin-top: 1rem;
 }
