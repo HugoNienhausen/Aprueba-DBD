@@ -235,7 +235,7 @@ export default function TestScreen() {
     <div className="test-config">
       <h1 className="page-title">Hacer test</h1>
       <p className="test-config__intro muted">
-        {TEST_SIZE} preguntas. Elige qué quieres practicar y pulsa Comenzar.
+        {TEST_SIZE} preguntas. Elige una opción y pulsa Comenzar.
       </p>
 
       <div className="test-options">
@@ -244,12 +244,12 @@ export default function TestScreen() {
           className={`test-option ${kind === "by_section" ? "test-option--active" : ""}`}
           onClick={() => setKind("by_section")}
         >
-          <span className="test-option__title">Un tema completo</span>
-          <span className="test-option__desc">Preguntas de una sección (ej. 0 Introduction)</span>
+          <span className="test-option__title">Tema</span>
+          <span className="test-option__desc">Una sección entera (ej. 0 Introduction)</span>
         </button>
         {kind === "by_section" && (
           <div className="test-option__extra">
-            <label className="test-option__label">Elige el tema</label>
+            <label className="test-option__label">Tema</label>
             <select
               value={selectedSection}
               onChange={(e) => setSelectedSection(e.target.value)}
@@ -267,12 +267,12 @@ export default function TestScreen() {
           className={`test-option ${kind === "by_topic" ? "test-option--active" : ""}`}
           onClick={() => setKind("by_topic")}
         >
-          <span className="test-option__title">Un subtema</span>
-          <span className="test-option__desc">Preguntas de un tema concreto (ej. Basic background)</span>
+          <span className="test-option__title">Subtema</span>
+          <span className="test-option__desc">Un tema concreto (ej. Basic background)</span>
         </button>
         {kind === "by_topic" && (
           <div className="test-option__extra">
-            <label className="test-option__label">Elige el subtema</label>
+            <label className="test-option__label">Subtema</label>
             <select
               value={selectedTopicId}
               onChange={(e) => setSelectedTopicId(e.target.value)}
@@ -293,7 +293,7 @@ export default function TestScreen() {
           onClick={() => setKind("random")}
         >
           <span className="test-option__title">Aleatorio</span>
-          <span className="test-option__desc">Preguntas de todos los temas mezcladas</span>
+          <span className="test-option__desc">De todos los temas</span>
         </button>
 
         <button
@@ -302,16 +302,16 @@ export default function TestScreen() {
           onClick={() => (failedCount ?? 0) > 0 && setKind("failed")}
           disabled={(failedCount ?? 0) === 0}
         >
-          <span className="test-option__title">Preguntas falladas</span>
+          <span className="test-option__title">Falladas</span>
           <span className="test-option__desc">
             {(failedCount ?? 0) === 0
-              ? "Haz un test antes para acumular fallos"
-              : `${Math.min(failedCount!, TEST_SIZE)} preguntas para repasar`}
+              ? "Haz antes un test para tener fallos"
+              : `${Math.min(failedCount!, TEST_SIZE)} para repasar`}
           </span>
         </button>
         {(failedCount ?? 0) > 0 && kind === "failed" && (
           <p className="test-option__link muted">
-            <Link to="/review/failed" className="link-plain">Repasarlas en orden →</Link>
+            <Link to="/review/failed" className="link-plain">Repasar en orden →</Link>
           </p>
         )}
       </div>

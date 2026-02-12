@@ -4,7 +4,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { getTopics, getFailedQuestionIds } from "../repos";
+import { getTopics } from "../repos";
 import type { Topic } from "../types";
 
 function groupBySection(topics: Topic[]): { section: string; topics: Topic[] }[] {
@@ -27,18 +27,14 @@ function groupBySection(topics: Topic[]): { section: string; topics: Topic[] }[]
 
 export default function TopicsScreen() {
   const [topics, setTopics] = useState<Topic[]>([]);
-  const [failedCount, setFailedCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const sections = useMemo(() => groupBySection(topics), [topics]);
 
   useEffect(() => {
-    Promise.all([getTopics(), getFailedQuestionIds()])
-      .then(([t, ids]) => {
-        setTopics(t);
-        setFailedCount(ids.length);
-      })
+    getTopics()
+      .then(setTopics)
       .catch((err) => setError(err instanceof Error ? err.message : String(err)))
       .finally(() => setLoading(false));
   }, []);
@@ -49,20 +45,6 @@ export default function TopicsScreen() {
   return (
     <div>
       <h1 className="page-title">Temas</h1>
-      <p className="mb-2">
-        <Link to="/test" className="link-plain" style={{ fontWeight: 600 }}>Hacer test de 20 preguntas</Link>
-        {(failedCount ?? 0) > 0 && (
-          <>
-            {" · "}
-            <Link to="/review/failed" className="link-plain">
-              Repaso falladas ({(failedCount ?? 0)})
-            </Link>
-          </>
-        )}
-      </p>
-      <p className="muted mb-2">
-        Cada <strong>tema</strong> agrupa varios <strong>subtemas</strong>. Puedes repasar el tema completo o un subtema.
-      </p>
 
       {sections.map(({ section, topics: sectionTopics }) => (
         <section key={section} className="card card--section">
