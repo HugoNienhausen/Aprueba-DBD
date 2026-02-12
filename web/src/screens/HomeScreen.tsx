@@ -33,10 +33,11 @@ export default function HomeScreen() {
   return (
     <div className="home">
       <h1 className="home__title">ApruebaDBD</h1>
-      <p className="home__subtitle">
-        Practica las preguntas del documento <b>TestQuestions.pdf</b> de la asignatura <b>Disseny de Bases de Dades (DBD)</b> de la FIB. 
-        (entran en el examen)
-      </p>
+      <div className="home__intro">
+        <p className="home__intro-line">Practica las preguntas del documento <strong>TestQuestions.pdf</strong></p>
+        <p className="home__intro-line">de la asignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
+        <p className="home__intro-note">(entran en el examen)</p>
+      </div>
       <div className="btn-group home__actions">
         <Link to="/topics" className="btn btn--primary btn--large">
           Ver temas

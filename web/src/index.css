@@ -70,6 +70,7 @@ body {
   max-width: 42rem;
   margin: 0 auto;
   padding: 1rem 1.25rem;
+  padding-bottom: 5rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -80,12 +81,16 @@ body {
 }
 
 .app-footer {
-  margin-top: 2rem;
-  padding-top: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
   border-top: 1px solid var(--border);
   font-size: 0.9rem;
   color: var(--muted);
   text-align: center;
+  background: var(--bg);
 }
 
 .app-footer__name {
@@ -214,46 +219,43 @@ body {
 /* --- Home --- */
 .home {
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0 1.5rem;
 }
 
 .home__title {
   font-size: 1.75rem;
   font-weight: 700;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
   letter-spacing: -0.02em;
 }
 
-.home__subtitle {
-  font-size: 1.05rem;
-  margin: 0 0 1rem;
-  color: var(--muted);
+.home__intro {
+  max-width: 28rem;
+  margin: 0 auto 1.25rem;
+  text-align: center;
 }
 
-.home__about {
-  max-width: 32rem;
-  margin: 0 auto 1.5rem;
-  padding: 0.9rem 1rem;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+.home__intro-line {
+  font-size: 1rem;
   line-height: 1.5;
   color: var(--muted);
-  text-align: left;
+  margin: 0 0 0.25rem;
 }
 
-.home__about p {
-  margin: 0;
-}
-
-.home__about strong {
+.home__intro-line strong {
   color: var(--text);
+}
+
+.home__intro-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.35rem 0 0;
+  font-style: italic;
 }
 
 .home__actions {
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .home__meta {
