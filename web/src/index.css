@@ -70,6 +70,59 @@ body {
   max-width: 42rem;
   margin: 0 auto;
   padding: 1rem 1.25rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-wrap > main {
+  flex: 1;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.app-footer__name {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.app-footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.app-footer__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--link);
+  text-decoration: none;
+}
+
+.app-footer__link:hover {
+  text-decoration: underline;
+}
+
+.app-footer__link:hover .app-footer__icon {
+  opacity: 1;
+}
+
+.app-footer__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  opacity: 0.9;
+  transition: opacity 0.15s ease;
 }
 
 /* --- Navegación --- */
