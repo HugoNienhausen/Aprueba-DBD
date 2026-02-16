@@ -47,7 +47,7 @@ export default function HomeScreen() {
         </Link>
       </div>
       <p className="home__meta muted">
-        {result.topicCount} temas · {result.questionCount} preguntas
+        {result.topicCount} páginas del PDF · {result.questionCount} preguntas
       </p>
     </div>
   );
