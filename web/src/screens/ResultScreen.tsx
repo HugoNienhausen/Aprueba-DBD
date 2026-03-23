@@ -49,10 +49,10 @@ export default function ResultScreen() {
             <>
               <h2 className="card-title">Preguntas falladas ({wrongAnswers.length})</h2>
               <ul className="list-plain">
-                {wrongAnswers.map((item, i) => (
+                {wrongAnswers.map((item) => (
                   <li key={item.question.id} className="wrong-item">
                     <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>
-                      {i + 1}. {item.question.text}
+                      Pregunta {item.question.number}. {item.question.text}
                     </p>
                     <ul className="result-options">
                       {item.question.options.map((opt) => {
@@ -86,10 +86,10 @@ export default function ResultScreen() {
                 Preguntas acertadas ({correctAnswers.length})
               </h2>
               <ul className="list-plain">
-                {correctAnswers.map((item, i) => (
+                {correctAnswers.map((item) => (
                   <li key={item.question.id} className="correct-item">
                     <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>
-                      {i + 1}. {item.question.text}
+                      Pregunta {item.question.number}. {item.question.text}
                     </p>
                     <ul className="result-options">
                       {item.question.options.map((opt) => {
