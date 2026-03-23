@@ -49,12 +49,25 @@ export default function ResultScreen() {
                     <p style={{ fontWeight: 600, marginBottom: "0.5rem" }}>
                       {i + 1}. {item.question.text}
                     </p>
-                    <p className="wrong-item__answer--yours mb-1">
-                      Tu respuesta: <strong>{item.selectedLetter}</strong>
-                    </p>
-                    <p className="wrong-item__answer--correct mb-1">
-                      Correcta: <strong>{item.correctLetter}</strong>
-                    </p>
+                    <ul className="result-options">
+                      {item.question.options.map((opt) => {
+                        const isSelected = opt.letter === item.selectedLetter;
+                        const isCorrect = opt.letter === item.correctLetter;
+                        const state = isCorrect ? "correct" : isSelected ? "wrong" : undefined;
+                        return (
+                          <li
+                            key={opt.letter}
+                            className="result-option"
+                            data-state={state}
+                          >
+                            <span className="result-option__letter">{opt.letter}.</span>
+                            <span className="result-option__text">{opt.text}</span>
+                            {isSelected && <span className="result-option__tag result-option__tag--yours">Tu respuesta</span>}
+                            {isCorrect && <span className="result-option__tag result-option__tag--correct">Correcta</span>}
+                          </li>
+                        );
+                      })}
+                    </ul>
                     {item.explicacion && (
                       <div className="explanation-box mt-2">
                         <strong>Explicación:</strong> {item.explicacion}

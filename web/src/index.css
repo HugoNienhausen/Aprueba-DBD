@@ -533,6 +533,66 @@ body {
   color: var(--correct-border);
 }
 
+/* --- Result options list --- */
+.result-options {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.result-option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card-bg);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.result-option[data-state="correct"] {
+  background: var(--correct-bg);
+  border-color: var(--correct-border);
+}
+
+.result-option[data-state="wrong"] {
+  background: var(--wrong-bg);
+  border-color: var(--wrong-border);
+}
+
+.result-option__letter {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.result-option__text {
+  flex: 1;
+}
+
+.result-option__tag {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.result-option__tag--yours {
+  background: var(--wrong-bg);
+  color: var(--wrong-border);
+}
+
+.result-option__tag--correct {
+  background: var(--correct-bg);
+  color: var(--correct-border);
+}
+
 .alert-error {
   color: var(--wrong-border);
 }
