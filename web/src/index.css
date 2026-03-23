@@ -517,7 +517,8 @@ body {
   margin-bottom: 0.25rem;
 }
 
-.wrong-item {
+.wrong-item,
+.correct-item {
   padding: 1rem;
   margin-bottom: 0.75rem;
   border: 1px solid var(--border);

@@ -192,14 +192,12 @@ export default function TestScreen() {
       correctCount: correctTotal,
       finishedAt: new Date().toISOString(),
     });
-    const wrongAnswers = allAnswers
-      .filter((a) => !a.isCorrect)
-      .map((a) => {
-        const q = questions.find((x) => x.id === a.questionId)!;
-        return { question: q, selectedLetter: a.selectedLetter, correctLetter: q.correctLetter, explicacion: q.explicacion };
-      });
+    const allAnswerItems = allAnswers.map((a) => {
+      const q = questions.find((x) => x.id === a.questionId)!;
+      return { question: q, selectedLetter: a.selectedLetter, correctLetter: q.correctLetter, explicacion: q.explicacion, isCorrect: a.isCorrect };
+    });
     navigate("/result", {
-      state: { correctCount: correctTotal, totalQuestions: questions.length, wrongAnswers },
+      state: { correctCount: correctTotal, totalQuestions: questions.length, allAnswers: allAnswerItems },
     });
   };
 
