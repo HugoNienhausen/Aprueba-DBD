@@ -125,7 +125,7 @@ export default function Layout() {
       <footer className="app-footer">
         <p className="app-footer__name">Hugo Nienhausen</p>
         <div className="app-footer__links">
-          <a href="https://github.com/HugoNienhausen" target="_blank" rel="noopener noreferrer" className="app-footer__link" title="GitHub" aria-label="GitHub">
+          <a href="https://github.com/HugoNienhausen/Aprueba-DBD" target="_blank" rel="noopener noreferrer" className="app-footer__link" title="GitHub" aria-label="GitHub">
             <svg className="app-footer__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.63-.735-3.63-.735-.39-.99-.96-1.255-.96-1.255-.78-.53.06-.52.06-.52.765.055 1.17.795 1.17.795.765 1.305 2.025.93 2.52.71.075-.555.3-.93.54-1.14-1.875-.21-3.855-.945-3.855-4.215 0-.93.33-1.695.87-2.295-.09-.21-.375-1.065.09-2.22 0 0 .705-.225 2.31.855.675-.195 1.395-.285 2.115-.285.72 0 1.44.09 2.115.285 1.605-1.08 2.31-.855 2.31-.855.465 1.155.18 2.01.09 2.22.54.6.87 1.365.87 2.295 0 3.27-1.95 4.005-3.81 4.215.3.255.57.765.57 1.53 0 1.11-.015 2.01-.015 2.28 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
             </svg>
