@@ -64,11 +64,13 @@ export default function QuestionCard({
         })}
       </ul>
       {showFeedback && question.explicacion && (
-        <div className="explanation-box">
-          <strong>Explicación:</strong>
-          <Markdown>{question.explicacion}</Markdown>
-          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-        </div>
+        <details className="explanation-box">
+          <summary><strong>Veure explicació</strong></summary>
+          <div className="explanation-box__content">
+            <Markdown>{question.explicacion}</Markdown>
+            <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
+          </div>
+        </details>
       )}
     </div>
   );

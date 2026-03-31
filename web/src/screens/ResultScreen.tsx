@@ -71,11 +71,13 @@ export default function ResultScreen() {
                       })}
                     </ul>
                     {item.explicacion && (
-                      <div className="explanation-box mt-2">
-                        <strong>Explicación:</strong>
-                        <Markdown>{item.explicacion}</Markdown>
-                        <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-                      </div>
+                      <details className="explanation-box mt-2">
+                        <summary><strong>Veure explicació</strong></summary>
+                        <div className="explanation-box__content">
+                          <Markdown>{item.explicacion}</Markdown>
+                          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
+                        </div>
+                      </details>
                     )}
                   </li>
                 ))}
@@ -108,11 +110,13 @@ export default function ResultScreen() {
                       })}
                     </ul>
                     {item.explicacion && (
-                      <div className="explanation-box mt-2">
-                        <strong>Explicación:</strong>
-                        <Markdown>{item.explicacion}</Markdown>
-                        <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-                      </div>
+                      <details className="explanation-box mt-2">
+                        <summary><strong>Veure explicació</strong></summary>
+                        <div className="explanation-box__content">
+                          <Markdown>{item.explicacion}</Markdown>
+                          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
+                        </div>
+                      </details>
                     )}
                   </li>
                 ))}

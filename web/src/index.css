@@ -459,16 +459,44 @@ body {
 
 .explanation-box {
   margin-top: 1rem;
-  padding: 0.75rem 1rem;
+  padding: 0;
   background: var(--explanation-bg);
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
   border: 1px solid var(--border);
 }
 
+.explanation-box summary {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.explanation-box__content {
+  padding: 0 1rem 0.75rem;
+}
+
+/* Compactar markdown dentro de explicaciones */
+.explanation-box__content p {
+  margin: 0.25rem 0;
+}
+
+.explanation-box__content h1,
+.explanation-box__content h2,
+.explanation-box__content h3,
+.explanation-box__content h4 {
+  margin: 0.4rem 0 0.15rem;
+  font-size: 0.95rem;
+}
+
+.explanation-box__content ul,
+.explanation-box__content ol {
+  margin: 0.2rem 0;
+  padding-left: 1.2rem;
+}
+
 .explanation-box strong {
-  display: block;
-  margin-bottom: 0.25rem;
+  display: inline;
 }
 
 /* --- Formularios (radios, selects) --- */
