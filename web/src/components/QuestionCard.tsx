@@ -65,6 +65,7 @@ export default function QuestionCard({
       {showFeedback && question.explicacion && (
         <div className="explanation-box">
           <strong>Explicación:</strong> {question.explicacion}
+          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
         </div>
       )}
     </div>

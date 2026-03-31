@@ -594,6 +594,14 @@ body {
   color: var(--correct-border);
 }
 
+.ai-disclaimer {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
 .alert-error {
   color: var(--wrong-border);
 }
