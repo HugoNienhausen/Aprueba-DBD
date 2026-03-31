@@ -2,7 +2,7 @@
  * Componente de pregunta (Tarea 1.3): enunciado, opciones, corrección al momento, explicación.
  */
 
-import Markdown from "react-markdown";
+import ExplanationBlock from "./ExplanationBlock";
 import type { Question, OptionLetter } from "../types";
 
 interface QuestionCardProps {
@@ -64,13 +64,7 @@ export default function QuestionCard({
         })}
       </ul>
       {showFeedback && question.explicacion && (
-        <details className="explanation-box">
-          <summary><strong>Veure explicació</strong></summary>
-          <div className="explanation-box__content">
-            <Markdown>{question.explicacion}</Markdown>
-            <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-          </div>
-        </details>
+        <ExplanationBlock text={question.explicacion} />
       )}
     </div>
   );

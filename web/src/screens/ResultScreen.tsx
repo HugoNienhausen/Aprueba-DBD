@@ -4,7 +4,7 @@
  */
 
 import { useLocation, Link } from "react-router-dom";
-import Markdown from "react-markdown";
+import ExplanationBlock from "../components/ExplanationBlock";
 import type { Question } from "../types";
 
 interface AnswerItem {
@@ -71,13 +71,7 @@ export default function ResultScreen() {
                       })}
                     </ul>
                     {item.explicacion && (
-                      <details className="explanation-box mt-2">
-                        <summary><strong>Veure explicació</strong></summary>
-                        <div className="explanation-box__content">
-                          <Markdown>{item.explicacion}</Markdown>
-                          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-                        </div>
-                      </details>
+                      <ExplanationBlock text={item.explicacion} />
                     )}
                   </li>
                 ))}
@@ -110,13 +104,7 @@ export default function ResultScreen() {
                       })}
                     </ul>
                     {item.explicacion && (
-                      <details className="explanation-box mt-2">
-                        <summary><strong>Veure explicació</strong></summary>
-                        <div className="explanation-box__content">
-                          <Markdown>{item.explicacion}</Markdown>
-                          <p className="ai-disclaimer">Explicació generada per IA — pot contenir errors.</p>
-                        </div>
-                      </details>
+                      <ExplanationBlock text={item.explicacion} />
                     )}
                   </li>
                 ))}
