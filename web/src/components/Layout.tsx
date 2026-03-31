@@ -123,7 +123,6 @@ export default function Layout() {
         <Outlet />
       </main>
       <footer className="app-footer">
-        <p className="ai-disclaimer">Les respostes corresponen a les del PDF i han sigut validades manualment. Les explicacions son generades per IA i poden contenir errors.</p>
         <p className="app-footer__name">Hugo Nienhausen</p>
         <div className="app-footer__links">
           <a href="https://github.com/HugoNienhausen/Aprueba-DBD" target="_blank" rel="noopener noreferrer" className="app-footer__link" title="GitHub" aria-label="GitHub">
@@ -140,6 +139,7 @@ export default function Layout() {
           </a>
         </div>
       </footer>
+      <p className="ai-disclaimer" style={{ textAlign: "center", padding: "0 1rem 1rem" }}>Les respostes corresponen a les del PDF i han sigut validades manualment. Les explicacions son generades per IA i poden contenir errors.</p>
     </div>
   );
 }
