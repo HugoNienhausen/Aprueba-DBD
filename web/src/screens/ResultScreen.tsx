@@ -127,11 +127,6 @@ export default function ResultScreen() {
       <p className="mt-2">
         <Link to="/test" className="link-plain">← Volver al test</Link>
       </p>
-      {hasResult && (
-        <p className="ai-disclaimer" style={{ marginTop: "1.5rem" }}>
-          Les respostes correctes han estat revisades manualment. Les explicacions han estat generades per un model d'OpenAI i poden contenir errors.
-        </p>
-      )}
     </div>
   );
 }
