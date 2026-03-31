@@ -11,26 +11,63 @@ import { getTopics } from "./repositories";
 
 const QUESTIONS_JSON_URL = "/data/questions_new.json";
 
+/**
+ * Bump this version whenever questions data changes.
+ * Users with an older version will get a transparent re-import
+ * without losing their test history (user_answers, test_sessions).
+ */
+const DATA_VERSION = 2;
+const DATA_VERSION_KEY = "data_version";
+
 export type BootstrapResult =
   | { ok: true; imported: true; topicCount: number; questionCount: number }
   | { ok: true; imported: false; topicCount: number; questionCount: number }
   | { ok: false; error: string };
 
+function getStoredVersion(db: import("sql.js").Database): number {
+  try {
+    const stmt = db.prepare("SELECT value FROM user_preferences WHERE key = ?");
+    stmt.bind([DATA_VERSION_KEY]);
+    if (stmt.step()) {
+      const v = Number(stmt.get()[0]);
+      stmt.free();
+      return v;
+    }
+    stmt.free();
+  } catch { /* table may not exist yet */ }
+  return 0;
+}
+
+function setStoredVersion(db: import("sql.js").Database, version: number): void {
+  db.run(
+    "INSERT OR REPLACE INTO user_preferences (key, value) VALUES (?, ?)",
+    [DATA_VERSION_KEY, String(version)]
+  );
+}
+
 /**
- * Ensures the DB has topics and questions. If empty, fetches questions.json
- * and runs the importer. Idempotent; does not overwrite existing data.
+ * Ensures the DB has topics and questions. If empty or outdated,
+ * fetches questions JSON and re-imports. Preserves user history.
  */
 export async function ensureDataLoaded(): Promise<BootstrapResult> {
   try {
     const db = await getDb();
     const topics = await getTopics();
+    const storedVersion = getStoredVersion(db);
+    const needsUpdate = storedVersion < DATA_VERSION;
 
-    if (topics.length > 0) {
+    if (topics.length > 0 && !needsUpdate) {
       const stmt = db.prepare("SELECT COUNT(*) FROM questions");
       stmt.step();
       const questionCount = (stmt.get()[0] as number) ?? 0;
       stmt.free();
       return { ok: true, imported: false, topicCount: topics.length, questionCount };
+    }
+
+    // Clear old question data (keep user history)
+    if (needsUpdate && topics.length > 0) {
+      db.run("DELETE FROM questions");
+      db.run("DELETE FROM topics");
     }
 
     const res = await fetch(QUESTIONS_JSON_URL);
@@ -43,6 +80,8 @@ export async function ensureDataLoaded(): Promise<BootstrapResult> {
     }
 
     await importFromJson(db, data as QuestionsImport);
+    setStoredVersion(db, DATA_VERSION);
+
     const topicsAfter = await getTopics();
     const stmt = db.prepare("SELECT COUNT(*) FROM questions");
     stmt.step();
