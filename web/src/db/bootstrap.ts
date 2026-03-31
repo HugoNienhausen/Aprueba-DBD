@@ -9,7 +9,7 @@ import { importFromJson } from "./import";
 import { getDb } from "./init";
 import { getTopics } from "./repositories";
 
-const QUESTIONS_JSON_URL = "/data/questions.json";
+const QUESTIONS_JSON_URL = "/data/questions_new.json";
 
 export type BootstrapResult =
   | { ok: true; imported: true; topicCount: number; questionCount: number }
