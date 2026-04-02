@@ -19,7 +19,7 @@ export default function StatsScreen() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="muted">Cargando estadísticas…</p>;
+  if (loading) return <p className="muted">Carregant estadístiques…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
   if (!stats) return null;
 
@@ -30,36 +30,36 @@ export default function StatsScreen() {
 
   return (
     <div>
-      <h1 className="page-title">Estadísticas</h1>
+      <h1 className="page-title">Estadístiques</h1>
       <p className="muted mb-2">
-        Resumen de tus tests completados y respuestas.
+        Resum dels teus tests completats i respostes.
       </p>
 
       <div className="stats-grid">
         <div className="stat-card">
-          <div className="stat-card__label">Tests completados</div>
+          <div className="stat-card__label">Tests completats</div>
           <div className="stat-card__value">{stats.totalTests}</div>
         </div>
         <div className="stat-card">
-          <div className="stat-card__label">Respuestas correctas</div>
+          <div className="stat-card__label">Respostes correctes</div>
           <div className="stat-card__value">
             {stats.totalCorrect} / {stats.totalQuestions}
           </div>
           <div className="muted" style={{ fontSize: "0.95rem", marginTop: "0.25rem" }}>
-            {percentage}% de aciertos
+            {percentage}% d'encerts
           </div>
         </div>
         <div className="stat-card">
-          <div className="stat-card__label">Preguntas falladas (distintas)</div>
+          <div className="stat-card__label">Preguntes fallades (diferents)</div>
           <div className="stat-card__value">{stats.failedCount}</div>
           <div className="mt-2">
-            <Link to="/review/failed" className="link-plain">Repasar falladas →</Link>
+            <Link to="/review/failed" className="link-plain">Repassar fallades →</Link>
           </div>
         </div>
       </div>
 
       <p>
-        <Link to="/test" className="link-plain">Hacer test</Link> · <Link to="/topics" className="link-plain">Temas</Link>
+        <Link to="/test" className="link-plain">Fer test</Link> · <Link to="/topics" className="link-plain">Temes</Link>
       </p>
     </div>
   );

@@ -39,12 +39,12 @@ export default function TopicsScreen() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="muted">Cargando temas…</p>;
+  if (loading) return <p className="muted">Carregant temes…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
 
   return (
     <div>
-      <h1 className="page-title">Temas</h1>
+      <h1 className="page-title">Temes</h1>
 
       {sections.map(({ section, topics: sectionTopics }) => (
         <section key={section} className="card card--section">
@@ -55,7 +55,7 @@ export default function TopicsScreen() {
               className="link-plain"
               style={{ fontWeight: 600 }}
             >
-              Repaso tema completo →
+              Repàs tema complet →
             </Link>
           </p>
           <ul className="list-plain">
@@ -63,7 +63,7 @@ export default function TopicsScreen() {
               <li key={t.id} className="list-item-row">
                 <span className="muted">{t.title}</span>
                 <Link to={`/topic/${t.id}`} className="link-plain">
-                  Repaso subtema →
+                  Repàs subtema →
                 </Link>
               </li>
             ))}

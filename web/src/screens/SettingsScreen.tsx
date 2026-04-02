@@ -8,13 +8,13 @@ import { getPreferences, setPreferences } from "../repos";
 import type { CorrectAt, Theme } from "../types";
 
 const CORRECT_AT_LABELS: Record<CorrectAt, string> = {
-  immediately: "Mostrar respuesta al responder",
-  at_end: "Mostrar respuestas al final del test",
+  immediately: "Mostrar resposta en respondre",
+  at_end: "Mostrar respostes al final del test",
 };
 
 const THEME_LABELS: Record<Theme, string> = {
-  light: "Claro",
-  dark: "Oscuro",
+  light: "Clar",
+  dark: "Fosc",
 };
 
 export default function SettingsScreen() {
@@ -49,15 +49,15 @@ export default function SettingsScreen() {
     );
   };
 
-  if (loading) return <p className="muted">Cargando preferencias…</p>;
+  if (loading) return <p className="muted">Carregant preferències…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
 
   return (
     <div>
-      <h1 className="page-title">Ajustes</h1>
+      <h1 className="page-title">Ajustos</h1>
 
       <section className="mb-2">
-        <h2 className="section-heading">Apariencia</h2>
+        <h2 className="section-heading">Aparença</h2>
         <fieldset className="fieldset-reset">
           {(["light", "dark"] as const).map((value) => (
             <label key={value} className="radio-label">
@@ -75,8 +75,8 @@ export default function SettingsScreen() {
       </section>
 
       <section className="mb-2">
-        <h2 className="section-heading">Test de 20 preguntas</h2>
-        <p className="muted mb-1">Cuándo ver la respuesta correcta:</p>
+        <h2 className="section-heading">Test de 20 preguntes</h2>
+        <p className="muted mb-1">Quan veure la resposta correcta:</p>
         <fieldset className="fieldset-reset">
           {(["immediately", "at_end"] as const).map((value) => (
             <label key={value} className="radio-label">
@@ -92,7 +92,7 @@ export default function SettingsScreen() {
           ))}
         </fieldset>
         <p className="muted mt-2" style={{ fontSize: "0.9rem" }}>
-          La preferencia se guarda automáticamente.
+          La preferència es desa automàticament.
         </p>
       </section>
     </div>

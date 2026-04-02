@@ -50,19 +50,19 @@ export default function SectionReviewScreen() {
   if (!section) {
     return (
       <div>
-        <p className="muted">Sección no especificada.</p>
-        <p className="mt-2"><Link to="/topics" className="link-plain">← Volver a temas</Link></p>
+        <p className="muted">Secció no especificada.</p>
+        <p className="mt-2"><Link to="/topics" className="link-plain">← Tornar a temes</Link></p>
       </div>
     );
   }
-  if (loading) return <p className="muted">Cargando preguntas…</p>;
+  if (loading) return <p className="muted">Carregant preguntes…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
   if (questions.length === 0) {
     return (
       <div>
-        <h1 className="page-title">Repaso: {section}</h1>
-        <p className="muted">No hay preguntas en este tema.</p>
-        <p className="mt-2"><Link to="/topics" className="link-plain">← Volver a temas</Link></p>
+        <h1 className="page-title">Repàs: {section}</h1>
+        <p className="muted">No hi ha preguntes en aquest tema.</p>
+        <p className="mt-2"><Link to="/topics" className="link-plain">← Tornar a temes</Link></p>
       </div>
     );
   }
@@ -72,9 +72,9 @@ export default function SectionReviewScreen() {
 
   return (
     <div>
-      <h1 className="page-title">Repaso: {section}</h1>
+      <h1 className="page-title">Repàs: {section}</h1>
       <p className="muted mb-2">
-        Tema completo · Pregunta {currentIndex + 1} de {questions.length}
+        Tema complet · Pregunta {currentIndex + 1} de {questions.length}
       </p>
 
       <QuestionCard
@@ -105,12 +105,12 @@ export default function SectionReviewScreen() {
           }}
           disabled={currentIndex === questions.length - 1}
         >
-          Siguiente →
+          Següent →
         </button>
       </div>
 
       <p className="jumper-wrap">
-        Ir a:{" "}
+        Anar a:{" "}
         {questions.slice(0, 20).map((_, i) => (
           <button
             key={i}
@@ -125,7 +125,7 @@ export default function SectionReviewScreen() {
       </p>
 
       <p className="mt-2">
-        <Link to="/topics" className="link-plain">← Volver a temas</Link>
+        <Link to="/topics" className="link-plain">← Tornar a temes</Link>
       </p>
     </div>
   );

@@ -225,7 +225,7 @@ export default function TestScreen() {
         </div>
         <p className="test-progress__label">
           Pregunta {currentIndex + 1} de {questions.length}
-          {correctAt === "at_end" && " · Verás las respuestas al final"}
+          {correctAt === "at_end" && " · Veuràs les respostes al final"}
         </p>
 
         <QuestionCard
@@ -244,7 +244,7 @@ export default function TestScreen() {
               </button>
             )}
             <button type="button" className="btn btn--primary btn--large" onClick={goNext}>
-              {isLast ? "Ver resultado" : "Siguiente →"}
+              {isLast ? "Veure resultat" : "Següent →"}
             </button>
           </div>
         )}
@@ -252,7 +252,7 @@ export default function TestScreen() {
     );
   }
 
-  if (loading) return <p className="muted">Cargando…</p>;
+  if (loading) return <p className="muted">Carregant…</p>;
 
   const canStart =
     (kind === "by_selection" && selectedTopicIds.length > 0) ||
@@ -261,9 +261,9 @@ export default function TestScreen() {
 
   return (
     <div className="test-config">
-      <h1 className="page-title">Hacer test</h1>
+      <h1 className="page-title">Fer test</h1>
       <p className="test-config__intro muted">
-        Elige una opción y el número de preguntas. Si hay menos preguntas en la selección, se usarán todas.
+        Tria una opció i el nombre de preguntes. Si hi ha menys preguntes a la selecció, s'usaran totes.
       </p>
 
       <div className="test-options">
@@ -272,8 +272,8 @@ export default function TestScreen() {
           className={`test-option ${kind === "random" ? "test-option--active" : ""}`}
           onClick={() => setKind("random")}
         >
-          <span className="test-option__title">Aleatorio</span>
-          <span className="test-option__desc">De todos los temas</span>
+          <span className="test-option__title">Aleatori</span>
+          <span className="test-option__desc">De tots els temes</span>
         </button>
 
         <button
@@ -281,8 +281,8 @@ export default function TestScreen() {
           className={`test-option ${kind === "by_selection" ? "test-option--active" : ""}`}
           onClick={() => setKind("by_selection")}
         >
-          <span className="test-option__title">Selección de temas</span>
-          <span className="test-option__desc">Elige los temas o subtemas que quieras practicar</span>
+          <span className="test-option__title">Selecció de temes</span>
+          <span className="test-option__desc">Tria els temes o subtemes que vulguis practicar</span>
         </button>
         {kind === "by_selection" && (
           <div className="test-option__extra test-selection">
@@ -327,23 +327,23 @@ export default function TestScreen() {
           onClick={() => (failedCount ?? 0) > 0 && setKind("failed")}
           disabled={(failedCount ?? 0) === 0}
         >
-          <span className="test-option__title">Falladas</span>
+          <span className="test-option__title">Fallades</span>
           <span className="test-option__desc">
             {(failedCount ?? 0) === 0
-              ? "Haz antes un test para tener fallos"
-              : `${Math.min(failedCount!, questionCount)} para repasar`}
+              ? "Fes un test abans per tenir errors"
+              : `${Math.min(failedCount!, questionCount)} per repassar`}
           </span>
         </button>
         {(failedCount ?? 0) > 0 && kind === "failed" && (
           <p className="test-option__link muted">
-            <Link to="/review/failed" className="link-plain">Repasar en orden →</Link>
+            <Link to="/review/failed" className="link-plain">Repassar en ordre →</Link>
           </p>
         )}
       </div>
 
       <div className="test-config__preguntas">
         <label className="test-config__preguntas-label">
-          Preguntas:{" "}
+          Preguntes:{" "}
           <select
             value={questionCount}
             onChange={(e) => setQuestionCount(Number(e.target.value))}
@@ -363,7 +363,7 @@ export default function TestScreen() {
           onClick={startTest}
           disabled={!canStart}
         >
-          Comenzar test
+          Començar test
         </button>
       </div>
     </div>

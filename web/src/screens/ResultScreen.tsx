@@ -36,19 +36,19 @@ export default function ResultScreen() {
 
   return (
     <div>
-      <h1 className="page-title">Resultado del test</h1>
+      <h1 className="page-title">Resultat del test</h1>
       {hasResult ? (
         <>
           <p className="result-score">
-            <strong>{correctCount}</strong> / {totalQuestions} correctas
+            <strong>{correctCount}</strong> / {totalQuestions} correctes
           </p>
           <p className="muted mb-2">
-            {percentage}% de aciertos
+            {percentage}% d'encerts
           </p>
 
           {wrongAnswers.length > 0 && (
             <>
-              <h2 className="card-title">Preguntas falladas ({wrongAnswers.length})</h2>
+              <h2 className="card-title">Preguntes fallades ({wrongAnswers.length})</h2>
               <ul className="list-plain">
                 {wrongAnswers.map((item) => (
                   <li key={item.question.id} className="wrong-item">
@@ -64,7 +64,7 @@ export default function ResultScreen() {
                           <li key={opt.letter} className="result-option" data-state={optState}>
                             <span className="result-option__letter">{opt.letter}.</span>
                             <span className="result-option__text">{opt.text}</span>
-                            {isSelected && <span className="result-option__tag result-option__tag--yours">Tu respuesta</span>}
+                            {isSelected && <span className="result-option__tag result-option__tag--yours">La teva resposta</span>}
                             {isCorrect && <span className="result-option__tag result-option__tag--correct">Correcta</span>}
                           </li>
                         );
@@ -82,7 +82,7 @@ export default function ResultScreen() {
           {correctAnswers.length > 0 && (
             <>
               <h2 className="card-title" style={{ marginTop: "1.5rem" }}>
-                Preguntas acertadas ({correctAnswers.length})
+                Preguntes encertades ({correctAnswers.length})
               </h2>
               <ul className="list-plain">
                 {correctAnswers.map((item) => (
@@ -98,7 +98,7 @@ export default function ResultScreen() {
                           <li key={opt.letter} className="result-option" data-state={optState}>
                             <span className="result-option__letter">{opt.letter}.</span>
                             <span className="result-option__text">{opt.text}</span>
-                            {isSelected && <span className="result-option__tag result-option__tag--correct">Tu respuesta</span>}
+                            {isSelected && <span className="result-option__tag result-option__tag--correct">La teva resposta</span>}
                           </li>
                         );
                       })}
@@ -113,14 +113,14 @@ export default function ResultScreen() {
           )}
 
           {wrongAnswers.length === 0 && (
-            <p className="success-msg mb-2">¡Todas correctas!</p>
+            <p className="success-msg mb-2">Totes correctes!</p>
           )}
         </>
       ) : (
-        <p className="muted">{state?.message ?? "Resumen y fallos (realiza un test para ver el resultado)."}</p>
+        <p className="muted">{state?.message ?? "Resum i errors (fes un test per veure el resultat)."}</p>
       )}
       <p className="mt-2">
-        <Link to="/test" className="link-plain">← Volver al test</Link>
+        <Link to="/test" className="link-plain">← Tornar al test</Link>
       </p>
     </div>
   );

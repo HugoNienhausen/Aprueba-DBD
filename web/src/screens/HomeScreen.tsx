@@ -40,7 +40,7 @@ export default function HomeScreen() {
   }, []);
 
   if (result === null) {
-    return <p className="muted">Cargando base de datos…</p>;
+    return <p className="muted">Carregant base de dades…</p>;
   }
   if (!result.ok) {
     return (
@@ -53,16 +53,16 @@ export default function HomeScreen() {
     <div className="home">
       <h1 className="home__title">ApruebaDBD</h1>
       <div className="home__intro">
-        <p className="home__intro-line">Practica las preguntas del documento <strong>TestQuestions.pdf</strong></p>
-        <p className="home__intro-line">de la asignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
-        <p className="home__intro-note">(entran en el examen)</p>
+        <p className="home__intro-line">Practica les preguntes del document <strong>TestQuestions.pdf</strong></p>
+        <p className="home__intro-line">de l'assignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
+        <p className="home__intro-note">(entren a l'examen)</p>
       </div>
       <div className="btn-group home__actions">
         <Link to="/topics" className="btn btn--primary btn--large">
-          Ver temas
+          Veure temes
         </Link>
         <Link to="/test" className="btn btn--secondary btn--large">
-          Hacer test
+          Fer test
         </Link>
       </div>
       {countdown && (
@@ -77,7 +77,7 @@ export default function HomeScreen() {
         </div>
       )}
       <p className="home__meta muted">
-        {result.topicCount} páginas del PDF · {result.questionCount} preguntas
+        {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
       </p>
     </div>
   );

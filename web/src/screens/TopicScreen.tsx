@@ -55,19 +55,19 @@ export default function TopicScreen() {
   if (!topicId) {
     return (
       <div>
-        <p className="muted">Tema no especificado.</p>
-        <p className="mt-2"><Link to="/topics" className="link-plain">← Volver a temas</Link></p>
+        <p className="muted">Tema no especificat.</p>
+        <p className="mt-2"><Link to="/topics" className="link-plain">← Tornar a temes</Link></p>
       </div>
     );
   }
-  if (loading) return <p className="muted">Cargando preguntas…</p>;
+  if (loading) return <p className="muted">Carregant preguntes…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
   if (questions.length === 0) {
     return (
       <div>
-        <h1 className="page-title">Repaso: {topic?.title ?? topicId}</h1>
-        <p className="muted">No hay preguntas en este tema.</p>
-        <p className="mt-2"><Link to="/topics" className="link-plain">← Volver a temas</Link></p>
+        <h1 className="page-title">Repàs: {topic?.title ?? topicId}</h1>
+        <p className="muted">No hi ha preguntes en aquest tema.</p>
+        <p className="mt-2"><Link to="/topics" className="link-plain">← Tornar a temes</Link></p>
       </div>
     );
   }
@@ -77,7 +77,7 @@ export default function TopicScreen() {
 
   return (
     <div>
-      <h1 className="page-title">Repaso: {topic?.title ?? topicId}</h1>
+      <h1 className="page-title">Repàs: {topic?.title ?? topicId}</h1>
       <p className="muted mb-2">
         {topic?.section ?? ""} · Pregunta {currentIndex + 1} de {questions.length}
       </p>
@@ -110,11 +110,11 @@ export default function TopicScreen() {
           }}
           disabled={currentIndex === questions.length - 1}
         >
-          Siguiente →
+          Següent →
         </button>
       </div>
       <p className="jumper-wrap">
-        Ir a:{" "}
+        Anar a:{" "}
         {questions.map((_, i) => (
           <button
             key={i}
@@ -131,7 +131,7 @@ export default function TopicScreen() {
       </p>
 
       <p className="mt-2">
-        <Link to="/topics" className="link-plain">← Volver a temas</Link>
+        <Link to="/topics" className="link-plain">← Tornar a temes</Link>
       </p>
     </div>
   );

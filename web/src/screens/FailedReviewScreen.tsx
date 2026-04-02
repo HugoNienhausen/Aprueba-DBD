@@ -46,15 +46,15 @@ export default function FailedReviewScreen() {
     }).catch((err) => console.error("saveUserAnswer failed:", err));
   };
 
-  if (loading) return <p className="muted">Cargando preguntas falladas…</p>;
+  if (loading) return <p className="muted">Carregant preguntes fallades…</p>;
   if (error) return <p className="alert-error"><strong>Error:</strong> {error}</p>;
   if (questions.length === 0) {
     return (
       <div>
-        <h1 className="page-title">Repaso: preguntas falladas</h1>
-        <p className="muted">No tienes preguntas falladas. Haz un test para acumular respuestas incorrectas.</p>
+        <h1 className="page-title">Repàs: preguntes fallades</h1>
+        <p className="muted">No tens preguntes fallades. Fes un test per acumular respostes incorrectes.</p>
         <p className="mt-2">
-          <Link to="/test" className="link-plain">Hacer test</Link> · <Link to="/topics" className="link-plain">← Volver a temas</Link>
+          <Link to="/test" className="link-plain">Fer test</Link> · <Link to="/topics" className="link-plain">← Tornar a temes</Link>
         </p>
       </div>
     );
@@ -65,10 +65,10 @@ export default function FailedReviewScreen() {
 
   return (
     <div>
-      <h1 className="page-title">Repaso: preguntas falladas</h1>
+      <h1 className="page-title">Repàs: preguntes fallades</h1>
       <p className="muted mb-2">
-        {questions.length} pregunta{questions.length !== 1 ? "s" : ""} fallada
-        {questions.length !== 1 ? "s" : ""} · Pregunta {currentIndex + 1} de {questions.length}
+        {questions.length} pregunta{questions.length !== 1 ? "es" : ""} fallada
+        {questions.length !== 1 ? "es" : ""} · Pregunta {currentIndex + 1} de {questions.length}
       </p>
 
       <QuestionCard
@@ -99,12 +99,12 @@ export default function FailedReviewScreen() {
           }}
           disabled={currentIndex === questions.length - 1}
         >
-          Siguiente →
+          Següent →
         </button>
       </div>
 
       <p className="jumper-wrap">
-        Ir a:{" "}
+        Anar a:{" "}
         {questions.map((_, i) => (
           <button
             key={i}
@@ -121,7 +121,7 @@ export default function FailedReviewScreen() {
       </p>
 
       <p className="mt-2">
-        <Link to="/topics" className="link-plain">← Volver a temas</Link> · <Link to="/test" className="link-plain">Hacer test</Link>
+        <Link to="/topics" className="link-plain">← Tornar a temes</Link> · <Link to="/test" className="link-plain">Fer test</Link>
       </p>
     </div>
   );

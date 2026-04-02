@@ -9,15 +9,15 @@ import { getPreferences, setPreferences } from "../repos";
 import type { CorrectAt, Theme } from "../types";
 
 const NAV = [
-  { to: "/", label: "Inicio" },
-  { to: "/topics", label: "Temas" },
-  { to: "/test", label: "Hacer test" },
+  { to: "/", label: "Inici" },
+  { to: "/topics", label: "Temes" },
+  { to: "/test", label: "Fer test" },
 ] as const;
 
-const THEME_LABELS: Record<Theme, string> = { light: "Claro", dark: "Oscuro" };
+const THEME_LABELS: Record<Theme, string> = { light: "Clar", dark: "Fosc" };
 const CORRECT_AT_LABELS: Record<CorrectAt, string> = {
-  immediately: "Ver respuesta al responder",
-  at_end: "Ver respuestas al final",
+  immediately: "Veure resposta en respondre",
+  at_end: "Veure respostes al final",
 };
 
 export default function Layout() {
@@ -74,15 +74,15 @@ export default function Layout() {
             type="button"
             className="nav-link nav-settings-trigger"
             onClick={() => setSettingsOpen((o) => !o)}
-            title="Ajustes"
+            title="Ajustos"
             aria-expanded={settingsOpen}
           >
-            ⚙ Ajustes
+            ⚙ Ajustos
           </button>
           {settingsOpen && (
             <div className="settings-panel">
               <div className="settings-panel__row">
-                <span className="settings-panel__label">Tema</span>
+                <span className="settings-panel__label">Aparença</span>
                 <div className="settings-panel__options">
                   {(["light", "dark"] as const).map((value) => (
                     <label key={value} className="radio-label">

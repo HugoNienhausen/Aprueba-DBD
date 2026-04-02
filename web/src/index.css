@@ -61,7 +61,7 @@ body {
 }
 
 #root:empty::after {
-  content: "Cargando…";
+  content: "Carregant…";
   color: var(--muted);
 }
 
