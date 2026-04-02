@@ -152,6 +152,8 @@ export default function TestScreen() {
     if (questions.length === 0 || !sessionId) return;
     const question = questions[currentIndex];
     if (!question) return;
+    // Prevent changing an already-answered question
+    if (answers.some((a) => a.questionId === question.id)) return;
     const isCorrect = letter === question.correctLetter;
     const newAnswer: AnswerRecord = { questionId: question.id, selectedLetter: letter, isCorrect };
     const newAnswers = [...answers, newAnswer];
@@ -177,12 +179,21 @@ export default function TestScreen() {
 
   const goNext = () => {
     if (currentIndex >= questions.length - 1) {
-      // En modo "immediately" answers ya incluye la última (se añadió en handleSelectOption)
       finishTest(answers);
       return;
     }
-    setCurrentIndex((i) => i + 1);
-    setSelectedLetter(null);
+    const nextIndex = currentIndex + 1;
+    const existing = answers.find((a) => a.questionId === questions[nextIndex]?.id);
+    setCurrentIndex(nextIndex);
+    setSelectedLetter(existing?.selectedLetter ?? null);
+  };
+
+  const goPrev = () => {
+    if (currentIndex <= 0) return;
+    const prevIndex = currentIndex - 1;
+    const existing = answers.find((a) => a.questionId === questions[prevIndex]?.id);
+    setCurrentIndex(prevIndex);
+    setSelectedLetter(existing?.selectedLetter ?? null);
   };
 
   const finishTest = async (allAnswers: AnswerRecord[]) => {
@@ -227,6 +238,11 @@ export default function TestScreen() {
 
         {answered && correctAt === "immediately" && (
           <div className="nav-questions">
+            {currentIndex > 0 && (
+              <button type="button" className="btn btn--secondary btn--large" onClick={goPrev}>
+                ← Anterior
+              </button>
+            )}
             <button type="button" className="btn btn--primary btn--large" onClick={goNext}>
               {isLast ? "Ver resultado" : "Siguiente →"}
             </button>
