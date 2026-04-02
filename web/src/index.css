@@ -219,27 +219,31 @@ body {
 /* --- Home --- */
 .home {
   text-align: center;
-  padding: 1rem 0 1.5rem;
+  padding: 2.5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .home__title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin: 0 0 0.75rem;
+  margin: 0;
   letter-spacing: -0.02em;
 }
 
 .home__intro {
-  max-width: 28rem;
-  margin: 0 auto 1.25rem;
+  max-width: 30rem;
   text-align: center;
+  margin: 0;
 }
 
 .home__intro-line {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.65;
   color: var(--muted);
-  margin: 0 0 0.25rem;
+  margin: 0;
 }
 
 .home__intro-line strong {
@@ -247,26 +251,27 @@ body {
 }
 
 .home__intro-note {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--muted);
-  margin: 0.35rem 0 0;
+  margin: 0.5rem 0 0;
   font-style: italic;
 }
 
 .home__actions {
   justify-content: center;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 .home__meta {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0;
+  letter-spacing: 0.02em;
 }
 
 /* Countdown */
 .countdown {
   text-align: center;
-  margin: 2rem 0 0;
+  margin: 0;
 }
 
 .countdown__label {
