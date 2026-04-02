@@ -65,6 +65,9 @@ export default function HomeScreen() {
           Fer test
         </Link>
       </div>
+      <p className="home__meta muted">
+        {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
+      </p>
       {countdown && (
         <div className="countdown">
           <p className="countdown__label">{EXAM_LABEL}</p>
@@ -76,9 +79,6 @@ export default function HomeScreen() {
           </div>
         </div>
       )}
-      <p className="home__meta muted">
-        {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
-      </p>
     </div>
   );
 }
