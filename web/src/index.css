@@ -18,6 +18,8 @@
   --wrong-border: #fca5a5;
   --selected-bg: #f1f5f9;
   --explanation-bg: #f1f5f9;
+  --star-bg: #fefce8;
+  --star-border: #fde68a;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   --radius: 10px;
   --radius-sm: 6px;
@@ -40,6 +42,8 @@
   --wrong-border: #991b1b;
   --selected-bg: #27272a;
   --explanation-bg: #27272a;
+  --star-bg: #2a2418;
+  --star-border: #4a3f2a;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   --radius: 10px;
   --radius-sm: 6px;
@@ -133,8 +137,8 @@ body {
 /* Star banner */
 .star-banner {
   position: relative;
-  background: var(--explanation-bg);
-  border: 1px solid var(--border);
+  background: var(--star-bg);
+  border: 1px solid var(--star-border);
   border-radius: 0.75rem;
   padding: 1.25rem;
   text-align: center;
