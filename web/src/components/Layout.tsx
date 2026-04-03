@@ -3,13 +3,12 @@
  * Ajustes (tema, correctAt) en un panel discreto al lado del nav.
  */
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { getPreferences, setPreferences } from "../repos";
 import type { CorrectAt, Theme } from "../types";
 
 const GITHUB_REPO = "https://github.com/HugoNienhausen/Aprueba-DBD";
-const STAR_DISMISSED_KEY = "star-prompt-dismissed";
 
 const NAV = [
   { to: "/", label: "Inici" },
@@ -28,21 +27,7 @@ export default function Layout() {
   const [theme, setTheme] = useState<Theme>("light");
   const [correctAt, setCorrectAt] = useState<CorrectAt>("immediately");
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [showStarPrompt, setShowStarPrompt] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const dismissed = localStorage.getItem(STAR_DISMISSED_KEY);
-    if (!dismissed) {
-      const timer = setTimeout(() => setShowStarPrompt(true), 5000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  const dismissStar = useCallback(() => {
-    setShowStarPrompt(false);
-    localStorage.setItem(STAR_DISMISSED_KEY, "1");
-  }, []);
 
   useEffect(() => {
     getPreferences().then((prefs) => {
@@ -148,12 +133,7 @@ export default function Layout() {
             </svg>
             <span>GitHub</span>
           </a>
-          <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="app-footer__link app-footer__star" title="Dona una estrella!" aria-label="Star on GitHub" onClick={dismissStar}>
-            <svg className="app-footer__icon star-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-              <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.86 1.4-8.168L.132 8.801l8.2-1.192z"/>
-            </svg>
-            <span>Star</span>
-          </a>
+
           <a href="https://www.linkedin.com/in/hugonienhausen/" target="_blank" rel="noopener noreferrer" className="app-footer__link" title="LinkedIn" aria-label="LinkedIn">
             <svg className="app-footer__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -163,15 +143,6 @@ export default function Layout() {
         </div>
       </footer>
       <p className="ai-disclaimer" style={{ textAlign: "center", padding: "0 1rem 1rem" }}>Les respostes corresponen a les del PDF i han sigut validades manualment. Les explicacions son generades per IA i poden contenir errors.</p>
-      {showStarPrompt && (
-        <div className="star-toast">
-          <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="star-toast__link" onClick={dismissStar}>
-            <span className="star-toast__icon">⭐</span>
-            <span>T'està sent útil? Dona-li una estrella a GitHub!</span>
-          </a>
-          <button type="button" className="star-toast__close" onClick={dismissStar} aria-label="Tancar">✕</button>
-        </div>
-      )}
     </div>
   );
 }

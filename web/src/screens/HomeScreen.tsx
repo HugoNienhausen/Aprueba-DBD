@@ -2,9 +2,12 @@
  * Pantalla de inicio. Muestra estado del bootstrap (datos cargados).
  */
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { ensureDataLoaded, type BootstrapResult } from "../repos";
+
+const GITHUB_REPO = "https://github.com/HugoNienhausen/Aprueba-DBD";
+const STAR_DISMISSED_KEY = "star-prompt-dismissed";
 
 const EXAM_DATE = new Date("2026-04-08T13:00:00+02:00");
 const EXAM_LABEL = "Primer Parcial";
@@ -27,6 +30,12 @@ function useCountdown(target: Date) {
 export default function HomeScreen() {
   const [result, setResult] = useState<BootstrapResult | null>(null);
   const countdown = useCountdown(EXAM_DATE);
+  const [showStar, setShowStar] = useState(() => !localStorage.getItem(STAR_DISMISSED_KEY));
+
+  const dismissStar = useCallback(() => {
+    setShowStar(false);
+    localStorage.setItem(STAR_DISMISSED_KEY, "1");
+  }, []);
 
   useEffect(() => {
     ensureDataLoaded()
@@ -77,6 +86,20 @@ export default function HomeScreen() {
             <div className="countdown__box"><span className="countdown__num">{countdown.minutes}</span><span className="countdown__unit">min</span></div>
             <div className="countdown__box"><span className="countdown__num">{countdown.seconds}</span><span className="countdown__unit">seg</span></div>
           </div>
+        </div>
+      )}
+      {showStar && (
+        <div className="star-banner">
+          <button type="button" className="star-banner__close" onClick={dismissStar} aria-label="Tancar">✕</button>
+          <p className="star-banner__text">
+            T'està ajudant a estudiar? Dona suport al projecte perquè segueixi actiu pel <strong>segon parcial</strong>!
+          </p>
+          <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="star-banner__btn" onClick={dismissStar}>
+            <svg className="star-banner__gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.63-.735-3.63-.735-.39-.99-.96-1.255-.96-1.255-.78-.53.06-.52.06-.52.765.055 1.17.795 1.17.795.765 1.305 2.025.93 2.52.71.075-.555.3-.93.54-1.14-1.875-.21-3.855-.945-3.855-4.215 0-.93.33-1.695.87-2.295-.09-.21-.375-1.065.09-2.22 0 0 .705-.225 2.31.855.675-.195 1.395-.285 2.115-.285.72 0 1.44.09 2.115.285 1.605-1.08 2.31-.855 2.31-.855.465 1.155.18 2.01.09 2.22.54.6.87 1.365.87 2.295 0 3.27-1.95 4.005-3.81 4.215.3.255.57.765.57 1.53 0 1.11-.015 2.01-.015 2.28 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            Dona-li una ⭐ a GitHub
+          </a>
         </div>
       )}
     </div>
