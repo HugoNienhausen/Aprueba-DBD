@@ -324,47 +324,10 @@ body {
 }
 
 /* Countdown */
-.countdown {
-  text-align: center;
-  margin: 0;
-}
-
-.countdown__label {
+.home__countdown {
   font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-.countdown__boxes {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.countdown__box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: var(--explanation-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 0.75rem;
-  min-width: 3.5rem;
-}
-
-.countdown__num {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.countdown__unit {
-  font-size: 0.7rem;
-  color: var(--muted);
-  text-transform: uppercase;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 .btn--large {

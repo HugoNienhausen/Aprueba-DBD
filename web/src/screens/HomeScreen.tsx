@@ -70,15 +70,9 @@ export default function HomeScreen() {
         {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
       </p>
       {countdown && (
-        <div className="countdown">
-          <p className="countdown__label">{EXAM_LABEL}</p>
-          <div className="countdown__boxes">
-            <div className="countdown__box"><span className="countdown__num">{countdown.days}</span><span className="countdown__unit">dies</span></div>
-            <div className="countdown__box"><span className="countdown__num">{countdown.hours}</span><span className="countdown__unit">hores</span></div>
-            <div className="countdown__box"><span className="countdown__num">{countdown.minutes}</span><span className="countdown__unit">min</span></div>
-            <div className="countdown__box"><span className="countdown__num">{countdown.seconds}</span><span className="countdown__unit">seg</span></div>
-          </div>
-        </div>
+        <p className="home__countdown muted">
+          {EXAM_LABEL} en {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
+        </p>
       )}
       <div className="star-banner">
           <p className="star-banner__text">
