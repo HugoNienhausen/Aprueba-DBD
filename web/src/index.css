@@ -136,26 +136,10 @@ body {
   background: var(--explanation-bg);
   border: 1px solid var(--border);
   border-radius: 0.75rem;
-  padding: 1.25rem 2.5rem 1.25rem 1.25rem;
+  padding: 1.25rem;
   text-align: center;
   max-width: 26rem;
   animation: fade-in 0.5s ease-out;
-}
-
-.star-banner__close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.65rem;
-  background: none;
-  border: none;
-  color: var(--muted);
-  cursor: pointer;
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-.star-banner__close:hover {
-  color: var(--text);
 }
 
 .star-banner__text {
