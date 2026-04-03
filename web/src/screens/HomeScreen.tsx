@@ -52,38 +52,42 @@ export default function HomeScreen() {
   }
   return (
     <div className="home">
-      <h1 className="home__title">ApruebaDBD</h1>
-      <div className="home__intro">
-        <p className="home__intro-line">Practica les preguntes del document <strong>TestQuestions.pdf</strong></p>
-        <p className="home__intro-line">de l'assignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
-        <p className="home__intro-note">(entren a l'examen)</p>
-      </div>
-      <div className="btn-group home__actions">
-        <Link to="/topics" className="btn btn--primary btn--large">
-          Veure temes
-        </Link>
-        <Link to="/test" className="btn btn--secondary btn--large">
-          Fer test
-        </Link>
-      </div>
-      <p className="home__meta muted">
-        {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
-      </p>
-      {countdown && (
-        <p className="home__countdown muted">
-          {EXAM_LABEL} en {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
+      <div className="home__center">
+        <h1 className="home__title">ApruebaDBD</h1>
+        <div className="home__intro">
+          <p className="home__intro-line">Practica les preguntes del document <strong>TestQuestions.pdf</strong></p>
+          <p className="home__intro-line">de l'assignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
+          <p className="home__intro-note">(entren a l'examen)</p>
+        </div>
+        <div className="btn-group home__actions">
+          <Link to="/topics" className="btn btn--primary btn--large">
+            Veure temes
+          </Link>
+          <Link to="/test" className="btn btn--secondary btn--large">
+            Fer test
+          </Link>
+        </div>
+        <p className="home__meta muted">
+          {result.topicCount} pàgines del PDF · {result.questionCount} preguntes
         </p>
-      )}
-      <div className="star-banner">
-          <p className="star-banner__text">
-            T'està ajudant a estudiar? Dona suport al projecte perquè segueixi actiu pel <strong>segon parcial</strong>!
-          </p>
-          <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="star-banner__btn">
-            <svg className="star-banner__gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      </div>
+
+      <div className="home__sidebar">
+        {countdown && (
+          <div className="home__sidebar-card">
+            <p className="home__sidebar-label">{EXAM_LABEL}</p>
+            <p className="home__sidebar-value">{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
+          </div>
+        )}
+        <div className="home__sidebar-card home__sidebar-card--star">
+          <p className="home__sidebar-label">T'està ajudant?</p>
+          <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="home__star-link">
+            <svg className="home__star-gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.63-.735-3.63-.735-.39-.99-.96-1.255-.96-1.255-.78-.53.06-.52.06-.52.765.055 1.17.795 1.17.795.765 1.305 2.025.93 2.52.71.075-.555.3-.93.54-1.14-1.875-.21-3.855-.945-3.855-4.215 0-.93.33-1.695.87-2.295-.09-.21-.375-1.065.09-2.22 0 0 .705-.225 2.31.855.675-.195 1.395-.285 2.115-.285.72 0 1.44.09 2.115.285 1.605-1.08 2.31-.855 2.31-.855.465 1.155.18 2.01.09 2.22.54.6.87 1.365.87 2.295 0 3.27-1.95 4.005-3.81 4.215.3.255.57.765.57 1.53 0 1.11-.015 2.01-.015 2.28 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
-            Dona-li una ⭐ a GitHub
+            ⭐ Dona suport a GitHub
           </a>
+        </div>
       </div>
     </div>
   );
