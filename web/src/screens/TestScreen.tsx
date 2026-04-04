@@ -349,7 +349,7 @@ export default function TestScreen() {
           )}
         </div>
         <p className="mt-2">
-          <Link to="/test" className="link-plain">← Sortir del test</Link>
+          <button type="button" className="link-plain" onClick={() => setPhase("config")}>← Sortir del test</button>
         </p>
       </div>
     );
