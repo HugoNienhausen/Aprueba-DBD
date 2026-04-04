@@ -3,7 +3,7 @@
  * X/N, porcentaje, listado de todas las preguntas (acertadas y falladas).
  */
 
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import ExplanationBlock from "../components/ExplanationBlock";
 import type { Question } from "../types";
 
@@ -15,16 +15,25 @@ interface AnswerItem {
   isCorrect: boolean;
 }
 
+interface TestConfig {
+  kind: string;
+  selectedTopicIds: string[];
+  questionCount: number;
+}
+
 interface ResultState {
   correctCount?: number;
   totalQuestions?: number;
   allAnswers?: AnswerItem[];
   message?: string;
+  testConfig?: TestConfig;
 }
 
 export default function ResultScreen() {
   const location = useLocation();
+  const navigate = useNavigate();
   const state = (location.state ?? null) as ResultState | null;
+  const testConfig = state?.testConfig ?? null;
   const correctCount = state?.correctCount ?? 0;
   const totalQuestions = state?.totalQuestions ?? 20;
   const allAnswers = state?.allAnswers ?? [];
@@ -119,9 +128,18 @@ export default function ResultScreen() {
       ) : (
         <p className="muted">{state?.message ?? "Resum i errors (fes un test per veure el resultat)."}</p>
       )}
-      <p className="mt-2">
-        <Link to="/test" className="link-plain">← Tornar al test</Link>
-      </p>
+      <div className="nav-questions mt-2">
+        <Link to="/test" className="btn btn--secondary btn--large">← Tornar al test</Link>
+        {testConfig && (
+          <button
+            type="button"
+            className="btn btn--primary btn--large"
+            onClick={() => navigate("/test", { state: { autoStart: true, ...testConfig } })}
+          >
+            Repetir test
+          </button>
+        )}
+      </div>
     </div>
   );
 }

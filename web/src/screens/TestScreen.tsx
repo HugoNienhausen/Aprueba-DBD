@@ -3,8 +3,8 @@
  * Número de preguntas configurable; si hay menos preguntas en la selección, se usan todas.
  */
 
-import { useEffect, useState, useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState, useMemo, useRef } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   getTopics,
   getQuestionsByTopicId,
@@ -60,15 +60,33 @@ interface AnswerRecord {
 
 export default function TestScreen() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const repeatState = location.state as { autoStart?: boolean; kind?: TestKind; selectedTopicIds?: string[]; questionCount?: number } | null;
+  const autoStartRef = useRef(false);
   const [phase, setPhase] = useState<Phase>("config");
   const [topics, setTopics] = useState<Topic[]>([]);
   const [failedCount, setFailedCount] = useState<number | null>(null);
-  const [kind, setKind] = useState<TestKind>("random");
-  const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>([]);
+  const [kind, setKind] = useState<TestKind>(() => {
+    const saved = localStorage.getItem("test-selected-topics");
+    return saved ? "by_selection" : "random";
+  });
+  const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>(() => {
+    try {
+      return JSON.parse(localStorage.getItem("test-selected-topics") ?? "[]");
+    } catch { return []; }
+  });
   const [questionCount, setQuestionCount] = useState<number>(20);
   const [loading, setLoading] = useState(true);
 
   const sectionsWithTopics = useMemo(() => groupBySection(topics), [topics]);
+
+  useEffect(() => {
+    if (selectedTopicIds.length > 0) {
+      localStorage.setItem("test-selected-topics", JSON.stringify(selectedTopicIds));
+    } else {
+      localStorage.removeItem("test-selected-topics");
+    }
+  }, [selectedTopicIds]);
 
   const toggleTopic = (topicId: string) => {
     setSelectedTopicIds((prev) =>
@@ -97,10 +115,24 @@ export default function TestScreen() {
       .then(([t, ids]) => {
         setTopics(t);
         setFailedCount(ids.length);
+        // Apply repeat config if navigated from result
+        if (repeatState?.autoStart && !autoStartRef.current) {
+          autoStartRef.current = true;
+          if (repeatState.kind) setKind(repeatState.kind);
+          if (repeatState.selectedTopicIds) setSelectedTopicIds(repeatState.selectedTopicIds);
+          if (repeatState.questionCount) setQuestionCount(repeatState.questionCount);
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!loading && autoStartRef.current && phase === "config") {
+      autoStartRef.current = false;
+      startTest();
+    }
+  }, [loading]);
 
   const startTest = async () => {
     if (kind === "by_selection" && selectedTopicIds.length === 0) return;
@@ -208,7 +240,12 @@ export default function TestScreen() {
       return { question: q, selectedLetter: a.selectedLetter, correctLetter: q.correctLetter, explicacion: q.explicacion, isCorrect: a.isCorrect };
     });
     navigate("/result", {
-      state: { correctCount: correctTotal, totalQuestions: questions.length, allAnswers: allAnswerItems },
+      state: {
+        correctCount: correctTotal,
+        totalQuestions: questions.length,
+        allAnswers: allAnswerItems,
+        testConfig: { kind, selectedTopicIds, questionCount },
+      },
     });
   };
 
@@ -286,6 +323,16 @@ export default function TestScreen() {
         </button>
         {kind === "by_selection" && (
           <div className="test-option__extra test-selection">
+            {selectedTopicIds.length > 0 && (
+              <button
+                type="button"
+                className="btn btn--small btn--secondary"
+                onClick={() => setSelectedTopicIds([])}
+                style={{ alignSelf: "flex-end", marginBottom: "0.5rem" }}
+              >
+                Netejar selecció
+              </button>
+            )}
             {sectionsWithTopics.map(({ section, topics: sectionTopics }) => {
               const ids = sectionTopics.map((t) => t.id);
               const allInSection = ids.every((id) => selectedTopicIds.includes(id));
