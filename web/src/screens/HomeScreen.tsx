@@ -57,7 +57,6 @@ export default function HomeScreen() {
         <div className="home__intro">
           <p className="home__intro-line">Practica les preguntes del document <strong>TestQuestions.pdf</strong></p>
           <p className="home__intro-line">de l'assignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
-          <p className="home__intro-note">(entren a l'examen)</p>
         </div>
         <div className="btn-group home__actions">
           <Link to="/topics" className="btn btn--primary btn--large">
