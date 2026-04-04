@@ -2750,7 +2750,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: el producte cartesià \\(A \\times B\\) és una **relació** entre elements d’\\(A\\) i \\(B\\), perquè és un conjunt de parelles \\((a,b)\\). Però no és **funcional** en general, ja que un mateix \\(a\\) pot aparèixer amb molts valors diferents de \\(b\\).\n\n**Explicació Detallada:**  \nEn teoria relacional, una relació és qualsevol subconjunt d’un producte cartesià. El producte cartesià complet conté totes les combinacions possibles, així que no compleix la idea de dependència funcional \\(X \\to Y\\): fixat \\(X\\), no queda determinat un únic \\(Y\\).\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals**: Incorrecta, perquè sí que és una relació. El que no és, en general, és una relació funcional."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: el producte cartesià A × B és una **relació** entre elements d’A i B, perquè és un conjunt de parelles (a,b). Però no és **funcional** en general, ja que un mateix a pot aparèixer amb molts valors diferents de b.\n\n**Explicació Detallada:**  \nEn teoria relacional, una relació és qualsevol subconjunt d’un producte cartesià. El producte cartesià complet conté totes les combinacions possibles, així que no compleix la idea de dependència funcional X to Y: fixat X, no queda determinat un únic Y.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals**: Incorrecta, perquè sí que és una relació. El que no és, en general, és una relació funcional."
     },
     {
       "id": "q_110",
@@ -2820,7 +2820,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: per definició, una dependència funcional \\(X \\rightarrow Y\\) vol dir que cada valor de \\(X\\) determina un únic valor de \\(Y\\). Si dues tuples tenen el mateix \\(X\\), han de tenir també el mateix \\(Y\\).\n\n**Explicació Detallada:**  \nSegons la teoria de normalització, una dependència funcional expressa unicitat de determinació. \\(X \\rightarrow Y\\) no vol dir “predir” \\(Y\\), sinó que dins la relació no poden existir dos valors diferents de \\(Y\\) per al mateix \\(X\\).\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals**: Incorrecta, perquè nega la definició bàsica de dependència funcional usada en 2NF, 3NF i BCNF."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: per definició, una dependència funcional X → Y vol dir que cada valor de X determina un únic valor de Y. Si dues tuples tenen el mateix X, han de tenir també el mateix Y.\n\n**Explicació Detallada:**  \nSegons la teoria de normalització, una dependència funcional expressa unicitat de determinació. X → Y no vol dir “predir” Y, sinó que dins la relació no poden existir dos valors diferents de Y per al mateix X.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals**: Incorrecta, perquè nega la definició bàsica de dependència funcional usada en 2NF, 3NF i BCNF."
     },
     {
       "id": "q_113",
@@ -2838,7 +2838,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**. Una dependència funcional plena no es defineix pel nombre d’atributs a la dreta, sinó perquè el determinant no es pot reduir: cap subconjunt propi de l’esquerra determina el mateix.\n\n**Explicació Detallada:**  \nUna DF plena \\(X \\to Y\\) vol dir que **Y depèn funcionalment de tot X**, no només d’una part. Això és clau a **2NF**, on s’eliminen dependències parcials respecte d’una clau composta. Que a la dreta hi hagi un sol atribut o diversos és irrellevant.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. Confón “plena” amb “tenir un únic atribut a la part dreta”; això no forma part de la definició teòrica."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**. Una dependència funcional plena no es defineix pel nombre d’atributs a la dreta, sinó perquè el determinant no es pot reduir: cap subconjunt propi de l’esquerra determina el mateix.\n\n**Explicació Detallada:**  \nUna DF plena X to Y vol dir que **Y depèn funcionalment de tot X**, no només d’una part. Això és clau a **2NF**, on s’eliminen dependències parcials respecte d’una clau composta. Que a la dreta hi hagi un sol atribut o diversos és irrellevant.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. Confón “plena” amb “tenir un únic atribut a la part dreta”; això no forma part de la definició teòrica."
     },
     {
       "id": "q_114",
@@ -2918,7 +2918,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**. La 2NF exigeix que tot atribut no primer depengui **plenament** de cada clau candidata, és a dir, que no hi hagi dependències parcials respecte d’una clau composta.\n\n**Explicació Detallada:**  \nPer definició, una relació en 1NF passa a 2NF quan elimina les dependències funcionals parcials: si \\(X \\to Y\\) i \\(Y\\) és atribut no clau, llavors \\(X\\) no pot ser només una part pròpia d’una clau candidata composta. Això evita anomalies d’inserció, modificació i esborrat.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals**: Incorrecta, perquè contradiu directament la definició de 2NF: les dependències cap a atributs no clau han de ser plenes, no parcials."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**. La 2NF exigeix que tot atribut no primer depengui **plenament** de cada clau candidata, és a dir, que no hi hagi dependències parcials respecte d’una clau composta.\n\n**Explicació Detallada:**  \nPer definició, una relació en 1NF passa a 2NF quan elimina les dependències funcionals parcials: si X to Y i Y és atribut no clau, llavors X no pot ser només una part pròpia d’una clau candidata composta. Això evita anomalies d’inserció, modificació i esborrat.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals**: Incorrecta, perquè contradiu directament la definició de 2NF: les dependències cap a atributs no clau han de ser plenes, no parcials."
     },
     {
       "id": "q_118",
@@ -2954,7 +2954,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**. En 3NF no es prohibeix que un atribut aparegui a l’esquerra d’una dependència funcional; el que es prohibeix són les **dependències transitives** entre atributs no clau.\n\n**Explicació Detallada:**  \nLa 3NF exigeix que tot atribut no clau depengui de la clau, de tota la clau i de res més. Formalment, si \\(X \\to A\\), aleshores \\(X\\) ha de ser superclau o bé \\(A\\) ha de ser atribut primer. Per tant, un atribut pot estar a l’esquerra d’una DF; això no viola la 3NF per si sol.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. La 3NF no diu “cap atribut a l’esquerra”, sinó “sense dependències transitives inadequades”."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**. En 3NF no es prohibeix que un atribut aparegui a l’esquerra d’una dependència funcional; el que es prohibeix són les **dependències transitives** entre atributs no clau.\n\n**Explicació Detallada:**  \nLa 3NF exigeix que tot atribut no clau depengui de la clau, de tota la clau i de res més. Formalment, si X to A, aleshores X ha de ser superclau o bé A ha de ser atribut primer. Per tant, un atribut pot estar a l’esquerra d’una DF; això no viola la 3NF per si sol.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. La 3NF no diu “cap atribut a l’esquerra”, sinó “sense dependències transitives inadequades”."
     },
     {
       "id": "q_120",
@@ -2972,7 +2972,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: per arribar a 3FN, es descompon la relació en subconjunts d’atributs eliminant les dependències transitives o parcials que causen anomalies. El determinant de la dependència que viola la forma normal es manté com a clau forana per preservar la connexió entre relacions.\n\n**Explicació Detallada:**  \nEn 3FN, cap atribut no clau pot dependre transitivament d’una clau candidata. Si hi ha una DF \\(X \\to Y\\) on \\(X\\) no és clau i això provoca la violació, es descompon la relació separant \\(X,Y\\) en una nova relació. \\(X\\) queda com a clau d’aquesta nova taula i com a clau forana a l’altra, evitant anomalies d’inserció, esborrat i modificació.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè la descomposició és precisament el mecanisme teòric de normalització fins a 3FN, preservant l’enllaç amb claus foranes basades en el determinant."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: per arribar a 3FN, es descompon la relació en subconjunts d’atributs eliminant les dependències transitives o parcials que causen anomalies. El determinant de la dependència que viola la forma normal es manté com a clau forana per preservar la connexió entre relacions.\n\n**Explicació Detallada:**  \nEn 3FN, cap atribut no clau pot dependre transitivament d’una clau candidata. Si hi ha una DF X to Y on X no és clau i això provoca la violació, es descompon la relació separant X,Y en una nova relació. X queda com a clau d’aquesta nova taula i com a clau forana a l’altra, evitant anomalies d’inserció, esborrat i modificació.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè la descomposició és precisament el mecanisme teòric de normalització fins a 3FN, preservant l’enllaç amb claus foranes basades en el determinant."
     },
     {
       "id": "q_121",
@@ -2998,7 +2998,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nLes formes normals amb excepció són **2NF i 3NF**. Són definicions relaxades respecte d’una forma “més estricta”: la 2NF admet dependències parcials en atributs primers, i la 3NF admet una excepció si el costat dret és atribut primer.\n\n**Explicació Detallada:**  \nLa **2NF** exigeix dependència funcional plena de cada atribut **no primer** respecte de tota la clau candidata; per tant, fa una excepció amb atributs primers. La **3NF** prohibeix dependències transitives de no clau, però admet \\(X \\to A\\) si \\(X\\) és superclau **o** \\(A\\) és atribut primer. En canvi, **BCNF** no admet aquesta excepció: tot determinant ha de ser clau candidata.\n\n**Anàlisi d'opcions falses:**  \n- **A)** Falsa: la **1NF** no es defineix amb excepcions; només demana atributs atòmics.  \n- **C)** Falsa: la **1NF** no té excepció; la **2NF** sí que en té.  \n- **D)** Falsa: inclou la **1NF**, que no presenta cap excepció formal."
+      "explicacion": "**Resum Ràpid:**  \nLes formes normals amb excepció són **2NF i 3NF**. Són definicions relaxades respecte d’una forma “més estricta”: la 2NF admet dependències parcials en atributs primers, i la 3NF admet una excepció si el costat dret és atribut primer.\n\n**Explicació Detallada:**  \nLa **2NF** exigeix dependència funcional plena de cada atribut **no primer** respecte de tota la clau candidata; per tant, fa una excepció amb atributs primers. La **3NF** prohibeix dependències transitives de no clau, però admet X to A si X és superclau **o** A és atribut primer. En canvi, **BCNF** no admet aquesta excepció: tot determinant ha de ser clau candidata.\n\n**Anàlisi d'opcions falses:**  \n- **A)** Falsa: la **1NF** no es defineix amb excepcions; només demana atributs atòmics.  \n- **C)** Falsa: la **1NF** no té excepció; la **2NF** sí que en té.  \n- **D)** Falsa: inclou la **1NF**, que no presenta cap excepció formal."
     },
     {
       "id": "q_122",
@@ -3016,7 +3016,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: la BCNF no prohibeix claus alternatives. Només exigeix que **qualsevol determinant** d’una dependència funcional no trivial sigui una **clau candidata**.\n\n**Explicació Detallada:**  \nEn BCNF, si \\(X \\rightarrow Y\\), aleshores \\(X\\) ha de ser clau candidata. Això és perfectament compatible amb tenir **diverses claus candidates** (claus alternatives). De fet, una relació pot tenir més d’una clau candidata i continuar en BCNF si totes les dependències compleixen aquesta condició.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. BCNF no elimina les claus alternatives; només restringeix els determinants que no siguin clau candidata."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: la BCNF no prohibeix claus alternatives. Només exigeix que **qualsevol determinant** d’una dependència funcional no trivial sigui una **clau candidata**.\n\n**Explicació Detallada:**  \nEn BCNF, si X → Y, aleshores X ha de ser clau candidata. Això és perfectament compatible amb tenir **diverses claus candidates** (claus alternatives). De fet, una relació pot tenir més d’una clau candidata i continuar en BCNF si totes les dependències compleixen aquesta condició.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta. BCNF no elimina les claus alternatives; només restringeix els determinants que no siguin clau candidata."
     },
     {
       "id": "q_123",
@@ -3034,7 +3034,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nCert. La 2NF i la 3NF eliminen moltes anomalies, però no totes: encara poden quedar esquemes on un determinant no és clau candidata. La BCNF es defineix just per reforçar això.\n\n**Explicació Detallada:**  \nEn BCNF, per a tota dependència funcional \\(X \\to Y\\), \\(X\\) ha de ser una clau candidata. Això evita anomalies que encara poden aparèixer en 3NF, perquè la 3NF permet alguns casos amb determinants que no són clau. Per això la BCNF dona una garantia més forta d’absència d’anomalies.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta, perquè històricament i teòricament la BCNF s’introdueix precisament per corregir casos que 2NF i 3NF encara no resolen completament."
+      "explicacion": "**Resum Ràpid:**  \nCert. La 2NF i la 3NF eliminen moltes anomalies, però no totes: encara poden quedar esquemes on un determinant no és clau candidata. La BCNF es defineix just per reforçar això.\n\n**Explicació Detallada:**  \nEn BCNF, per a tota dependència funcional X to Y, X ha de ser una clau candidata. Això evita anomalies que encara poden aparèixer en 3NF, perquè la 3NF permet alguns casos amb determinants que no són clau. Per això la BCNF dona una garantia més forta d’absència d’anomalies.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta, perquè històricament i teòricament la BCNF s’introdueix precisament per corregir casos que 2NF i 3NF encara no resolen completament."
     },
     {
       "id": "q_124",
@@ -3086,7 +3086,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \n**Distributivitat** no és una regla d’Armstrong. Les regles bàsiques són **reflexivitat, augmentativitat i transitivitat**; i de derivades, **adició**, **descomposició/projectabilitat** i **pseudo-transitivitat**.\n\n**Explicació Detallada:**  \nLes regles d’Armstrong serveixen per inferir dependències funcionals \\(X \\to Y\\). Les tres primitives són: **Reflexivitat**, **Augmentativitat** i **Transitivitat**. A partir d’aquestes se’n deriven d’altres com **Adició (unió)**, **Projectabilitat/Descomposició** i **Pseudo-transitivitat**. **Distributivitat** no forma part d’aquest sistema axiomàtic.\n\n**Anàlisi d'opcions falses:**  \n- **B) Pseudo-transitivitat**: sí que és una regla derivada d’Armstrong.  \n- **C) Adició**: correcta dins les regles derivades.  \n- **D) Projectabilitat/Descomposició**: també és derivada vàlida.  \n- **E) Augmentativitat**: és una de les tres bàsiques.  \n- **F) Transitivitat**: és bàsica.  \n- **G) Reflexivitat**: és bàsica."
+      "explicacion": "**Resum Ràpid:**  \n**Distributivitat** no és una regla d’Armstrong. Les regles bàsiques són **reflexivitat, augmentativitat i transitivitat**; i de derivades, **adició**, **descomposició/projectabilitat** i **pseudo-transitivitat**.\n\n**Explicació Detallada:**  \nLes regles d’Armstrong serveixen per inferir dependències funcionals X to Y. Les tres primitives són: **Reflexivitat**, **Augmentativitat** i **Transitivitat**. A partir d’aquestes se’n deriven d’altres com **Adició (unió)**, **Projectabilitat/Descomposició** i **Pseudo-transitivitat**. **Distributivitat** no forma part d’aquest sistema axiomàtic.\n\n**Anàlisi d'opcions falses:**  \n- **B) Pseudo-transitivitat**: sí que és una regla derivada d’Armstrong.  \n- **C) Adició**: correcta dins les regles derivades.  \n- **D) Projectabilitat/Descomposició**: també és derivada vàlida.  \n- **E) Augmentativitat**: és una de les tres bàsiques.  \n- **F) Transitivitat**: és bàsica.  \n- **G) Reflexivitat**: és bàsica."
     },
     {
       "id": "q_126",
@@ -3104,7 +3104,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: la clausura \\(F^+\\) d’un conjunt de dependències funcionals inclou tant les dependències donades explícitament com totes les que es poden deduir lògicament d’elles. Per això recull totes les dependències implícites del disseny.\n\n**Explicació Detallada:**  \nPer teoria, la clausura d’un conjunt de DF és el conjunt de totes les DF derivables a partir de les originals mitjançant regles d’inferència (com les d’Armstrong). Això permet detectar implicacions del disseny i analitzar normalització, claus candidates i possibles anomalies.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta, perquè justament la definició de clausura és contenir totes les dependències implícites deduïbles del conjunt inicial."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: la clausura F^+ d’un conjunt de dependències funcionals inclou tant les dependències donades explícitament com totes les que es poden deduir lògicament d’elles. Per això recull totes les dependències implícites del disseny.\n\n**Explicació Detallada:**  \nPer teoria, la clausura d’un conjunt de DF és el conjunt de totes les DF derivables a partir de les originals mitjançant regles d’inferència (com les d’Armstrong). Això permet detectar implicacions del disseny i analitzar normalització, claus candidates i possibles anomalies.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta, perquè justament la definició de clausura és contenir totes les dependències implícites deduïbles del conjunt inicial."
     },
     {
       "id": "q_127",
@@ -3130,7 +3130,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nLa clausura de dependències funcionals permet inferir què DF es compleixen, comparar equivalència entre esquemes respecte a DF i ajudar a trobar claus candidates. Però no permet decidir si un esquema “és correcte”, perquè això depèn també de semàntica, requisits i qualitat del disseny.\n\n**Explicació Detallada:**  \nLa clausura \\(F^+\\) conté totes les DF deduïbles d’un conjunt \\(F\\). Amb això podem comprovar si una DF és implicada i si dos conjunts de DF són equivalents. També serveix per derivar claus candidates via clausura d’atributs. En canvi, “esquema correcte” no és una propietat formal deduïble només de \\(F^+\\): cal valorar normalització, semàntica i anomalies.\n\n**Anàlisi d'opcions falses:**  \n**A)** Sí que es poden obtenir claus candidates analitzant clausures d’atributs.  \n**C)** Sí: dos esquemes/conjunts de DF són equivalents si les seves clausures impliquen les mateixes DF.  \n**D)** Sí: una DF és certa respecte \\(F\\) si pertany a \\(F^+\\)."
+      "explicacion": "**Resum Ràpid:**  \nLa clausura de dependències funcionals permet inferir què DF es compleixen, comparar equivalència entre esquemes respecte a DF i ajudar a trobar claus candidates. Però no permet decidir si un esquema “és correcte”, perquè això depèn també de semàntica, requisits i qualitat del disseny.\n\n**Explicació Detallada:**  \nLa clausura F^+ conté totes les DF deduïbles d’un conjunt F. Amb això podem comprovar si una DF és implicada i si dos conjunts de DF són equivalents. També serveix per derivar claus candidates via clausura d’atributs. En canvi, “esquema correcte” no és una propietat formal deduïble només de F^+: cal valorar normalització, semàntica i anomalies.\n\n**Anàlisi d'opcions falses:**  \n**A)** Sí que es poden obtenir claus candidates analitzant clausures d’atributs.  \n**C)** Sí: dos esquemes/conjunts de DF són equivalents si les seves clausures impliquen les mateixes DF.  \n**D)** Sí: una DF és certa respecte F si pertany a F^+."
     },
     {
       "id": "q_128",
@@ -3220,7 +3220,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: qualsevol esquema relacional es pot descompondre fins a **BCNF** mitjançant l’algorisme de normalització. El cost és que, en alguns casos, es poden **perdre dependències funcionals** preservades.\n\n**Explicació Detallada:**  \nBCNF exigeix que **tot determinant sigui clau candidata**. Si hi ha una DF \\(X \\to Y\\) on \\(X\\) no és clau, es descompon l’esquema repetidament fins eliminar aquesta violació. Per tant, **sempre es pot arribar a BCNF**; el problema no és la possibilitat, sinó que la descomposició pot no preservar totes les DF.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert**: Incorrecta. Segons la teoria de normalització, qualsevol relació es pot portar a BCNF per descomposició."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: qualsevol esquema relacional es pot descompondre fins a **BCNF** mitjançant l’algorisme de normalització. El cost és que, en alguns casos, es poden **perdre dependències funcionals** preservades.\n\n**Explicació Detallada:**  \nBCNF exigeix que **tot determinant sigui clau candidata**. Si hi ha una DF X to Y on X no és clau, es descompon l’esquema repetidament fins eliminar aquesta violació. Per tant, **sempre es pot arribar a BCNF**; el problema no és la possibilitat, sinó que la descomposició pot no preservar totes les DF.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert**: Incorrecta. Segons la teoria de normalització, qualsevol relació es pot portar a BCNF per descomposició."
     },
     {
       "id": "q_133",
@@ -3238,7 +3238,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nSi es coneixen totes les dependències funcionals, la normalització fins a 3NF/BCNF es pot aplicar amb algoritmes formals d’anàlisi i síntesi. Per això, en aquest marc teòric, es considera automatitzable.\n\n**Explicació Detallada:**  \nLa normalització es basa en dependències funcionals \\(X \\to Y\\) per detectar dependències parcials, transitives o determinants no clau. Amb aquesta informació, es poden executar algorismes sistemàtics per obtenir esquemes en 3NF o BCNF i reduir anomalies d’inserció, esborrat i modificació.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta perquè, donat el conjunt de dependències funcionals, la descomposició normalitzada es pot derivar mecànicament amb procediments estàndard."
+      "explicacion": "**Resum Ràpid:**  \nSi es coneixen totes les dependències funcionals, la normalització fins a 3NF/BCNF es pot aplicar amb algoritmes formals d’anàlisi i síntesi. Per això, en aquest marc teòric, es considera automatitzable.\n\n**Explicació Detallada:**  \nLa normalització es basa en dependències funcionals X to Y per detectar dependències parcials, transitives o determinants no clau. Amb aquesta informació, es poden executar algorismes sistemàtics per obtenir esquemes en 3NF o BCNF i reduir anomalies d’inserció, esborrat i modificació.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta perquè, donat el conjunt de dependències funcionals, la descomposició normalitzada es pot derivar mecànicament amb procediments estàndard."
     },
     {
       "id": "q_134",
@@ -3308,7 +3308,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nLes formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si \\(E_X\\) apareix abans que \\(E_Y\\), aleshores \\(E_X \\\\supseteq E_Y\\).\n\n**Explicació Detallada:**  \n1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:**  \n**A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en \\(E_Y\\) també és en \\(E_X\\).  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
+      "explicacion": "**Resum Ràpid:**  \nLes formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si E_X apareix abans que E_Y, aleshores E_X \\⊇ E_Y.\n\n**Explicació Detallada:**  \n1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:**  \n**A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en E_Y també és en E_X.  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
     },
     {
       "id": "q_137",
@@ -3326,7 +3326,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:** Les formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si $E_X$ apareix abans que $E_Y$, aleshores $E_X \\supseteq E_Y$.\n\n**Explicació Detallada:** 1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:** **A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en $E_Y$ també és en $E_X$.  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
+      "explicacion": "**Resum Ràpid:**  \nTota relació clàssica pertany a NF², ja que el model NF² (Non First Normal Form) és una generalització que inclou la 1NF com a cas particular.\n\n**Explicació Detallada:**  \nEn el model relacional clàssic, tota relació compleix la 1NF (només té atributs atòmics). El model NF² relaxa aquesta restricció permetent atributs multivaluats o niats. Com que una relació en 1NF equival a un esquema NF² amb profunditat de niament zero, qualsevol relació estàndard és inherentment una relació NF².\n\n**Anàlisi d'opcions falses:**  \n- **Fals:** Incorrecte perquè tota relació clàssica (1NF) compleix les regles del model NF² per definició."
     },
     {
       "id": "q_138",
@@ -3344,7 +3344,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: una dependència multivaluada (MVD) **no és** una dependència funcional (DF). A la DF, \\(X \\to Y\\) fixa **un únic** valor de \\(Y\\) per cada \\(X\\); a la MVD, \\(X \\twoheadrightarrow Y\\) pot determinar **un conjunt de valors** de \\(Y\\).\n\n**Explicació Detallada:**  \nSegons la teoria de normalització, les DF s’usen en 2NF, 3NF i BCNF, mentre que les dependències multivaluades apareixen a **4NF**. Una MVD modela atributs multivalor independents per a un mateix determinant, així que és un concepte diferent de DF.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè confon dos tipus de dependència diferents: la DF imposa unicitat; la MVD no."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: una dependència multivaluada (MVD) **no és** una dependència funcional (DF). A la DF, X to Y fixa **un únic** valor de Y per cada X; a la MVD, X twoheadrightarrow Y pot determinar **un conjunt de valors** de Y.\n\n**Explicació Detallada:**  \nSegons la teoria de normalització, les DF s’usen en 2NF, 3NF i BCNF, mentre que les dependències multivaluades apareixen a **4NF**. Una MVD modela atributs multivalor independents per a un mateix determinant, així que és un concepte diferent de DF.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè confon dos tipus de dependència diferents: la DF imposa unicitat; la MVD no."
     },
     {
       "id": "q_139",
@@ -3380,7 +3380,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals** dir-ho així: la 4NF no prohibeix qualsevol dependència multivaluada, sinó només les **no trivials** quan el determinant **no és una clau candidata**. Si la dependència és trivial o el determinant és clau, no viola 4NF.\n\n**Explicació Detallada:**  \nLa 4NF reforça BCNF per eliminar anomalies causades per dependències multivaluades. Formalment, per a tota dependència multivaluada no trivial \\(X \\twoheadrightarrow Y\\), \\(X\\) ha de ser una clau candidata. Per tant, sí que poden existir dependències multivaluades en 4NF en aquests casos.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè afirma una prohibició absoluta. La 4NF només elimina les dependències multivaluades problemàtiques, no totes."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals** dir-ho així: la 4NF no prohibeix qualsevol dependència multivaluada, sinó només les **no trivials** quan el determinant **no és una clau candidata**. Si la dependència és trivial o el determinant és clau, no viola 4NF.\n\n**Explicació Detallada:**  \nLa 4NF reforça BCNF per eliminar anomalies causades per dependències multivaluades. Formalment, per a tota dependència multivaluada no trivial X twoheadrightarrow Y, X ha de ser una clau candidata. Per tant, sí que poden existir dependències multivaluades en 4NF en aquests casos.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè afirma una prohibició absoluta. La 4NF només elimina les dependències multivaluades problemàtiques, no totes."
     },
     {
       "id": "q_141",
@@ -5920,7 +5920,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: si tenim diverses dimensions, cada subconjunt possible d’aquestes defineix un nivell d’agregació diferent. Per tant, el nombre de vistes materialitzades candidates creix exponencialment.\n\n**Explicació Detallada:**  \nEn un esquema analític, cada combinació d’atributs d’agrupació pot donar lloc a una vista materialitzada. Amb *n* dimensions, hi ha fins a \\(2^n\\) combinacions d’agregació possibles (cub de dades). Això fa que el problema de selecció de vistes sigui combinatòriament molt gran, i per això s’usen heurístiques com algoritmes *greedy*.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta, perquè ignora que cada subconjunt de dimensions genera una agregació potencial; aquest creixement és precisament exponencial."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: si tenim diverses dimensions, cada subconjunt possible d’aquestes defineix un nivell d’agregació diferent. Per tant, el nombre de vistes materialitzades candidates creix exponencialment.\n\n**Explicació Detallada:**  \nEn un esquema analític, cada combinació d’atributs d’agrupació pot donar lloc a una vista materialitzada. Amb *n* dimensions, hi ha fins a 2^n combinacions d’agregació possibles (cub de dades). Això fa que el problema de selecció de vistes sigui combinatòriament molt gran, i per això s’usen heurístiques com algoritmes *greedy*.\n\n**Anàlisi d'opcions falses:**  \n**B) Fals:** Incorrecta, perquè ignora que cada subconjunt de dimensions genera una agregació potencial; aquest creixement és precisament exponencial."
     },
     {
       "id": "q_261",
@@ -7476,7 +7476,7 @@
         }
       ],
       "correctLetter": "D",
-      "explicacion": "**Resum Ràpid:**  \nLa *join* respecte a ella mateixa compleix tant **commutativitat** com **associativitat**. Això permet a l’optimitzador sintàctic reordenar joins en l’arbre algebraic sense canviar el resultat, buscant menys cost.\n\n**Explicació Detallada:**  \nEn àlgebra relacional, \\(R \\bowtie S = S \\bowtie R\\) (commutativa) i \\((R \\bowtie S) \\bowtie T = R \\bowtie (S \\bowtie T)\\) (associativa), assumint joins compatibles. Aquestes propietats són clau a l’optimització sintàctica: permeten transformar l’arbre de procés i provar ordres de join més eficients.\n\n**Anàlisi d'opcions falses:**  \n- **A)** Falsa perquè no és només commutativa; també és associativa.  \n- **B)** Falsa perquè no és només associativa; també és commutativa.  \n- **C)** Falsa perquè sí que compleix ambdues propietats."
+      "explicacion": "**Resum Ràpid:**  \nLa *join* respecte a ella mateixa compleix tant **commutativitat** com **associativitat**. Això permet a l’optimitzador sintàctic reordenar joins en l’arbre algebraic sense canviar el resultat, buscant menys cost.\n\n**Explicació Detallada:**  \nEn àlgebra relacional, R bowtie S = S bowtie R (commutativa) i (R bowtie S) bowtie T = R bowtie (S bowtie T) (associativa), assumint joins compatibles. Aquestes propietats són clau a l’optimització sintàctica: permeten transformar l’arbre de procés i provar ordres de join més eficients.\n\n**Anàlisi d'opcions falses:**  \n- **A)** Falsa perquè no és només commutativa; també és associativa.  \n- **B)** Falsa perquè no és només associativa; també és commutativa.  \n- **C)** Falsa perquè sí que compleix ambdues propietats."
     },
     {
       "id": "q_339",
@@ -7776,7 +7776,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: el factor de selecció és la fracció de tuples que compleixen el predicat respecte del **total de files de l’entrada**, no respecte d’un mínim possible. Sempre pren valors entre 0 i 1.\n\n**Explicació Detallada:**  \nEn optimització de consultes, la selectivitat d’una selecció es defineix com \\(|resultat| / |relació d’entrada|\\). Serveix per estimar cost d’E/S a disc i decidir estratègies d’accés. No té cap relació amb “el mínim de files que podem tenir”.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè dona una definició errònia del denominador. El percentatge es calcula sobre el total de tuples d’entrada, no sobre un mínim teòric."
+      "explicacion": "**Resum Ràpid:**  \nÉs **fals**: el factor de selecció és la fracció de tuples que compleixen el predicat respecte del **total de files de l’entrada**, no respecte d’un mínim possible. Sempre pren valors entre 0 i 1.\n\n**Explicació Detallada:**  \nEn optimització de consultes, la selectivitat d’una selecció es defineix com |resultat| / |relació d’entrada|. Serveix per estimar cost d’E/S a disc i decidir estratègies d’accés. No té cap relació amb “el mínim de files que podem tenir”.\n\n**Anàlisi d'opcions falses:**  \n- **A) Cert:** Incorrecta perquè dona una definició errònia del denominador. El percentatge es calcula sobre el total de tuples d’entrada, no sobre un mínim teòric."
     },
     {
       "id": "q_353",
@@ -8108,7 +8108,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: si cada bloc conté un nombre fix de registres, els blocs totals s’estimen com `cardinalitat / registres per bloc`, arrodonint per excés perquè un bloc parcial també ocupa espai.\n\n**Explicació Detallada:**  \nAquesta és l’estimació estàndard del cost en accessos a disc. Si una taula té \\(N\\) registres i a cada bloc n’hi caben \\(f\\), el nombre de blocs és \\(\\lceil N/f \\rceil\\). L’arrodoniment per excés és necessari perquè qualsevol resta de registres requereix un bloc addicional.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè ignoraria que els registres sobrants no desapareixen: si no omplen un bloc sencer, igualment cal llegir/escriure aquell bloc."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: si cada bloc conté un nombre fix de registres, els blocs totals s’estimen com `cardinalitat / registres per bloc`, arrodonint per excés perquè un bloc parcial també ocupa espai.\n\n**Explicació Detallada:**  \nAquesta és l’estimació estàndard del cost en accessos a disc. Si una taula té N registres i a cada bloc n’hi caben f, el nombre de blocs és ⌈ N/f ⌉. L’arrodoniment per excés és necessari perquè qualsevol resta de registres requereix un bloc addicional.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè ignoraria que els registres sobrants no desapareixen: si no omplen un bloc sencer, igualment cal llegir/escriure aquell bloc."
     },
     {
       "id": "q_371",
@@ -8270,7 +8270,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: un índex bitmap representa, per a cada valor diferent d’un atribut, un vector de bits amb una posició per fila. Cada bit indica si aquella fila té aquell valor.\n\n**Explicació Detallada:**  \nEn un bitmap, si un atribut té \\(k\\) valors diferents, es poden mantenir \\(k\\) bitmaps. Això permet resoldre seleccions complexes combinant bits amb operacions AND/OR abans d’accedir a disc, reduint cost d’E/S.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè la definició bàsica d’un bitmap és precisament guardar un mapa de bits per cada valor diferent de l’atribut."
+      "explicacion": "**Resum Ràpid:**  \nÉs **cert**: un índex bitmap representa, per a cada valor diferent d’un atribut, un vector de bits amb una posició per fila. Cada bit indica si aquella fila té aquell valor.\n\n**Explicació Detallada:**  \nEn un bitmap, si un atribut té k valors diferents, es poden mantenir k bitmaps. Això permet resoldre seleccions complexes combinant bits amb operacions AND/OR abans d’accedir a disc, reduint cost d’E/S.\n\n**Anàlisi d'opcions falses:**  \n- **B) Fals:** Incorrecta perquè la definició bàsica d’un bitmap és precisament guardar un mapa de bits per cada valor diferent de l’atribut."
     },
     {
       "id": "q_380",

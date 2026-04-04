@@ -16,7 +16,7 @@ const QUESTIONS_JSON_URL = "/data/questions_new.json";
  * Users with an older version will get a transparent re-import
  * without losing their test history (user_answers, test_sessions).
  */
-const DATA_VERSION = 4;
+const DATA_VERSION = 5;
 const DATA_VERSION_KEY = "data_version";
 
 export type BootstrapResult =
