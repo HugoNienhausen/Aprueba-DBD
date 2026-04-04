@@ -542,7 +542,7 @@ export default function TestScreen() {
             onChange={(e) => setFlashMode(e.target.checked)}
           />
           <span>⚡ Mode Flash</span>
-          <span className="muted" style={{ fontSize: "0.8rem", marginLeft: "0.35rem" }}>— sense explicacions, resposta ràpida</span>
+          <span className="muted" style={{ fontSize: "0.8rem", marginLeft: "0.35rem" }}>sense explicacions, resposta ràpida</span>
         </label>
       </div>
 
