@@ -304,6 +304,9 @@ export default function TestScreen() {
             showCorrectAnswer={correctAt === "immediately"}
             hideExplanation
           />
+          <p className="mt-2">
+            <Link to="/test" className="link-plain">← Sortir del test</Link>
+          </p>
         </div>
       );
     }
@@ -345,6 +348,9 @@ export default function TestScreen() {
             </button>
           )}
         </div>
+        <p className="mt-2">
+          <Link to="/test" className="link-plain">← Sortir del test</Link>
+        </p>
       </div>
     );
   }
