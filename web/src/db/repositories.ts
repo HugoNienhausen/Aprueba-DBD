@@ -119,16 +119,36 @@ export async function getFailedQuestionIds(): Promise<string[]> {
   return ids;
 }
 
-/** Question IDs that the user has never answered. */
-export async function getUnansweredQuestionIds(): Promise<string[]> {
+/** Question IDs that the user has never answered, optionally filtered by topic IDs. */
+export async function getUnansweredQuestionIds(topicIds?: string[]): Promise<string[]> {
   const db = await getDb();
-  const stmt = db.prepare(
-    "SELECT id FROM questions WHERE id NOT IN (SELECT DISTINCT question_id FROM user_answers)"
-  );
+  let sql = "SELECT id FROM questions WHERE id NOT IN (SELECT DISTINCT question_id FROM user_answers)";
+  if (topicIds && topicIds.length > 0) {
+    const placeholders = topicIds.map(() => "?").join(",");
+    sql += ` AND topic_id IN (${placeholders})`;
+  }
+  const stmt = db.prepare(sql);
+  if (topicIds && topicIds.length > 0) stmt.bind(topicIds);
   const ids: string[] = [];
   while (stmt.step()) ids.push((stmt.get()[0] as string) ?? "");
   stmt.free();
   return ids;
+}
+
+/** Count of unanswered questions per topic_id. */
+export async function getUnansweredCountByTopic(): Promise<Record<string, number>> {
+  const db = await getDb();
+  const stmt = db.prepare(
+    `SELECT topic_id, COUNT(*) as cnt FROM questions
+     WHERE id NOT IN (SELECT DISTINCT question_id FROM user_answers)
+     GROUP BY topic_id`
+  );
+  const result: Record<string, number> = {};
+  while (stmt.step()) {
+    result[stmt.get()[0] as string] = stmt.get()[1] as number;
+  }
+  stmt.free();
+  return result;
 }
 
 export async function saveUserAnswer(

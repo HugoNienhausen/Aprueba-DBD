@@ -11,6 +11,7 @@ import {
   getQuestionsRandom,
   getFailedQuestionIds,
   getUnansweredQuestionIds,
+  getUnansweredCountByTopic,
   getQuestionById,
   getPreferences,
   saveTestSession,
@@ -69,6 +70,8 @@ export default function TestScreen() {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [failedCount, setFailedCount] = useState<number | null>(null);
   const [unansweredCount, setUnansweredCount] = useState<number | null>(null);
+  const [unansweredByTopic, setUnansweredByTopic] = useState<Record<string, number>>({});
+  const [unansweredTopicIds, setUnansweredTopicIds] = useState<string[]>([]);
   const [kind, setKind] = useState<TestKind>(() => {
     const saved = localStorage.getItem("test-selected-topics");
     return saved ? "by_selection" : "random";
@@ -114,11 +117,12 @@ export default function TestScreen() {
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
 
   useEffect(() => {
-    Promise.all([getTopics(), getFailedQuestionIds(), getUnansweredQuestionIds()])
-      .then(([t, failedIds, unansweredIds]) => {
+    Promise.all([getTopics(), getFailedQuestionIds(), getUnansweredQuestionIds(), getUnansweredCountByTopic()])
+      .then(([t, failedIds, unansweredIds, byTopic]) => {
         setTopics(t);
         setFailedCount(failedIds.length);
         setUnansweredCount(unansweredIds.length);
+        setUnansweredByTopic(byTopic);
         // Apply repeat config if navigated from result
         if (repeatState?.autoStart && !autoStartRef.current) {
           autoStartRef.current = true;
@@ -141,7 +145,12 @@ export default function TestScreen() {
   const startTest = async () => {
     if (kind === "by_selection" && selectedTopicIds.length === 0) return;
     if (kind === "failed" && (failedCount ?? 0) === 0) return;
-    if (kind === "unanswered" && (unansweredCount ?? 0) === 0) return;
+    if (kind === "unanswered") {
+      const effectiveCount = unansweredTopicIds.length > 0
+        ? unansweredTopicIds.reduce((sum, id) => sum + (unansweredByTopic[id] ?? 0), 0)
+        : (unansweredCount ?? 0);
+      if (effectiveCount === 0) return;
+    }
 
     const prefs = await getPreferences();
     setCorrectAt(prefs.correctAt);
@@ -158,7 +167,7 @@ export default function TestScreen() {
     } else if (kind === "random") {
       qs = await getQuestionsRandom(n);
     } else if (kind === "unanswered") {
-      const ids = await getUnansweredQuestionIds();
+      const ids = await getUnansweredQuestionIds(unansweredTopicIds.length > 0 ? unansweredTopicIds : undefined);
       const limited = shuffle(ids).slice(0, n);
       const resolved = await Promise.all(limited.map((id) => getQuestionById(id)));
       qs = resolved.filter((q): q is Question => q != null);
@@ -420,6 +429,67 @@ export default function TestScreen() {
               : `${unansweredCount} preguntes per descobrir`}
           </span>
         </button>
+        {kind === "unanswered" && (unansweredCount ?? 0) > 0 && (
+          <div className="test-option__extra test-selection">
+            {unansweredTopicIds.length > 0 && (
+              <button
+                type="button"
+                className="clear-selection-btn"
+                onClick={() => setUnansweredTopicIds([])}
+              >
+                Netejar selecció
+              </button>
+            )}
+            {sectionsWithTopics.map(({ section, topics: sectionTopics }) => {
+              const sectionUnanswered = sectionTopics.reduce((sum, t) => sum + (unansweredByTopic[t.id] ?? 0), 0);
+              if (sectionUnanswered === 0) return null;
+              const ids = sectionTopics.filter((t) => (unansweredByTopic[t.id] ?? 0) > 0).map((t) => t.id);
+              const allInSection = ids.every((id) => unansweredTopicIds.includes(id));
+              return (
+                <div key={section} className="test-selection__section">
+                  <label className="test-selection__section-header">
+                    <input
+                      type="checkbox"
+                      checked={allInSection}
+                      onChange={() => {
+                        setUnansweredTopicIds((prev) =>
+                          allInSection ? prev.filter((id) => !ids.includes(id)) : [...new Set([...prev, ...ids])]
+                        );
+                      }}
+                      className="test-selection__checkbox"
+                    />
+                    <span className="test-selection__section-title">{section}</span>
+                    <span className="muted" style={{ marginLeft: "0.5rem", fontSize: "0.8rem" }}>({sectionUnanswered})</span>
+                  </label>
+                  <ul className="test-selection__list">
+                    {sectionTopics.map((t) => {
+                      const count = unansweredByTopic[t.id] ?? 0;
+                      if (count === 0) return null;
+                      return (
+                        <li key={t.id}>
+                          <label className="test-selection__item">
+                            <input
+                              type="checkbox"
+                              checked={unansweredTopicIds.includes(t.id)}
+                              onChange={() => {
+                                setUnansweredTopicIds((prev) =>
+                                  prev.includes(t.id) ? prev.filter((id) => id !== t.id) : [...prev, t.id]
+                                );
+                              }}
+                              className="test-selection__checkbox"
+                            />
+                            <span>{t.title}</span>
+                            <span className="muted" style={{ marginLeft: "0.35rem", fontSize: "0.8rem" }}>({count})</span>
+                          </label>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <div className="test-config__preguntas">

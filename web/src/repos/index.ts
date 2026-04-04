@@ -12,6 +12,7 @@ export {
   getQuestionsRandom,
   getFailedQuestionIds,
   getUnansweredQuestionIds,
+  getUnansweredCountByTopic,
   saveUserAnswer,
   saveTestSession,
   updateTestSession,
