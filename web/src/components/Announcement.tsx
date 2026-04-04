@@ -27,13 +27,8 @@ export default function Announcement() {
         <p className="announcement__text">
           Ja som una mitjana de <strong>50 usuaris practicant cada dia</strong> els tests de DBD!
         </p>
-        <p className="announcement__text">Avui hem afegit:</p>
-        <ul className="announcement__list">
-          <li>⚡ <strong>Mode Flash</strong> — preguntes ràpides sense explicacions</li>
-          <li>🆕 <strong>Preguntes no intentades</strong> — descobreix les que encara no has fet</li>
-        </ul>
         <button type="button" className="btn btn--primary announcement__btn" onClick={dismiss}>
-          Entesos, a estudiar!
+          Tancar
         </button>
       </div>
     </div>
