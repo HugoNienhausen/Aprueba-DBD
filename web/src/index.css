@@ -788,6 +788,26 @@ body {
   background: var(--selected-bg);
 }
 
+.jumper-wrap button[data-state="correct"] {
+  background: var(--correct-bg);
+  border-color: var(--correct-border);
+}
+
+.jumper-wrap button[data-state="wrong"] {
+  background: var(--wrong-bg);
+  border-color: var(--wrong-border);
+}
+
+.jumper-wrap button[data-state="answered"] {
+  background: var(--selected-bg);
+  border-color: var(--muted);
+}
+
+.jumper-ellipsis {
+  color: var(--muted);
+  margin: 0 0.15rem;
+}
+
 /* --- Test: config --- */
 .test-config__intro {
   margin-bottom: 1.25rem;

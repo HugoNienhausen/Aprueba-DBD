@@ -18,6 +18,7 @@ import {
 } from "../repos";
 import type { Topic, Question, OptionLetter, TestSessionMode } from "../types";
 import QuestionCard from "../components/QuestionCard";
+import Jumper, { type JumperItemState } from "../components/Jumper";
 
 type TestMode = TestSessionMode;
 type TestKind = "by_selection" | "random" | "failed";
@@ -199,21 +200,11 @@ export default function TestScreen() {
       answeredAt: new Date().toISOString(),
     }).catch((err) => console.error("saveUserAnswer failed:", err));
 
-    if (correctAt === "at_end") {
-      if (currentIndex >= questions.length - 1) {
-        finishTest(newAnswers);
-      } else {
-        setCurrentIndex((i) => i + 1);
-        setSelectedLetter(null);
-      }
-    }
+    // In at_end mode, don't auto-advance — let user navigate freely
   };
 
   const goNext = () => {
-    if (currentIndex >= questions.length - 1) {
-      finishTest(answers);
-      return;
-    }
+    if (currentIndex >= questions.length - 1) return;
     const nextIndex = currentIndex + 1;
     const existing = answers.find((a) => a.questionId === questions[nextIndex]?.id);
     setCurrentIndex(nextIndex);
@@ -226,6 +217,19 @@ export default function TestScreen() {
     const existing = answers.find((a) => a.questionId === questions[prevIndex]?.id);
     setCurrentIndex(prevIndex);
     setSelectedLetter(existing?.selectedLetter ?? null);
+  };
+
+  const goTo = (i: number) => {
+    const existing = answers.find((a) => a.questionId === questions[i]?.id);
+    setCurrentIndex(i);
+    setSelectedLetter(existing?.selectedLetter ?? null);
+  };
+
+  const getJumperState = (i: number): JumperItemState => {
+    const a = answers.find((a) => a.questionId === questions[i]?.id);
+    if (!a) return undefined;
+    if (correctAt === "immediately") return a.isCorrect ? "correct" : "wrong";
+    return "answered";
   };
 
   const finishTest = async (allAnswers: AnswerRecord[]) => {
@@ -252,8 +256,8 @@ export default function TestScreen() {
   if (phase === "running" && questions.length > 0) {
     const question = questions[currentIndex]!;
     const answered = selectedLetter !== null;
-    const isLast = currentIndex === questions.length - 1;
-    const progress = ((currentIndex + 1) / questions.length) * 100;
+    const allAnswered = answers.length >= questions.length;
+    const progress = ((answers.length) / questions.length) * 100;
 
     return (
       <div className="test-running">
@@ -261,9 +265,11 @@ export default function TestScreen() {
           <div className="test-progress__bar" style={{ width: `${progress}%` }} />
         </div>
         <p className="test-progress__label">
-          Pregunta {currentIndex + 1} de {questions.length}
+          Pregunta {currentIndex + 1} de {questions.length} · {answers.length} respostes
           {correctAt === "at_end" && " · Veuràs les respostes al final"}
         </p>
+
+        <Jumper total={questions.length} current={currentIndex} onJump={goTo} getState={getJumperState} />
 
         <QuestionCard
           question={question}
@@ -273,18 +279,23 @@ export default function TestScreen() {
           showCorrectAnswer={correctAt === "immediately"}
         />
 
-        {answered && correctAt === "immediately" && (
-          <div className="nav-questions">
-            {currentIndex > 0 && (
-              <button type="button" className="btn btn--secondary btn--large" onClick={goPrev}>
-                ← Anterior
-              </button>
-            )}
-            <button type="button" className="btn btn--primary btn--large" onClick={goNext}>
-              {isLast ? "Veure resultat" : "Següent →"}
+        <div className="nav-questions">
+          {currentIndex > 0 && (
+            <button type="button" className="btn btn--secondary btn--large" onClick={goPrev}>
+              ← Anterior
             </button>
-          </div>
-        )}
+          )}
+          {currentIndex < questions.length - 1 && (
+            <button type="button" className="btn btn--secondary btn--large" onClick={goNext}>
+              Següent →
+            </button>
+          )}
+          {allAnswered && (
+            <button type="button" className="btn btn--primary btn--large" onClick={() => finishTest(answers)}>
+              Veure resultat
+            </button>
+          )}
+        </div>
       </div>
     );
   }
