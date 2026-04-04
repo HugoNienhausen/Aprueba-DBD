@@ -883,12 +883,18 @@ body {
 
 .test-option__radio {
   flex-shrink: 0;
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 0.9rem;
+  height: 0.9rem;
   border-radius: 50%;
   border: 2px solid var(--border);
-  margin-top: 0.15rem;
+  margin-top: 0.2rem;
   transition: all 0.15s ease;
+}
+
+.test-option__inline-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
 }
 
 .test-option--disabled {

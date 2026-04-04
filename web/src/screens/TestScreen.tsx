@@ -441,13 +441,11 @@ export default function TestScreen() {
                 ? "Fes un test abans per tenir errors"
                 : `${Math.min(failedCount!, questionCount)} per repassar`}
             </span>
+            {(failedCount ?? 0) > 0 && kind === "failed" && (
+              <Link to="/review/failed" className="link-plain test-option__inline-link" onClick={(e) => e.stopPropagation()}>Repassar en ordre →</Link>
+            )}
           </div>
         </button>
-        {(failedCount ?? 0) > 0 && kind === "failed" && (
-          <p className="test-option__link muted">
-            <Link to="/review/failed" className="link-plain">Repassar en ordre →</Link>
-          </p>
-        )}
 
         <button
           type="button"
