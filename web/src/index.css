@@ -350,6 +350,21 @@ body {
   font-size: 0.8rem;
 }
 
+.clear-selection-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.clear-selection-btn:hover {
+  color: var(--text);
+}
+
 /* --- Páginas --- */
 .page-title {
   font-size: 1.5rem;

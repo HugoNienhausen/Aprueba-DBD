@@ -326,9 +326,8 @@ export default function TestScreen() {
             {selectedTopicIds.length > 0 && (
               <button
                 type="button"
-                className="btn btn--small btn--secondary"
+                className="clear-selection-btn"
                 onClick={() => setSelectedTopicIds([])}
-                style={{ alignSelf: "flex-end", marginBottom: "0.5rem" }}
               >
                 Netejar selecció
               </button>
