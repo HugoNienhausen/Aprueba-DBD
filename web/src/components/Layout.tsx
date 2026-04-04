@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { getPreferences, setPreferences } from "../repos";
 import type { CorrectAt, Theme } from "../types";
+import Announcement from "./Announcement";
 
 const GITHUB_REPO = "https://github.com/HugoNienhausen/Aprueba-DBD";
 
@@ -143,6 +144,7 @@ export default function Layout() {
         </div>
       </footer>
       <p className="ai-disclaimer" style={{ textAlign: "center", padding: "0 1rem 1rem" }}>Les respostes corresponen a les del PDF i han sigut validades manualment. Les explicacions son generades per IA i poden contenir errors.</p>
+      <Announcement />
     </div>
   );
 }
