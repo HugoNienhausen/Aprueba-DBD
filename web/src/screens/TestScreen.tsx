@@ -10,6 +10,7 @@ import {
   getQuestionsByTopicId,
   getQuestionsRandom,
   getFailedQuestionIds,
+  getUnansweredQuestionIds,
   getQuestionById,
   getPreferences,
   saveTestSession,
@@ -21,7 +22,7 @@ import QuestionCard from "../components/QuestionCard";
 import Jumper, { type JumperItemState } from "../components/Jumper";
 
 type TestMode = TestSessionMode;
-type TestKind = "by_selection" | "random" | "failed";
+type TestKind = "by_selection" | "random" | "failed" | "unanswered";
 
 const QUESTION_COUNT_OPTIONS = [10, 15, 20, 25, 30, 50] as const;
 
@@ -67,6 +68,7 @@ export default function TestScreen() {
   const [phase, setPhase] = useState<Phase>("config");
   const [topics, setTopics] = useState<Topic[]>([]);
   const [failedCount, setFailedCount] = useState<number | null>(null);
+  const [unansweredCount, setUnansweredCount] = useState<number | null>(null);
   const [kind, setKind] = useState<TestKind>(() => {
     const saved = localStorage.getItem("test-selected-topics");
     return saved ? "by_selection" : "random";
@@ -112,10 +114,11 @@ export default function TestScreen() {
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
 
   useEffect(() => {
-    Promise.all([getTopics(), getFailedQuestionIds()])
-      .then(([t, ids]) => {
+    Promise.all([getTopics(), getFailedQuestionIds(), getUnansweredQuestionIds()])
+      .then(([t, failedIds, unansweredIds]) => {
         setTopics(t);
-        setFailedCount(ids.length);
+        setFailedCount(failedIds.length);
+        setUnansweredCount(unansweredIds.length);
         // Apply repeat config if navigated from result
         if (repeatState?.autoStart && !autoStartRef.current) {
           autoStartRef.current = true;
@@ -138,6 +141,7 @@ export default function TestScreen() {
   const startTest = async () => {
     if (kind === "by_selection" && selectedTopicIds.length === 0) return;
     if (kind === "failed" && (failedCount ?? 0) === 0) return;
+    if (kind === "unanswered" && (unansweredCount ?? 0) === 0) return;
 
     const prefs = await getPreferences();
     setCorrectAt(prefs.correctAt);
@@ -153,6 +157,11 @@ export default function TestScreen() {
       qs = shuffle(unique).slice(0, n);
     } else if (kind === "random") {
       qs = await getQuestionsRandom(n);
+    } else if (kind === "unanswered") {
+      const ids = await getUnansweredQuestionIds();
+      const limited = shuffle(ids).slice(0, n);
+      const resolved = await Promise.all(limited.map((id) => getQuestionById(id)));
+      qs = resolved.filter((q): q is Question => q != null);
     } else {
       const ids = await getFailedQuestionIds();
       const limited = ids.slice(0, n);
@@ -305,7 +314,8 @@ export default function TestScreen() {
   const canStart =
     (kind === "by_selection" && selectedTopicIds.length > 0) ||
     kind === "random" ||
-    (kind === "failed" && (failedCount ?? 0) > 0);
+    (kind === "failed" && (failedCount ?? 0) > 0) ||
+    (kind === "unanswered" && (unansweredCount ?? 0) > 0);
 
   return (
     <div className="test-config">
@@ -396,6 +406,20 @@ export default function TestScreen() {
             <Link to="/review/failed" className="link-plain">Repassar en ordre →</Link>
           </p>
         )}
+
+        <button
+          type="button"
+          className={`test-option ${kind === "unanswered" ? "test-option--active" : ""} ${(unansweredCount ?? 0) === 0 ? "test-option--disabled" : ""}`}
+          onClick={() => (unansweredCount ?? 0) > 0 && setKind("unanswered")}
+          disabled={(unansweredCount ?? 0) === 0}
+        >
+          <span className="test-option__title">No intentades</span>
+          <span className="test-option__desc">
+            {(unansweredCount ?? 0) === 0
+              ? "Ja has respost totes les preguntes!"
+              : `${unansweredCount} preguntes per descobrir`}
+          </span>
+        </button>
       </div>
 
       <div className="test-config__preguntas">

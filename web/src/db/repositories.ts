@@ -119,6 +119,18 @@ export async function getFailedQuestionIds(): Promise<string[]> {
   return ids;
 }
 
+/** Question IDs that the user has never answered. */
+export async function getUnansweredQuestionIds(): Promise<string[]> {
+  const db = await getDb();
+  const stmt = db.prepare(
+    "SELECT id FROM questions WHERE id NOT IN (SELECT DISTINCT question_id FROM user_answers)"
+  );
+  const ids: string[] = [];
+  while (stmt.step()) ids.push((stmt.get()[0] as string) ?? "");
+  stmt.free();
+  return ids;
+}
+
 export async function saveUserAnswer(
   answer: Omit<UserAnswer, "id">
 ): Promise<void> {

@@ -11,6 +11,7 @@ export {
   getQuestionById,
   getQuestionsRandom,
   getFailedQuestionIds,
+  getUnansweredQuestionIds,
   saveUserAnswer,
   saveTestSession,
   updateTestSession,
