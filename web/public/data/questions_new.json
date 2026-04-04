@@ -3308,7 +3308,7 @@
         }
       ],
       "correctLetter": "B",
-      "explicacion": "**Resum Ràpid:**  \nLes formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si \\(E_X\\) apareix abans que \\(E_Y\\), aleshores \\(E_X \\supseteq E_Y\\).\n\n**Explicació Detallada:**  \n1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:**  \n**A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en \\(E_Y\\) també és en \\(E_X\\).  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
+      "explicacion": "**Resum Ràpid:**  \nLes formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si \\(E_X\\) apareix abans que \\(E_Y\\), aleshores \\(E_X \\\\supseteq E_Y\\).\n\n**Explicació Detallada:**  \n1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:**  \n**A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en \\(E_Y\\) també és en \\(E_X\\).  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
     },
     {
       "id": "q_137",
@@ -3326,13 +3326,7 @@
         }
       ],
       "correctLetter": "A",
-      "explicacion": "**Resum Ràpid:** Les formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si $E_X$ apareix abans que $E_Y$, aleshores $E_X \supseteq E_Y$.
-
-**Explicació Detallada:** 1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.
-
-**Anàlisi d'opcions falses:** **A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en $E_Y$ també és en $E_X$.  
-**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  
-**D)** Falsa: la B és correcta."
+      "explicacion": "**Resum Ràpid:** Les formes normals estan **encadenades per inclusió**: cada nivell més restrictiu implica complir tots els anteriors. Per això, si $E_X$ apareix abans que $E_Y$, aleshores $E_X \\supseteq E_Y$.\n\n**Explicació Detallada:** 1NF, 2NF, 3NF, BCNF i 4NF afegeixen restriccions progressivament per evitar anomalies. Així, tot esquema en 4NF també està en BCNF, 3NF, 2NF i 1NF; i tot esquema en BCNF també compleix 3NF, etc. Per tant, el conjunt d’esquemes d’una forma normal posterior és subconjunt del d’una anterior.\n\n**Anàlisi d'opcions falses:** **A)** Falsa: sí que hi ha esquemes que compleixen dues formes normals alhora; de fet, qualsevol en $E_Y$ també és en $E_X$.  \n**C)** Falsa: la inclusió va al revés; no tot esquema en una forma més feble compleix una de més forta.  \n**D)** Falsa: la B és correcta."
     },
     {
       "id": "q_138",
