@@ -852,11 +852,13 @@ body {
 }
 
 .test-option {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
   width: 100%;
   text-align: left;
   padding: 0.9rem 1rem;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--card-bg);
   color: var(--text);
@@ -865,13 +867,28 @@ body {
 }
 
 .test-option:hover:not(.test-option--disabled) {
-  border-color: var(--link);
   background: var(--selected-bg);
 }
 
 .test-option--active {
-  border-color: var(--link);
   background: var(--selected-bg);
+  border-color: var(--link);
+}
+
+.test-option--active .test-option__radio {
+  border-color: var(--link);
+  background: var(--link);
+  box-shadow: inset 0 0 0 3px var(--card-bg);
+}
+
+.test-option__radio {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  margin-top: 0.15rem;
+  transition: all 0.15s ease;
 }
 
 .test-option--disabled {

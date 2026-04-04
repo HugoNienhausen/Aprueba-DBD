@@ -375,8 +375,11 @@ export default function TestScreen() {
           className={`test-option ${kind === "by_selection" ? "test-option--active" : ""}`}
           onClick={() => setKind("by_selection")}
         >
-          <span className="test-option__title">Aleatori per temes</span>
-          <span className="test-option__desc">Tria els temes o subtemes que vulguis practicar</span>
+          <span className="test-option__radio" />
+          <div>
+            <span className="test-option__title">Aleatori per temes</span>
+            <span className="test-option__desc">Tria els temes o subtemes que vulguis practicar</span>
+          </div>
         </button>
         {kind === "by_selection" && (
           <div className="test-option__extra test-selection">
@@ -430,12 +433,15 @@ export default function TestScreen() {
           onClick={() => (failedCount ?? 0) > 0 && setKind("failed")}
           disabled={(failedCount ?? 0) === 0}
         >
-          <span className="test-option__title">Fallades</span>
-          <span className="test-option__desc">
-            {(failedCount ?? 0) === 0
-              ? "Fes un test abans per tenir errors"
-              : `${Math.min(failedCount!, questionCount)} per repassar`}
-          </span>
+          <span className="test-option__radio" />
+          <div>
+            <span className="test-option__title">Fallades</span>
+            <span className="test-option__desc">
+              {(failedCount ?? 0) === 0
+                ? "Fes un test abans per tenir errors"
+                : `${Math.min(failedCount!, questionCount)} per repassar`}
+            </span>
+          </div>
         </button>
         {(failedCount ?? 0) > 0 && kind === "failed" && (
           <p className="test-option__link muted">
@@ -449,12 +455,15 @@ export default function TestScreen() {
           onClick={() => (unansweredCount ?? 0) > 0 && setKind("unanswered")}
           disabled={(unansweredCount ?? 0) === 0}
         >
-          <span className="test-option__title">No intentades</span>
-          <span className="test-option__desc">
-            {(unansweredCount ?? 0) === 0
-              ? "Ja has respost totes les preguntes!"
-              : `${unansweredCount} preguntes per descobrir`}
-          </span>
+          <span className="test-option__radio" />
+          <div>
+            <span className="test-option__title">No intentades</span>
+            <span className="test-option__desc">
+              {(unansweredCount ?? 0) === 0
+                ? "Ja has respost totes les preguntes!"
+                : `${unansweredCount} preguntes per descobrir`}
+            </span>
+          </div>
         </button>
         {kind === "unanswered" && (unansweredCount ?? 0) > 0 && (
           <div className="test-option__extra test-selection">
