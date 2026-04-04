@@ -5,7 +5,8 @@ const SHOW_DATE = "2026-04-05";
 
 export default function Announcement() {
   const [visible, setVisible] = useState(() => {
-    const today = new Date().toISOString().slice(0, 10);
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
     if (today !== SHOW_DATE) return false;
     return localStorage.getItem(ANNOUNCEMENT_ID) !== "1";
   });
