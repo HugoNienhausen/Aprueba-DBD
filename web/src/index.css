@@ -808,6 +808,37 @@ body {
   margin: 0 0.15rem;
 }
 
+/* Flash mode */
+.flash-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.test-config__flash {
+  margin-top: 0.5rem;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.flash-counter--correct {
+  color: var(--correct-border);
+}
+
+.flash-counter--wrong {
+  color: var(--wrong-border);
+}
+
 /* --- Test: config --- */
 .test-config__intro {
   margin-bottom: 1.25rem;

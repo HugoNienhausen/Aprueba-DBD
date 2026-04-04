@@ -12,6 +12,7 @@ interface QuestionCardProps {
   disabled?: boolean;
   /** Si false (modo "al final"), no se muestra la correcta ni la explicación hasta el final del test. */
   showCorrectAnswer?: boolean;
+  hideExplanation?: boolean;
 }
 
 function getOptionState(
@@ -32,6 +33,7 @@ export default function QuestionCard({
   onSelect,
   disabled = false,
   showCorrectAnswer = true,
+  hideExplanation = false,
 }: QuestionCardProps) {
   const answered = selectedLetter !== null;
   const showFeedback = showCorrectAnswer && answered;
@@ -63,7 +65,7 @@ export default function QuestionCard({
           );
         })}
       </ul>
-      {showFeedback && question.explicacion && (
+      {showFeedback && question.explicacion && !hideExplanation && (
         <ExplanationBlock text={question.explicacion} />
       )}
     </div>

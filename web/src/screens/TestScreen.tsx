@@ -82,6 +82,7 @@ export default function TestScreen() {
     } catch { return []; }
   });
   const [questionCount, setQuestionCount] = useState<number>(20);
+  const [flashMode, setFlashMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const sectionsWithTopics = useMemo(() => groupBySection(topics), [topics]);
@@ -218,7 +219,17 @@ export default function TestScreen() {
       answeredAt: new Date().toISOString(),
     }).catch((err) => console.error("saveUserAnswer failed:", err));
 
-    // In at_end mode, don't auto-advance — let user navigate freely
+    // Flash mode: auto-advance after brief delay
+    if (flashMode && correctAt === "immediately") {
+      setTimeout(() => {
+        if (currentIndex >= questions.length - 1) {
+          finishTest(newAnswers);
+        } else {
+          setCurrentIndex((i) => i + 1);
+          setSelectedLetter(null);
+        }
+      }, 800);
+    }
   };
 
   const goNext = () => {
@@ -276,6 +287,32 @@ export default function TestScreen() {
     const answered = selectedLetter !== null;
     const allAnswered = answers.length >= questions.length;
     const progress = ((answers.length) / questions.length) * 100;
+    const correctSoFar = answers.filter((a) => a.isCorrect).length;
+    const wrongSoFar = answers.length - correctSoFar;
+
+    if (flashMode) {
+      return (
+        <div className="test-running test-running--flash">
+          <div className="test-progress">
+            <div className="test-progress__bar" style={{ width: `${progress}%` }} />
+          </div>
+          <div className="flash-header">
+            <span className="flash-counter flash-counter--correct">✓ {correctSoFar}</span>
+            <span className="flash-counter flash-counter--wrong">✗ {wrongSoFar}</span>
+            <span className="muted">{answers.length} / {questions.length}</span>
+          </div>
+
+          <QuestionCard
+            question={question}
+            selectedLetter={selectedLetter}
+            onSelect={handleSelectOption}
+            disabled={answered}
+            showCorrectAnswer={correctAt === "immediately"}
+            hideExplanation
+          />
+        </div>
+      );
+    }
 
     return (
       <div className="test-running">
@@ -507,6 +544,18 @@ export default function TestScreen() {
         </label>
       </div>
 
+      <div className="test-config__flash">
+        <label className="flash-toggle">
+          <input
+            type="checkbox"
+            checked={flashMode}
+            onChange={(e) => setFlashMode(e.target.checked)}
+          />
+          <span>⚡ Mode Flash</span>
+          <span className="muted" style={{ fontSize: "0.8rem", marginLeft: "0.35rem" }}>— sense explicacions, resposta ràpida</span>
+        </label>
+      </div>
+
       <div className="test-config__actions">
         <button
           type="button"
@@ -514,7 +563,7 @@ export default function TestScreen() {
           onClick={startTest}
           disabled={!canStart}
         >
-          Començar test
+          {flashMode ? "⚡ Començar Flash" : "Començar test"}
         </button>
       </div>
     </div>
