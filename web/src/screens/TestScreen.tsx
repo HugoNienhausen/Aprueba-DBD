@@ -8,7 +8,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   getTopics,
   getQuestionsByTopicId,
-  getQuestionsRandom,
   getFailedQuestionIds,
   getUnansweredQuestionIds,
   getUnansweredCountByTopic,
@@ -23,7 +22,7 @@ import QuestionCard from "../components/QuestionCard";
 import Jumper, { type JumperItemState } from "../components/Jumper";
 
 type TestMode = TestSessionMode;
-type TestKind = "by_selection" | "random" | "failed" | "unanswered";
+type TestKind = "by_selection" | "failed" | "unanswered";
 
 const QUESTION_COUNT_OPTIONS = [10, 15, 20, 25, 30, 50] as const;
 
@@ -72,10 +71,7 @@ export default function TestScreen() {
   const [unansweredCount, setUnansweredCount] = useState<number | null>(null);
   const [unansweredByTopic, setUnansweredByTopic] = useState<Record<string, number>>({});
   const [unansweredTopicIds, setUnansweredTopicIds] = useState<string[]>([]);
-  const [kind, setKind] = useState<TestKind>(() => {
-    const saved = localStorage.getItem("test-selected-topics");
-    return saved ? "by_selection" : "random";
-  });
+  const [kind, setKind] = useState<TestKind>("by_selection");
   const [selectedTopicIds, setSelectedTopicIds] = useState<string[]>(() => {
     try {
       return JSON.parse(localStorage.getItem("test-selected-topics") ?? "[]");
@@ -158,15 +154,13 @@ export default function TestScreen() {
 
     const n = Math.max(1, questionCount);
     let qs: Question[] = [];
-    const mode: TestMode = kind === "random" ? "random" : kind === "failed" ? "failed" : "by_topic";
+    const mode: TestMode = kind === "failed" ? "failed" : "by_topic";
 
     if (kind === "by_selection") {
       const byTopic = await Promise.all(selectedTopicIds.map((id) => getQuestionsByTopicId(id)));
       const merged = byTopic.flat().sort((a, b) => a.number - b.number);
       const unique = Array.from(new Map(merged.map((q) => [q.id, q])).values());
       qs = shuffle(unique).slice(0, n);
-    } else if (kind === "random") {
-      qs = await getQuestionsRandom(n);
     } else if (kind === "unanswered") {
       const ids = await getUnansweredQuestionIds(unansweredTopicIds.length > 0 ? unansweredTopicIds : undefined);
       const limited = shuffle(ids).slice(0, n);
@@ -359,7 +353,6 @@ export default function TestScreen() {
 
   const canStart =
     (kind === "by_selection" && selectedTopicIds.length > 0) ||
-    kind === "random" ||
     (kind === "failed" && (failedCount ?? 0) > 0) ||
     (kind === "unanswered" && (unansweredCount ?? 0) > 0);
 
@@ -373,19 +366,10 @@ export default function TestScreen() {
       <div className="test-options">
         <button
           type="button"
-          className={`test-option ${kind === "random" ? "test-option--active" : ""}`}
-          onClick={() => setKind("random")}
-        >
-          <span className="test-option__title">Aleatori</span>
-          <span className="test-option__desc">De tots els temes</span>
-        </button>
-
-        <button
-          type="button"
           className={`test-option ${kind === "by_selection" ? "test-option--active" : ""}`}
           onClick={() => setKind("by_selection")}
         >
-          <span className="test-option__title">Selecció de temes</span>
+          <span className="test-option__title">Aleatori per temes</span>
           <span className="test-option__desc">Tria els temes o subtemes que vulguis practicar</span>
         </button>
         {kind === "by_selection" && (
