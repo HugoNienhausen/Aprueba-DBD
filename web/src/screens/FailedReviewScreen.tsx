@@ -137,7 +137,7 @@ export default function FailedReviewScreen() {
       </p>
 
       <p className="mt-2">
-        <Link to="/topics" className="link-plain">← Tornar a temes</Link> · <Link to="/test" className="link-plain">Fer test</Link>
+        <Link to="/test" className="link-plain">← Sortir del test</Link>
       </p>
     </div>
   );
