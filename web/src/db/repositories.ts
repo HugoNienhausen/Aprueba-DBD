@@ -106,7 +106,15 @@ export async function getQuestionsRandom(limit: number): Promise<Question[]> {
 export async function getFailedQuestionIds(): Promise<string[]> {
   const db = await getDb();
   const stmt = db.prepare(
-    "SELECT DISTINCT question_id FROM user_answers WHERE is_correct = 0"
+    `SELECT DISTINCT question_id FROM user_answers WHERE is_correct = 0
+     AND question_id NOT IN (
+       SELECT a.question_id FROM user_answers a
+       WHERE a.is_correct = 1
+       AND a.answered_at = (
+         SELECT MAX(a2.answered_at) FROM user_answers a2
+         WHERE a2.question_id = a.question_id
+       )
+     )`
   );
   const ids: string[] = [];
   while (stmt.step()) ids.push((stmt.get()[0] as string) ?? "");

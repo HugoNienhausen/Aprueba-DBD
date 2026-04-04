@@ -8,10 +8,16 @@ import { getFailedQuestionIds, getQuestionById, saveUserAnswer } from "../repos"
 import type { Question, OptionLetter } from "../types";
 import QuestionCard from "../components/QuestionCard";
 
+interface AnswerRecord {
+  questionId: string;
+  selectedLetter: OptionLetter;
+}
+
 export default function FailedReviewScreen() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedLetter, setSelectedLetter] = useState<OptionLetter | null>(null);
+  const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,6 +26,7 @@ export default function FailedReviewScreen() {
     setError(null);
     setCurrentIndex(0);
     setSelectedLetter(null);
+    setAnswers([]);
     getFailedQuestionIds()
       .then((ids) => Promise.all(ids.map((id) => getQuestionById(id))))
       .then((resolved) => {
@@ -35,8 +42,10 @@ export default function FailedReviewScreen() {
     if (questions.length === 0) return;
     const question = questions[currentIndex];
     if (!question) return;
+    if (answers.some((a) => a.questionId === question.id)) return;
     const isCorrect = letter === question.correctLetter;
     setSelectedLetter(letter);
+    setAnswers((prev) => [...prev, { questionId: question.id, selectedLetter: letter }]);
     saveUserAnswer({
       questionId: question.id,
       selectedLetter: letter,
@@ -44,6 +53,28 @@ export default function FailedReviewScreen() {
       testSessionId: null,
       answeredAt: new Date().toISOString(),
     }).catch((err) => console.error("saveUserAnswer failed:", err));
+  };
+
+  const goNext = () => {
+    if (currentIndex >= questions.length - 1) return;
+    const nextIndex = currentIndex + 1;
+    const existing = answers.find((a) => a.questionId === questions[nextIndex]?.id);
+    setCurrentIndex(nextIndex);
+    setSelectedLetter(existing?.selectedLetter ?? null);
+  };
+
+  const goPrev = () => {
+    if (currentIndex <= 0) return;
+    const prevIndex = currentIndex - 1;
+    const existing = answers.find((a) => a.questionId === questions[prevIndex]?.id);
+    setCurrentIndex(prevIndex);
+    setSelectedLetter(existing?.selectedLetter ?? null);
+  };
+
+  const goTo = (i: number) => {
+    const existing = answers.find((a) => a.questionId === questions[i]?.id);
+    setCurrentIndex(i);
+    setSelectedLetter(existing?.selectedLetter ?? null);
   };
 
   if (loading) return <p className="muted">Carregant preguntes fallades…</p>;
@@ -79,28 +110,16 @@ export default function FailedReviewScreen() {
       />
 
       <div className="nav-questions">
-        <button
-          type="button"
-          className="btn btn--secondary"
-          onClick={() => {
-            setCurrentIndex((i) => Math.max(0, i - 1));
-            setSelectedLetter(null);
-          }}
-          disabled={currentIndex === 0}
-        >
-          ← Anterior
-        </button>
-        <button
-          type="button"
-          className="btn btn--secondary"
-          onClick={() => {
-            setCurrentIndex((i) => Math.min(questions.length - 1, i + 1));
-            setSelectedLetter(null);
-          }}
-          disabled={currentIndex === questions.length - 1}
-        >
-          Següent →
-        </button>
+        {currentIndex > 0 && (
+          <button type="button" className="btn btn--secondary" onClick={goPrev}>
+            ← Anterior
+          </button>
+        )}
+        {currentIndex < questions.length - 1 && (
+          <button type="button" className="btn btn--secondary" onClick={goNext}>
+            Següent →
+          </button>
+        )}
       </div>
 
       <p className="jumper-wrap">
@@ -110,10 +129,7 @@ export default function FailedReviewScreen() {
             key={i}
             type="button"
             className={currentIndex === i ? "current" : ""}
-            onClick={() => {
-              setCurrentIndex(i);
-              setSelectedLetter(null);
-            }}
+            onClick={() => goTo(i)}
           >
             {i + 1}
           </button>
