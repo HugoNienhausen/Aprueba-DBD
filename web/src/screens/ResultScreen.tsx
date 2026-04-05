@@ -3,10 +3,8 @@
  * X/N, porcentaje, listado de todas las preguntas (acertadas y falladas).
  */
 
-import { useEffect, useRef } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import ExplanationBlock from "../components/ExplanationBlock";
-import StarPrompt, { recordTestCompleted, shouldShowStar } from "../components/StarPrompt";
 import type { Question } from "../types";
 
 interface AnswerItem {
@@ -45,16 +43,6 @@ export default function ResultScreen() {
   const wrongAnswers = allAnswers.filter((a) => !a.isCorrect);
   const correctAnswers = allAnswers.filter((a) => a.isCorrect);
 
-  const recordedRef = useRef(false);
-  useEffect(() => {
-    if (hasResult && !recordedRef.current) {
-      recordedRef.current = true;
-      recordTestCompleted();
-    }
-  }, [hasResult]);
-
-  const showStar = hasResult && shouldShowStar(percentage);
-
   return (
     <div>
       <h1 className="page-title">Resultat del test</h1>
@@ -66,8 +54,6 @@ export default function ResultScreen() {
           <p className="muted mb-2">
             {percentage}% d'encerts
           </p>
-
-          {showStar && <StarPrompt percentage={percentage} />}
 
           {wrongAnswers.length > 0 && (
             <>
