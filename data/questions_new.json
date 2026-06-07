@@ -6606,27 +6606,27 @@
       "id": "q_293",
       "number": 293,
       "topicId": "7.4",
-      "text": "¿Quin és típicament l'ordre (normalment representat per la lletra \"d\") d'un índex tipus arbre?",
+      "text": " | T | representa el nombre de ... de la taula T.",
       "options": [
         {
           "letter": "A",
-          "text": "Menor que 10"
+          "text": "Atributs"
         },
         {
           "letter": "B",
-          "text": "Entre 10 i 50"
+          "text": "Bytes"
         },
         {
           "letter": "C",
-          "text": "Entre 50 i 100"
+          "text": "Files"
         },
         {
           "letter": "D",
-          "text": "Major que 100"
+          "text": "Blocs"
         }
       ],
       "correctLetter": "C",
-      "explicacion": "**Resum Ràpid:**  \nL’ordre *d* d’un índex en arbre (com un B+Tree) sol ser alt perquè cada node pot contenir moltes claus i punters dins d’un bloc de disc. Per això, típicament està entre **50 i 100**.\n\n**Explicació Detallada:**  \nL’ordre depèn de la mida del bloc i de l’espai que ocupen les claus i els punters. Com que un node s’ajusta a una pàgina de disc i aquests elements solen ser petits, hi caben moltes entrades per node. Això fa que els B+Tree tinguin fan-out alt i poca alçada, reduint el cost d’E/S.\n\n**Anàlisi d'opcions falses:**  \n**A)** Massa petit: donaria arbres massa alts i pitjor rendiment.  \n**B)** Possible en alguns casos, però no és el valor típic més habitual.  \n**D)** Pot passar amb blocs grans o claus petites, però no és el rang típic estàndard."
+      "explicacion": "**Resum Ràpid:** La notació $|T|$ indica la cardinalitat de la relació $T$, és a dir, el seu nombre de files (tuples).**Explicació Detallada:** En disseny i optimització de consultes, $|T|$ representa la quantitat total de registres que té una taula. És una estadística fonamental que utilitza l'optimitzador del SGBD per estimar els costos dels plans d'execució.**Anàlisi d'opcions falses:** **A)** El nombre de columnes (grau d'una relació) no s'indica amb aquesta notació. **B)** La mida física en bytes s'expressa de forma diferent. **D)** El nombre de blocs de disc s'acostuma a denotar de manera estàndard com a $B(T)$."
     },
     {
       "id": "q_294",
