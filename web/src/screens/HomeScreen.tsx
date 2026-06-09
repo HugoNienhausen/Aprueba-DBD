@@ -98,7 +98,7 @@ export default function HomeScreen() {
             className="btn btn--secondary btn--large"
             style={{ borderColor: "#1DA1F2", color: "inherit" }} // Toque de estilo opcional
           >
-            💪 Motivación
+            😢
           </button>
         </div>
 
@@ -173,20 +173,11 @@ export default function HomeScreen() {
               &times;
             </button>
 
-            <h2 style={{ marginTop: 0, textAlign: "center", fontSize: "1.5rem" }}>¡A por el parcial! 🐐</h2>
+            <h2 style={{ marginTop: 0, textAlign: "center", fontSize: "1.5rem" }}>🐐</h2>
 
             {/* Contenedor del vídeo de TikTok */}
             <div style={{ display: "flex", justifyContent: "center", overflow: "hidden", marginTop: "15px" }}>
-              <blockquote
-                className="tiktok-embed"
-                cite="https://www.tiktok.com/@bicho_lover19/video/7643591450864651552"
-                data-video-id="7643591450864651552"
-                style={{ maxWidth: "100%", width: "325px", margin: "0 auto" }}
-              >
-                <section>
-                  <a target="_blank" rel="noreferrer" title="@bicho_lover19" href="https://www.tiktok.com/@bicho_lover19?refer=embed">@bicho_lover19</a>
-                </section>
-              </blockquote>
+              <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@bicho_lover19/video/7648997389629410593" data-video-id="7648997389629410593" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@bicho_lover19" href="https://www.tiktok.com/@bicho_lover19?refer=embed">@bicho_lover19</a> GRACIAS POR EL 1M DE VISITAS🥹🫶. <a title="elbicho" target="_blank" href="https://www.tiktok.com/tag/elbicho?refer=embed">#elbicho</a> <a title="escuela" target="_blank" href="https://www.tiktok.com/tag/escuela?refer=embed">#escuela</a> <a title="motivacion" target="_blank" href="https://www.tiktok.com/tag/motivacion?refer=embed">#motivacion</a> <a title="futbol" target="_blank" href="https://www.tiktok.com/tag/futbol?refer=embed">#futbol</a> <a target="_blank" title="♬ sonido original - BICHO_LOVER✨✨" href="https://www.tiktok.com/music/sonido-original-7648997402669550368?refer=embed">♬ sonido original - BICHO_LOVER✨✨</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
             </div>
 
             <button
