@@ -29,6 +29,8 @@ function useCountdown(target: Date) {
 export default function HomeScreen() {
   const [result, setResult] = useState<BootstrapResult | null>(null);
   const countdown = useCountdown(EXAM_DATE);
+
+  // Carga de los datos de la base de datos
   useEffect(() => {
     ensureDataLoaded()
       .then(setResult)
@@ -38,6 +40,18 @@ export default function HomeScreen() {
           error: err instanceof Error ? err.message : String(err),
         });
       });
+  }, []);
+
+  // Carga del script de TikTok para que el iframe se renderice correctamente en React
+  useEffect(() => {
+    const scriptId = "tiktok-embed-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://www.tiktok.com/embed.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
   }, []);
 
   if (result === null) {
@@ -50,6 +64,7 @@ export default function HomeScreen() {
       </div>
     );
   }
+
   return (
     <div className="home">
       <div className="home__center">
@@ -78,10 +93,34 @@ export default function HomeScreen() {
             <p className="home__sidebar-value">{countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</p>
           </div>
         )}
+
+        {/* Componente del vídeo de TikTok */}
+        <div className="home__sidebar-card">
+          <p className="home__sidebar-label">Motivación</p>
+          <div style={{ display: "flex", justifyContent: "center", overflow: "hidden" }}>
+            <blockquote
+              className="tiktok-embed"
+              cite="https://www.tiktok.com/@bicho_lover19/video/7643591450864651552"
+              data-video-id="7643591450864651552"
+              style={{ maxWidth: "605px", minWidth: "325px", margin: 0 }}
+            >
+              <section>
+                <a target="_blank" rel="noreferrer" title="@bicho_lover19" href="https://www.tiktok.com/@bicho_lover19?refer=embed">@bicho_lover19</a> OLEEEE..
+                <a title="motivacion" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/motivacion?refer=embed">#motivacion</a>
+                <a title="elbicho" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/elbicho?refer=embed">#elbicho</a>
+                <a title="frase" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/frase?refer=embed">#frase</a>
+                <a title="fyp" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a>
+                <a title="parati" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/parati?refer=embed">#parati</a>
+                <a target="_blank" rel="noreferrer" title="♬ sonido original - BICHO_LOVER✨✨" href="https://www.tiktok.com/music/sonido-original-7643591477154663200?refer=embed">♬ sonido original - BICHO_LOVER✨✨</a>
+              </section>
+            </blockquote>
+          </div>
+        </div>
+
         <div className="home__sidebar-card home__sidebar-card--star">
           <p className="home__sidebar-label">T'està ajudant?</p>
           <a href={GITHUB_REPO} target="_blank" rel="noopener noreferrer" className="home__star-link">
-            <svg className="home__star-gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+            <svg className="home__star-gh" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.63-.735-3.63-.735-.39-.99-.96-1.255-.96-1.255-.78-.53.06-.52.06-.52.765.055 1.17.795 1.17.795.765 1.305 2.025.93 2.52.71.075-.555.3-.93.54-1.14-1.875-.21-3.855-.945-3.855-4.215 0-.93.33-1.695.87-2.295-.09-.21-.375-1.065.09-2.22 0 0 .705-.225 2.31.855.675-.195 1.395-.285 2.115-.285.72 0 1.44.09 2.115.285 1.605-1.08 2.31-.855 2.31-.855.465 1.155.18 2.01.09 2.22.54.6.87 1.365.87 2.295 0 3.27-1.95 4.005-3.81 4.215.3.255.57.765.57 1.53 0 1.11-.015 2.01-.015 2.28 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
             ⭐ Dona suport a GitHub
