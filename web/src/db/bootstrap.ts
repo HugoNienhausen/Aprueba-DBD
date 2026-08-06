@@ -1,5 +1,5 @@
 /**
- * Tarea 0.4: ensure data is loaded on app startup.
+ * Ensures data is loaded on app startup.
  * If DB has no topics/questions, fetch questions.json and import.
  */
 
@@ -9,14 +9,15 @@ import { importFromJson } from "./import";
 import { getDb } from "./init";
 import { getTopics } from "./repositories";
 
-const QUESTIONS_JSON_URL = "/data/questions_new.json";
+const QUESTIONS_JSON_URL = "/data/questions.json";
 
 /**
- * Bump this version whenever questions data changes.
- * Users with an older version will get a transparent re-import
- * without losing their test history (user_answers, test_sessions).
+ * Bump this version whenever questions data changes (run `npm run sync-data`,
+ * it does this automatically). Users with an older version will get a
+ * transparent re-import without losing their test history
+ * (user_answers, test_sessions).
  */
-const DATA_VERSION = 6;
+const DATA_VERSION = 8;
 const DATA_VERSION_KEY = "data_version";
 
 export type BootstrapResult =

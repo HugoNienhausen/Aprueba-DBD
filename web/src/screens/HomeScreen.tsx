@@ -28,10 +28,9 @@ function useCountdown(target: Date) {
 
 export default function HomeScreen() {
   const [result, setResult] = useState<BootstrapResult | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar el modal
   const countdown = useCountdown(EXAM_DATE);
 
-  // 1. Carga de los datos de la base de datos
+  // Carga de los datos de la base de datos
   useEffect(() => {
     ensureDataLoaded()
       .then(setResult)
@@ -42,27 +41,6 @@ export default function HomeScreen() {
         });
       });
   }, []);
-
-  // 2. Renderizar TikTok cuando se abre el modal
-  useEffect(() => {
-    if (isModalOpen) {
-      // Damos un pequeñísimo margen para que React pinte el HTML antes de que TikTok lo busque
-      setTimeout(() => {
-        if ((window as any).tiktokEmbed) {
-          (window as any).tiktokEmbed.lib.render();
-        } else {
-          const scriptId = "tiktok-embed-script";
-          if (!document.getElementById(scriptId)) {
-            const script = document.createElement("script");
-            script.id = scriptId;
-            script.src = "https://www.tiktok.com/embed.js";
-            script.async = true;
-            document.body.appendChild(script);
-          }
-        }
-      }, 100);
-    }
-  }, [isModalOpen]);
 
   if (result === null) {
     return <p className="muted">Carregant base de dades…</p>;
@@ -84,7 +62,7 @@ export default function HomeScreen() {
           <p className="home__intro-line">de l'assignatura <strong>Disseny de Bases de Dades (DBD)</strong> de la FIB.</p>
         </div>
 
-        {/* Botones principales actualizados */}
+        {/* Botones principales */}
         <div className="btn-group home__actions">
           <Link to="/topics" className="btn btn--primary btn--large">
             Veure temes
@@ -92,14 +70,6 @@ export default function HomeScreen() {
           <Link to="/test" className="btn btn--secondary btn--large">
             Fer test
           </Link>
-          {/* NUEVO BOTÓN DE MOTIVACIÓN */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="btn btn--secondary btn--large"
-            style={{ borderColor: "#1DA1F2", color: "inherit" }} // Toque de estilo opcional
-          >
-            😢
-          </button>
         </div>
 
         <p className="home__meta muted">
@@ -125,85 +95,6 @@ export default function HomeScreen() {
           </a>
         </div>
       </div>
-
-      {/* --- MODAL (TARJETA FLOTANTE) --- */}
-      {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0, left: 0, right: 0, bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 9999,
-            padding: "20px"
-          }}
-          onClick={() => setIsModalOpen(false)} // Cierra al hacer clic fuera
-        >
-          <div
-            style={{
-              backgroundColor: "var(--bg-card, #ffffff)", // Soporte para modo claro/oscuro
-              color: "var(--text-main, #000)",
-              borderRadius: "16px",
-              padding: "20px",
-              position: "relative",
-              maxWidth: "400px",
-              width: "100%",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.5)"
-            }}
-            onClick={(e) => e.stopPropagation()} // Evita que se cierre al hacer clic dentro
-          >
-            {/* Botón de cerrar */}
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                position: "absolute",
-                top: "15px",
-                right: "15px",
-                background: "none",
-                border: "none",
-                fontSize: "24px",
-                cursor: "pointer",
-                color: "inherit",
-                lineHeight: "1"
-              }}
-              aria-label="Cerrar modal"
-            >
-              &times;
-            </button>
-
-            <h2 style={{ marginTop: 0, textAlign: "center", fontSize: "1.5rem" }}>🐐</h2>
-
-            {/* Contenedor del vídeo de TikTok convertido a JSX */}
-            <div style={{ display: "flex", justifyContent: "center", overflow: "hidden", marginTop: "15px" }}>
-              <blockquote
-                className="tiktok-embed"
-                cite="https://www.tiktok.com/@bicho_lover19/video/7648997389629410593"
-                data-video-id="7648997389629410593"
-                style={{ maxWidth: "100%", width: "325px", margin: "0 auto" }}
-              >
-                <section>
-                  <a target="_blank" rel="noreferrer" title="@bicho_lover19" href="https://www.tiktok.com/@bicho_lover19?refer=embed">@bicho_lover19</a> GRACIAS POR EL 1M DE VISITAS🥹🫶.
-                  <a title="elbicho" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/elbicho?refer=embed">#elbicho</a>
-                  <a title="escuela" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/escuela?refer=embed">#escuela</a>
-                  <a title="motivacion" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/motivacion?refer=embed">#motivacion</a>
-                  <a title="futbol" target="_blank" rel="noreferrer" href="https://www.tiktok.com/tag/futbol?refer=embed">#futbol</a>
-                  <a target="_blank" rel="noreferrer" title="♬ sonido original - BICHO_LOVER✨✨" href="https://www.tiktok.com/music/sonido-original-7648997402669550368?refer=embed">♬ sonido original - BICHO_LOVER✨✨</a>
-                </section>
-              </blockquote>
-            </div>
-
-            <button
-              className="btn btn--primary"
-              style={{ width: "100%", marginTop: "15px" }}
-              onClick={() => setIsModalOpen(false)}
-            >
-              Cerrar y seguir estudiando
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

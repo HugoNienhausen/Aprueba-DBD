@@ -1,22 +1,42 @@
 #!/usr/bin/env python3
 """
-Genera questions_new.json con explicaciones regeneradas usando GPT-5.4.
-Usa el sistema de prompts variables según el tema de cada pregunta.
+Generates/fills the "explicacion" (explanation) field for questions in
+data/questions.json using the OpenAI API.
+
+By default it only processes questions that don't have an explanation yet
+(explicacion is null or empty), so it's safe to run after adding new
+questions by hand. Use --all to regenerate every explanation.
+
+Usage (from repo root):
+  export OPENAI_API_KEY=sk-...
+  pip install -r scripts/requirements.txt
+  python scripts/generate_explanations.py            # only fills missing ones
+  python scripts/generate_explanations.py --all       # regenerate everything
+  python scripts/generate_explanations.py --limit 5   # test on a few questions
+  python scripts/generate_explanations.py --dry-run   # don't save, just print
+
+The script writes to data/questions.json in place. It saves progress
+periodically to data/questions.json.progress so it can be resumed if it's
+interrupted or a question fails.
+
+After running this, remember to run `npm run sync-data` (or
+`python scripts/sync_to_web.py`) so the web app picks up the new file.
 """
 
+import argparse
 import json
 import os
+import sys
 import time
-from openai import OpenAI
+from pathlib import Path
 
-# ── Configuración ──────────────────────────────────────────────────────────
-MODEL = "gpt-5.4"
-INPUT_FILE = os.path.join(os.path.dirname(__file__), "data", "questions.json")
-OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "data", "questions_new.json")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_JSON = REPO_ROOT / "data" / "questions.json"
 
-client = OpenAI()  # usa OPENAI_API_KEY del entorno
+# Change this if you want to use a different OpenAI model.
+DEFAULT_MODEL = "gpt-4o-mini"
 
-# ── System Prompt fijo ─────────────────────────────────────────────────────
+# ── System prompt ───────────────────────────────────────────────────────────
 SYSTEM_PROMPT = """Eres un profesor universitario experto en Diseño de Bases de Datos, concretamente de la Universitat Politècnica de Catalunya (UPC). Tu tarea es explicar a los alumnos la solución de preguntas de opción múltiple (test) de forma clara, técnica y rigurosa.
 
 Para cada pregunta proporcionada, generarás una respuesta estructurada siguiendo estrictamente estas reglas:
@@ -35,7 +55,10 @@ Anàlisi d'opcions falses: Explica de forma muy concisa (1 o 2 líneas por opci�
 
 Mantén un tono académico, directo y pedagógico."""
 
-# ── Diccionario de contextos teóricos por tema ─────────────────────────────
+# ── Theoretical context per topic ───────────────────────────────────────────
+# Keyed by the main topic number (e.g. topicId "4.3" -> context "4").
+# If you add questions under a brand-new main topic number that isn't listed
+# here, the script will still work but will use a generic/empty context.
 CONTEXTOS = {
     "0": (
         "Conceptos fundamentales de sistemas de información. Diferencias entre "
@@ -154,13 +177,12 @@ CONTEXTOS = {
 
 
 def get_tema_number(topic_id: str) -> str:
-    """Extrae el número de tema del topicId (ej. '4.3' -> '4')."""
+    """Extracts the main topic number from a topicId (e.g. '4.3' -> '4')."""
     return topic_id.split(".")[0]
 
 
 def build_user_prompt(question: dict) -> str:
-    """Construye el user prompt variable para una pregunta."""
-    tema = get_tema_number(question["topicId"])
+    tema = get_tema_number(question.get("topicId", ""))
     contexto = CONTEXTOS.get(tema, "")
 
     opciones = "\n".join(
@@ -181,10 +203,9 @@ Opciones:
 Respuesta Correcta: {question['correctLetter']}"""
 
 
-def generate_explanation(question: dict) -> str:
-    """Llama a GPT-5.4 para generar la explicación de una pregunta."""
+def generate_explanation(question: dict, client, model: str) -> str:
     response = client.chat.completions.create(
-        model=MODEL,
+        model=model,
         temperature=0.0,
         top_p=0.1,
         messages=[
@@ -195,63 +216,116 @@ def generate_explanation(question: dict) -> str:
     return response.choices[0].message.content.strip()
 
 
-def main():
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Genera explicaciones para data/questions.json usando OpenAI."
+    )
+    parser.add_argument(
+        "--all", action="store_true",
+        help="Regenerar TODAS las explicaciones (por defecto solo las que faltan).",
+    )
+    parser.add_argument("--limit", type=int, default=0, help="Procesar como máximo N preguntas.")
+    parser.add_argument("--dry-run", action="store_true", help="No guardar; solo simular.")
+    parser.add_argument("--model", type=str, default=DEFAULT_MODEL, help=f"Modelo OpenAI (por defecto {DEFAULT_MODEL}).")
+    parser.add_argument("--input", type=Path, default=DEFAULT_JSON, help="Ruta del JSON (por defecto data/questions.json).")
+    args = parser.parse_args()
+
+    if not os.environ.get("OPENAI_API_KEY"):
+        print("Error: define OPENAI_API_KEY en el entorno. Ej:\n  export OPENAI_API_KEY=sk-...", file=sys.stderr)
+        sys.exit(1)
+
+    try:
+        from openai import OpenAI
+    except ImportError:
+        print("Error: instala las dependencias: pip install -r scripts/requirements.txt", file=sys.stderr)
+        sys.exit(1)
+
+    if not args.input.exists():
+        print(f"Error: no existe {args.input}", file=sys.stderr)
+        sys.exit(1)
+
+    with open(args.input, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     questions = data["questions"]
-    total = len(questions)
-    print(f"Procesando {total} preguntas con {MODEL}...")
 
-    # Cargar progreso parcial si existe (para poder reanudar)
-    progress_file = OUTPUT_FILE + ".progress"
-    processed = {}
-    if os.path.exists(progress_file):
+    if args.all:
+        to_process = questions
+    else:
+        to_process = [q for q in questions if not q.get("explicacion")]
+
+    if args.limit > 0:
+        to_process = to_process[: args.limit]
+
+    total = len(to_process)
+    if total == 0:
+        print("No hay preguntas que procesar (todas ya tienen explicación). Usa --all para regenerar todas.")
+        return
+
+    print(f"Procesando {total} pregunta(s) con el modelo '{args.model}'...")
+
+    client = OpenAI()
+
+    progress_file = Path(str(args.input) + ".progress")
+    processed: dict[str, str] = {}
+    if progress_file.exists():
         with open(progress_file, "r", encoding="utf-8") as f:
             processed = json.load(f)
-        print(f"  Reanudando: {len(processed)} preguntas ya procesadas.")
+        print(f"  Reanudando: {len(processed)} pregunta(s) ya procesadas en un intento anterior.")
 
-    for i, q in enumerate(questions):
+    updated = 0
+    for i, q in enumerate(to_process):
         qid = q["id"]
+
         if qid in processed:
             q["explicacion"] = processed[qid]
             continue
 
-        try:
-            new_exp = generate_explanation(q)
-            q["explicacion"] = new_exp
-            processed[qid] = new_exp
+        if args.dry_run:
+            print(f"  [{i + 1}/{total}] (dry-run) {qid}")
+            continue
 
-            # Guardar progreso cada 10 preguntas
+        try:
+            explanation = generate_explanation(q, client, args.model)
+            q["explicacion"] = explanation
+            processed[qid] = explanation
+            updated += 1
+            print(f"  [{i + 1}/{total}] OK {qid}")
+
             if (i + 1) % 10 == 0:
                 with open(progress_file, "w", encoding="utf-8") as f:
                     json.dump(processed, f, ensure_ascii=False)
-                print(f"  [{i + 1}/{total}] ✓ progreso guardado")
-            else:
-                print(f"  [{i + 1}/{total}] ✓ {qid}")
 
         except Exception as e:
-            print(f"  [{i + 1}/{total}] ✗ Error en {qid}: {e}")
-            # Guardar progreso antes de fallar
+            print(f"  [{i + 1}/{total}] ERROR en {qid}: {e}")
             with open(progress_file, "w", encoding="utf-8") as f:
                 json.dump(processed, f, ensure_ascii=False)
-            print(f"  Progreso guardado. Reejecutar el script para continuar.")
-            # Esperar y reintentar en caso de rate limit
-            if "rate" in str(e).lower():
+            print("  Progreso guardado. Vuelve a ejecutar el script para continuar donde se quedó.")
+            if "rate" in str(e).lower() or "429" in str(e):
                 print("  Rate limit detectado, esperando 30s...")
                 time.sleep(30)
                 continue
             raise
 
-    # Escribir archivo final
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    if args.dry_run:
+        print(f"\n[dry-run] Se habrían procesado {total} pregunta(s). No se ha guardado nada.")
+        return
+
+    if updated == 0:
+        print("\nNo se generó ninguna explicación nueva.")
+        return
+
+    # Write atomically: write to a temp file, then replace the original.
+    tmp_path = args.input.with_suffix(args.input.suffix + ".tmp")
+    with open(tmp_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    tmp_path.replace(args.input)
 
-    # Limpiar archivo de progreso
-    if os.path.exists(progress_file):
-        os.remove(progress_file)
+    if progress_file.exists():
+        progress_file.unlink()
 
-    print(f"\n✓ Archivo generado: {OUTPUT_FILE}")
+    print(f"\nListo. {updated} explicación(es) generada(s) y guardadas en {args.input}")
+    print("Recuerda ejecutar `npm run sync-data` para actualizar la web.")
 
 
 if __name__ == "__main__":

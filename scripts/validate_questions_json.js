@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Validates data/questions.json against Tarea 0.2 types (ARQUITECTURA §3, §4).
+ * Validates that data/questions.json has the shape the web app expects.
  * Run from repo root: node scripts/validate_questions_json.js
  */
 const fs = require("fs");
@@ -52,4 +52,4 @@ if (errors.length) {
 }
 
 console.log("OK: topics=" + data.topics.length + ", questions=" + data.questions.length);
-console.log("JSON matches Tarea 0.2 types (Topic, Question, QuestionOption, correctLetter, topicId).");
+console.log("data/questions.json has a valid shape.");

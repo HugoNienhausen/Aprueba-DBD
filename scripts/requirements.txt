@@ -1,5 +1,2 @@
-# PDF text extraction (Tarea 0.1)
-pypdf>=4.0.0
-
-# OpenAI explicaciones (Tarea 2.1)
+# Needed by scripts/generate_explanations.py
 openai>=1.0.0
