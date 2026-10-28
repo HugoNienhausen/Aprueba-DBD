@@ -468,7 +468,7 @@
       "id": "q_2",
       "number": 2,
       "topicId": "0.1",
-      "text": "¿Quin NO podem considerar un sinònim?",
+      "text": "Quin NO podem considerar un sinònim?",
       "options": [
         {
           "letter": "A",
@@ -502,7 +502,7 @@
       "id": "q_3",
       "number": 3,
       "topicId": "0.1",
-      "text": "¿Quin NO podem considerar un sinònim?",
+      "text": "Quin NO podem considerar un sinònim?",
       "options": [
         {
           "letter": "A",
@@ -536,7 +536,7 @@
       "id": "q_4",
       "number": 4,
       "topicId": "0.1",
-      "text": "¿Quin NO podem considerar un sinònim?",
+      "text": "Quin NO podem considerar un sinònim?",
       "options": [
         {
           "letter": "A",
@@ -566,7 +566,7 @@
       "id": "q_5",
       "number": 5,
       "topicId": "0.1",
-      "text": "¿Quin NO és un dels subsistemes d’una organització?",
+      "text": "Quin NO és un dels subsistemes d’una organització?",
       "options": [
         {
           "letter": "A",
@@ -592,7 +592,7 @@
       "id": "q_6",
       "number": 6,
       "topicId": "0.1",
-      "text": "¿A quin dels subsistemes d’una organització dona support el subsistema d’informació?",
+      "text": "A quin dels subsistemes d’una organització dona support el subsistema d’informació?",
       "options": [
         {
           "letter": "A",
@@ -618,7 +618,7 @@
       "id": "q_7",
       "number": 7,
       "topicId": "0.2",
-      "text": "¿Quin és un tipus sistema d’informació operational?",
+      "text": "Quin és un tipus sistema d’informació operational?",
       "options": [
         {
           "letter": "A",
@@ -644,7 +644,7 @@
       "id": "q_8",
       "number": 8,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació és orientat a temes?",
+      "text": "Quin tipus de sistema d’informació és orientat a temes?",
       "options": [
         {
           "letter": "A",
@@ -662,7 +662,7 @@
       "id": "q_9",
       "number": 9,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació té més usuaris?",
+      "text": "Quin tipus de sistema d’informació té més usuaris?",
       "options": [
         {
           "letter": "A",
@@ -680,7 +680,7 @@
       "id": "q_10",
       "number": 10,
       "topicId": "0.2",
-      "text": "¿Les consultes de quin tipus de sistema d’informació accedeixen, en general, més tuples?",
+      "text": "Les consultes de quin tipus de sistema d’informació accedeixen, en general, més tuples?",
       "options": [
         {
           "letter": "A",
@@ -698,7 +698,7 @@
       "id": "q_11",
       "number": 11,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació utilitza menys fonts de dades?",
+      "text": "Quin tipus de sistema d’informació utilitza menys fonts de dades?",
       "options": [
         {
           "letter": "A",
@@ -716,7 +716,7 @@
       "id": "q_12",
       "number": 12,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació utilitza accedeix dades atòmiques?",
+      "text": "Quin tipus de sistema d’informació utilitza accedeix dades atòmiques?",
       "options": [
         {
           "letter": "A",
@@ -734,7 +734,7 @@
       "id": "q_13",
       "number": 13,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació utilitza principalment dades històriques?",
+      "text": "Quin tipus de sistema d’informació utilitza principalment dades històriques?",
       "options": [
         {
           "letter": "A",
@@ -774,7 +774,7 @@
       "id": "q_15",
       "number": 15,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació utilitza transaccions?",
+      "text": "Quin tipus de sistema d’informació utilitza transaccions?",
       "options": [
         {
           "letter": "A",
@@ -792,7 +792,7 @@
       "id": "q_16",
       "number": 16,
       "topicId": "0.2",
-      "text": "¿Per a quin tipus de sistemes d’informació es rellevant el seu rendiment (performance)?",
+      "text": "Per a quin tipus de sistemes d’informació és rellevant el seu rendiment (performance)?",
       "options": [
         {
           "letter": "A",
@@ -818,7 +818,7 @@
       "id": "q_17",
       "number": 17,
       "topicId": "0.2",
-      "text": "¿Quin tipus de sistema d’informació ha de gestionar un volum de dades més gran?",
+      "text": "Quin tipus de sistema d’informació ha de gestionar un volum de dades més gran?",
       "options": [
         {
           "letter": "A",
@@ -862,7 +862,7 @@
       "id": "q_19",
       "number": 19,
       "topicId": "0.3",
-      "text": "¿Quin NO és una de les tres fases principals del disseny de bases de dades?",
+      "text": "Quin NO és una de les tres fases principals del disseny de bases de dades?",
       "options": [
         {
           "letter": "A",
@@ -942,7 +942,7 @@
       "id": "q_23",
       "number": 23,
       "topicId": "0.3",
-      "text": "¿Què és el més rellevant pel disseny de la base de dades?",
+      "text": "Què és el més rellevant pel disseny de la base de dades?",
       "options": [
         {
           "letter": "A",
@@ -968,7 +968,7 @@
       "id": "q_24",
       "number": 24,
       "topicId": "0.3",
-      "text": "¿En que es basa el disseny de la base de dades?",
+      "text": "En què es basa el disseny de la base de dades?",
       "options": [
         {
           "letter": "A",
@@ -1012,7 +1012,7 @@
       "id": "q_26",
       "number": 26,
       "topicId": "0.4",
-      "text": "¿Quin dels models ha de ser més expressiu?",
+      "text": "Quin dels models ha de ser més expressiu?",
       "options": [
         {
           "letter": "A",
@@ -1038,7 +1038,7 @@
       "id": "q_27",
       "number": 27,
       "topicId": "0.4",
-      "text": "¿En quina dècada va aparèixer la primera versió de SQL?",
+      "text": "En quina dècada va aparèixer la primera versió de SQL?",
       "options": [
         {
           "letter": "A",
@@ -1100,7 +1100,7 @@
       "id": "q_30",
       "number": 30,
       "topicId": "1.1",
-      "text": "¿Quina NO és una alternativa de disseny?",
+      "text": "Quina NO és una alternativa de disseny?",
       "options": [
         {
           "letter": "A",
@@ -1126,7 +1126,7 @@
       "id": "q_31",
       "number": 31,
       "topicId": "1.1",
-      "text": "¿Quina és la fase de disseny més tardana?",
+      "text": "Quina és la fase de disseny més tardana?",
       "options": [
         {
           "letter": "A",
@@ -1188,7 +1188,7 @@
       "id": "q_34",
       "number": 34,
       "topicId": "1.3",
-      "text": "¿Què NO és relativisme semàntic?",
+      "text": "Què NO és relativisme semàntic?",
       "options": [
         {
           "letter": "A",
@@ -1214,7 +1214,7 @@
       "id": "q_35",
       "number": 35,
       "topicId": "1.3",
-      "text": "Un atribut d’una classe, es pot representar també mitjan¸ cant una associació d’aquesta amb una segona classe.",
+      "text": "Un atribut d’una classe, es pot representar també mitjançant una associació d’aquesta amb una segona classe.",
       "options": [
         {
           "letter": "A",
@@ -1304,7 +1304,7 @@
       "id": "q_40",
       "number": 40,
       "topicId": "1.4",
-      "text": "Utilitzar un zero és equivalent a utilitzar un valornull, sempre que el primer no pertanyi al domini de l’atribut.",
+      "text": "Utilitzar un zero és equivalent a utilitzar un valor null, sempre que el primer no pertanyi al domini de l’atribut.",
       "options": [
         {
           "letter": "A",
@@ -1322,7 +1322,7 @@
       "id": "q_41",
       "number": 41,
       "topicId": "1.4",
-      "text": "¿En quin cas NO s’haurien d’utilitzar valor nulls?",
+      "text": "En quin cas NO s’haurien d’utilitzar valor nulls?",
       "options": [
         {
           "letter": "A",
@@ -1348,7 +1348,7 @@
       "id": "q_42",
       "number": 42,
       "topicId": "1.4",
-      "text": "El problema de tenir molts valorsnullen una taula és que malbaratem espai.",
+      "text": "El problema de tenir molts valors null en una taula és que malbaratem espai.",
       "options": [
         {
           "letter": "A",
@@ -1366,7 +1366,7 @@
       "id": "q_43",
       "number": 43,
       "topicId": "1.4",
-      "text": "¿Quina afirmació es certa?",
+      "text": "Quina afirmació és certa?",
       "options": [
         {
           "letter": "A",
@@ -1410,11 +1410,11 @@
       "id": "q_45",
       "number": 45,
       "topicId": "1.4",
-      "text": "¿Quina afirmació és certa?",
+      "text": "Quina afirmació és certa?",
       "options": [
         {
           "letter": "A",
-          "text": "Una tupla que té un valornulla la clau forana viola la restricció d’integritat"
+          "text": "Una tupla que té un valor nulla la clau forana viola la restricció d’integritat"
         },
         {
           "letter": "B",
@@ -1436,7 +1436,7 @@
       "id": "q_46",
       "number": 46,
       "topicId": "1.4",
-      "text": "Si a l’entrada de l’operació algebraica d’unió hi ha dues files que només tenen valornulla tots els seus atributs, a la sortida tindré només una fila.",
+      "text": "Si a l’entrada de l’operació algebraica d’unió hi ha dues files que només tenen valor nulla tots els seus atributs, a la sortida tindré només una fila.",
       "options": [
         {
           "letter": "A",
@@ -1454,7 +1454,7 @@
       "id": "q_47",
       "number": 47,
       "topicId": "1.4",
-      "text": "Si a l’entrada de l’operació algebraica d’intersecció hi ha dues files (una a cada taula) que només tenen valornulla tots els seus atributs, a la sortida no apareixerà aquesta fila.",
+      "text": "Si a l’entrada de l’operació algebraica d’intersecció hi ha dues files (una a cada taula) que només tenen valor nulla tots els seus atributs, a la sortida no apareixerà aquesta fila.",
       "options": [
         {
           "letter": "A",
@@ -1472,7 +1472,7 @@
       "id": "q_48",
       "number": 48,
       "topicId": "1.4",
-      "text": "Si a l’entrada de l’operació algebraica de diferència hi ha dues files (una a cada taula) que només tenen valornulla tots els seus atributs, a la sortida no apareixerà aquesta fila.",
+      "text": "Si a l’entrada de l’operació algebraica de diferència hi ha dues files (una a cada taula) que només tenen valor nulla tots els seus atributs, a la sortida no apareixerà aquesta fila.",
       "options": [
         {
           "letter": "A",
@@ -1490,7 +1490,7 @@
       "id": "q_49",
       "number": 49,
       "topicId": "1.4",
-      "text": "Si com a resultat d’una operació algebraica de projecció queda més d’una fila que només te valornulla tots els seus atributs, a la sortida apareixerà aquesta fila tantes vegades com la tingues a l’entrada.",
+      "text": "Si com a resultat d’una operació algebraica de projecció queda més d’una fila que només te valor nulla tots els seus atributs, a la sortida apareixerà aquesta fila tantes vegades com la tingues a l’entrada.",
       "options": [
         {
           "letter": "A",
@@ -1508,7 +1508,7 @@
       "id": "q_50",
       "number": 50,
       "topicId": "1.4",
-      "text": "¿Quina de les següents expressions dona error en SQL estàndard?",
+      "text": "Quina de les següents expressions dona error en SQL estàndard?",
       "options": [
         {
           "letter": "A",
@@ -1534,7 +1534,7 @@
       "id": "q_51",
       "number": 51,
       "topicId": "1.4",
-      "text": "El GROUP BY genera un grup per a cada valornullque troba.",
+      "text": "El GROUP BY genera un grup per a cada valor null que troba.",
       "options": [
         {
           "letter": "A",
@@ -1570,7 +1570,7 @@
       "id": "q_53",
       "number": 53,
       "topicId": "1.4",
-      "text": "Sempre puc implementar una diferència indistintament amb un “NOT IN” o un “NOT EX- ISTS”.",
+      "text": "Sempre puc implementar una diferència indistintament amb un “NOT IN” o un “NOT EXISTS”.",
       "options": [
         {
           "letter": "A",
@@ -1588,7 +1588,7 @@
       "id": "q_54",
       "number": 54,
       "topicId": "1.5",
-      "text": "¿Quin NO és un tipus de Generalització/Especialització?",
+      "text": "Quin NO és un tipus de Generalització/Especialització?",
       "options": [
         {
           "letter": "A",
@@ -1650,7 +1650,7 @@
       "id": "q_57",
       "number": 57,
       "topicId": "1.5",
-      "text": "¿Quina de les tres implementacions de Generalització/Especializació NO genera mai nuls ni repeteix valors?",
+      "text": "Quina de les tres implementacions de Generalització/Especializació NO genera mai nuls ni repeteix valors?",
       "options": [
         {
           "letter": "A",
@@ -1676,7 +1676,7 @@
       "id": "q_58",
       "number": 58,
       "topicId": "1.5",
-      "text": "Quan implementem una Generalització/Especializació en un SGBD relacional, sempre cal fer unajoinper consultar juntes totes les dades de la superclasse.",
+      "text": "Quan implementem una Generalització/Especializació en un SGBD relacional, sempre cal fer una join per consultar juntes totes les dades de la superclasse.",
       "options": [
         {
           "letter": "A",
@@ -1694,7 +1694,7 @@
       "id": "q_59",
       "number": 59,
       "topicId": "1.5",
-      "text": "Quan implementem una Generalització/Especializació en un SGBD relacional, sempre cal util- itzar unaouter joinper consultar juntes totes les dades de qualsevol de les subclasses.",
+      "text": "Quan implementem una Generalització/Especializació en un SGBD relacional, sempre cal utilitzar una outer join per consultar juntes totes les dades de qualsevol de les subclasses.",
       "options": [
         {
           "letter": "A",
@@ -1712,7 +1712,7 @@
       "id": "q_60",
       "number": 60,
       "topicId": "1.5",
-      "text": "¿Quin dels tres tipus dejoinNO genera mai valorsnull?",
+      "text": "Quin dels tres tipus de join NO genera mai valors null?",
       "options": [
         {
           "letter": "A",
@@ -1756,7 +1756,7 @@
       "id": "q_62",
       "number": 62,
       "topicId": "1.5",
-      "text": "LaFULL OUTER JOINde dues taules permet obtenir el mateix resultat que unaLEFT OUTER JOINo unaRIGHT OUTER JOIN, simplement afegint un cert predicat alWHERE.",
+      "text": "La FULL OUTER JOIN de dues taules permet obtenir el mateix resultat que una LEFT OUTER JOIN o una RIGHT OUTER JOIN, simplement afegint un cert predicat al WHERE.",
       "options": [
         {
           "letter": "A",
@@ -1774,7 +1774,7 @@
       "id": "q_63",
       "number": 63,
       "topicId": "1.5",
-      "text": "LaFULL OUTER JOINde dues taules és equivalent a fer la unió d’unaLEFT OUTER JOIN i unaRIGHT OUTER JOIN.",
+      "text": "La FULL OUTER JOIN de dues taules és equivalent a fer la unió d’una LEFT OUTER JOIN i una RIGHT OUTER JOIN.",
       "options": [
         {
           "letter": "A",
@@ -1792,7 +1792,7 @@
       "id": "q_64",
       "number": 64,
       "topicId": "1.5",
-      "text": "Quan utilitzem la implementació de l’herència en PostgreSQL, ¿Quina de les següents afirma- cions és certa?",
+      "text": "Quan utilitzem la implementació de l’herència en PostgreSQL, Quina de les següents afirmacions és certa?",
       "options": [
         {
           "letter": "A",
@@ -1818,7 +1818,7 @@
       "id": "q_65",
       "number": 65,
       "topicId": "1.6",
-      "text": "¿Quina NO és una raó per a crear unsurrogate?",
+      "text": "Quina NO és una raó per a crear un surrogate?",
       "options": [
         {
           "letter": "A",
@@ -1862,7 +1862,7 @@
       "id": "q_67",
       "number": 67,
       "topicId": "1.6",
-      "text": "UnaSEQUENCEde PostgreSQL es pot utilitzar a taules diferents.",
+      "text": "Una SEQUENCE de PostgreSQL es pot utilitzar a taules diferents.",
       "options": [
         {
           "letter": "A",
@@ -1880,7 +1880,7 @@
       "id": "q_68",
       "number": 68,
       "topicId": "2.1",
-      "text": "¿Com podem implementar les restriccions d’integritat?",
+      "text": "Com podem implementar les restriccions d’integritat?",
       "options": [
         {
           "letter": "A",
@@ -1888,7 +1888,7 @@
         },
         {
           "letter": "B",
-          "text": "AmbPersistent Stored Modules"
+          "text": "Amb Persistent Stored Modules"
         },
         {
           "letter": "C",
@@ -1906,7 +1906,7 @@
       "id": "q_69",
       "number": 69,
       "topicId": "2.1",
-      "text": "¿La clau primària d’una taula sempre genera automàticament un índex B+ associat?",
+      "text": "La clau primària d’una taula sempre genera automàticament un índex B+ associat?",
       "options": [
         {
           "letter": "A",
@@ -1924,7 +1924,7 @@
       "id": "q_70",
       "number": 70,
       "topicId": "2.1",
-      "text": "¿Les claus alternatives no tenen una clàusula pròpia a l’estàndard per a crear-les?",
+      "text": "Les claus alternatives no tenen una clàusula pròpia a l’estàndard per a crear-les?",
       "options": [
         {
           "letter": "A",
@@ -1978,7 +1978,7 @@
       "id": "q_73",
       "number": 73,
       "topicId": "2.1",
-      "text": "¿Quina és la millor opció per inserir tuples quan tenim un deadlock provocat per claus foranes entre dues taules?",
+      "text": "Quina és la millor opció per inserir tuples quan tenim un deadlock provocat per claus foranes entre dues taules?",
       "options": [
         {
           "letter": "A",
@@ -2004,7 +2004,7 @@
       "id": "q_74",
       "number": 74,
       "topicId": "2.1",
-      "text": "¿Què perdem si esborrem una taula que només té l’atribut identificador i una clau forana que l’apunta?",
+      "text": "Què perdem si esborrem una taula que només té l’atribut identificador i una clau forana que l’apunta?",
       "options": [
         {
           "letter": "A",
@@ -2030,7 +2030,7 @@
       "id": "q_75",
       "number": 75,
       "topicId": "2.2",
-      "text": "¿Què és menys important en una associació binària quan fem el disseny conceptual de la base de dades?",
+      "text": "Què és menys important en una associació binària quan fem el disseny conceptual de la base de dades?",
       "options": [
         {
           "letter": "A",
@@ -2056,7 +2056,7 @@
       "id": "q_76",
       "number": 76,
       "topicId": "2.2",
-      "text": "¿En quin tipus d’associació binària és totalment irrellevant si un dels costats admet zeros o no?",
+      "text": "En quin tipus d’associació binària és totalment irrellevant si un dels costats admet zeros o no?",
       "options": [
         {
           "letter": "A",
@@ -2082,7 +2082,7 @@
       "id": "q_77",
       "number": 77,
       "topicId": "2.2",
-      "text": "¿Quin tipus d’associació binària s’ha d’implementar sempre amb una taula propia (a més de les dues corresponents a les classes)?",
+      "text": "Quin tipus d’associació binària s’ha d’implementar sempre amb una taula propia (a més de les dues corresponents a les classes)?",
       "options": [
         {
           "letter": "A",
@@ -2108,7 +2108,7 @@
       "id": "q_78",
       "number": 78,
       "topicId": "2.2",
-      "text": "¿En quin tipus d’associació binària podem triar a quina taula posem la clau forana?",
+      "text": "En quin tipus d’associació binària podem triar a quina taula posem la clau forana?",
       "options": [
         {
           "letter": "A",
@@ -2134,7 +2134,7 @@
       "id": "q_79",
       "number": 79,
       "topicId": "2.2",
-      "text": "Independentment de les multiplicitats d’una associació binària, sempre hi ha una opció per evitar que es puguin generar valorsnull.",
+      "text": "Independentment de les multiplicitats d’una associació binària, sempre hi ha una opció per evitar que es puguin generar valors null.",
       "options": [
         {
           "letter": "A",
@@ -2170,7 +2170,7 @@
       "id": "q_81",
       "number": 81,
       "topicId": "2.2",
-      "text": "En el model relacional clàssic, ¿en presència de quin tipus d’associació binària podem fusionar les dues taules en una?",
+      "text": "En el model relacional clàssic, en presència de quin tipus d’associació binària podem fusionar les dues taules en una?",
       "options": [
         {
           "letter": "A",
@@ -2196,7 +2196,7 @@
       "id": "q_82",
       "number": 82,
       "topicId": "2.2",
-      "text": "¿Quin NO és un criteri per a triar la clau primària entre les alternatives que hi hagin?",
+      "text": "Quin NO és un criteri per a triar la clau primària entre les alternatives que hi hagin?",
       "options": [
         {
           "letter": "A",
@@ -2222,7 +2222,7 @@
       "id": "q_83",
       "number": 83,
       "topicId": "2.3",
-      "text": "¿Quina de les següents afirmacions respecte a les associacions reflexives és falsa?",
+      "text": "Quina de les següents afirmacions respecte a les associacions reflexives és falsa?",
       "options": [
         {
           "letter": "A",
@@ -2346,7 +2346,7 @@
       "id": "q_89",
       "number": 89,
       "topicId": "2.4",
-      "text": "La implementació d’una associació ternària en un SGBD relacional mai genera valorsnull.",
+      "text": "La implementació d’una associació ternària en un SGBD relacional mai genera valors null.",
       "options": [
         {
           "letter": "A",
@@ -2436,7 +2436,7 @@
       "id": "q_94",
       "number": 94,
       "topicId": "2.6",
-      "text": "Quan en l’esquema conceptual trobem una associació binària, independentment de la multi- plicitat, sempre podem transformar-la en una classe que tingui el mateix nom que l’associació i dues associacions amb les classes originals.",
+      "text": "Quan en l’esquema conceptual trobem una associació binària, independentment de la multiplicitat, sempre podem transformar-la en una classe que tingui el mateix nom que l’associació i dues associacions amb les classes originals.",
       "options": [
         {
           "letter": "A",
@@ -2542,7 +2542,7 @@
       "id": "q_99",
       "number": 99,
       "topicId": "2.7",
-      "text": "Un atribut multivaluat emmagatzemat per files mai genera valorsnull.",
+      "text": "Un atribut multivaluat emmagatzemat per files mai genera valors null.",
       "options": [
         {
           "letter": "A",
@@ -2668,7 +2668,7 @@
       "id": "q_106",
       "number": 106,
       "topicId": "3.1",
-      "text": "¿Quina NO és una conseqüència de les anomalies que motiven la teoria de la normalització?",
+      "text": "Quina NO és una conseqüència de les anomalies que motiven la teoria de la normalització?",
       "options": [
         {
           "letter": "A",
@@ -2712,7 +2712,7 @@
       "id": "q_108",
       "number": 108,
       "topicId": "3.1",
-      "text": "¿Quin és el propòsit fonamental de la normalització?",
+      "text": "Quin és el propòsit fonamental de la normalització?",
       "options": [
         {
           "letter": "A",
@@ -2880,7 +2880,7 @@
       "id": "q_116",
       "number": 116,
       "topicId": "3.3",
-      "text": "¿Quin dels següents tipus de dades és atòmic?",
+      "text": "Quin dels següents tipus de dades és atòmic?",
       "options": [
         {
           "letter": "A",
@@ -2960,7 +2960,7 @@
       "id": "q_120",
       "number": 120,
       "topicId": "3.3",
-      "text": "Si una relació que no està en 3FN i volem que ho estigui, el que hem de fer és dividir els seus atributs en subconjunts disjunts tant com calgui fins que ho estigui, però deixant en cada divisió com clau forana entre les parts el determinant que provoca la violacio de la forma normal.",
+      "text": "Si una relació que no està en 3FN i volem que ho estigui, el que hem de fer és dividir els seus atributs en subconjunts disjunts tant com calgui fins que ho estigui, però deixant en cada divisió com clau forana entre les parts el determinant que provoca la violació de la forma normal.",
       "options": [
         {
           "letter": "A",
@@ -2978,7 +2978,7 @@
       "id": "q_121",
       "number": 121,
       "topicId": "3.3",
-      "text": "¿Quines formes normals tenen excepció?",
+      "text": "Quines formes normals tenen excepció?",
       "options": [
         {
           "letter": "A",
@@ -3058,7 +3058,7 @@
       "id": "q_125",
       "number": 125,
       "topicId": "3.4",
-      "text": "¿Quina NO és una de les regles d’Armstrong?",
+      "text": "Quina NO és una de les regles d’Armstrong?",
       "options": [
         {
           "letter": "A",
@@ -3110,7 +3110,7 @@
       "id": "q_127",
       "number": 127,
       "topicId": "3.4",
-      "text": "¿Què NO puc deduir a partir de la clausura de dependències funcionals?",
+      "text": "Què NO puc deduir a partir de la clausura de dependències funcionals?",
       "options": [
         {
           "letter": "A",
@@ -3262,7 +3262,7 @@
       "id": "q_135",
       "number": 135,
       "topicId": "3.5",
-      "text": "¿Quina NO és una raó per a desnormalitzar?",
+      "text": "Quina NO és una raó per a desnormalitzar?",
       "options": [
         {
           "letter": "A",
@@ -3288,19 +3288,19 @@
       "id": "q_136",
       "number": 136,
       "topicId": "3.5",
-      "text": "Donada la seqüència de conjunts d’esquemes tals que compleixen una certa dependència fun- cional:E 1N F,E 2N F,E 3N F,E BCN F iE 4N F (per exemple,E 3N F representa tots el esquemes que compleixen 3NF). Si considerem qualsevol parellaE X-EY tal queE X apareix abans queE Y en aquesta seqüència, podem afirmar que:",
+      "text": "Donada la seqüència de conjunts d’esquemes tals que compleixen una certa dependència funcional: E1NF, E2NF, E3NF, EBCNF i E4NF (per exemple, E3NF representa tots els esquemes que compleixen 3NF). Si considerem qualsevol parella EX-EY tal que EX apareix abans que EY en aquesta seqüència, podem afirmar que:",
       "options": [
         {
           "letter": "A",
-          "text": "E X ∩E Y =∅(no hi ha cap esquema que compleixiXiYalhora)"
+          "text": "EX ∩ EY = ∅ (no hi ha cap esquema que compleixi X i Y alhora)"
         },
         {
           "letter": "B",
-          "text": "E X ⊇E Y (tots els que compleixenY, tambe compleixenX)"
+          "text": "EX ⊇ EY (tots els que compleixen Y, també compleixen X)"
         },
         {
           "letter": "C",
-          "text": "E X ⊆E Y (tots els que compleixenX, tambe compleixenY)"
+          "text": "EX ⊆ EY (tots els que compleixen X, també compleixen Y)"
         },
         {
           "letter": "D",
@@ -3386,7 +3386,7 @@
       "id": "q_141",
       "number": 141,
       "topicId": "3.6",
-      "text": "Per normalitzar una relació que no estigui en 4FN, hem de fer el producte cartesià del atributs que l’estiguin violant.",
+      "text": "Per normalitzar una relació que no estigui en 4FN, hem de fer el producte cartesià dels atributs que l’estiguin violant.",
       "options": [
         {
           "letter": "A",
@@ -3404,7 +3404,7 @@
       "id": "q_142",
       "number": 142,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema NO forma part del suport a la presa de decisions?",
+      "text": "Quin tipus de sistema NO forma part del suport a la presa de decisions?",
       "options": [
         {
           "letter": "A",
@@ -3438,7 +3438,7 @@
       "id": "q_143",
       "number": 143,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema té un us més repetitiu?",
+      "text": "Quin tipus de sistema té un ús més repetitiu?",
       "options": [
         {
           "letter": "A",
@@ -3460,7 +3460,7 @@
       "id": "q_144",
       "number": 144,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema té més usuaris?",
+      "text": "Quin tipus de sistema té més usuaris?",
       "options": [
         {
           "letter": "A",
@@ -3482,7 +3482,7 @@
       "id": "q_145",
       "number": 145,
       "topicId": "4.1",
-      "text": "¿En quin tipus de sistema una consulta acostuma a accedir més tuples?",
+      "text": "En quin tipus de sistema una consulta acostuma a accedir més tuples?",
       "options": [
         {
           "letter": "A",
@@ -3504,7 +3504,7 @@
       "id": "q_146",
       "number": 146,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema té més dades històriques?",
+      "text": "Quin tipus de sistema té més dades històriques?",
       "options": [
         {
           "letter": "A",
@@ -3526,7 +3526,7 @@
       "id": "q_147",
       "number": 147,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema té més operacions de modificació?",
+      "text": "Quin tipus de sistema té més operacions de modificació?",
       "options": [
         {
           "letter": "A",
@@ -3548,7 +3548,7 @@
       "id": "q_148",
       "number": 148,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema utilitza transaccions?",
+      "text": "Quin tipus de sistema utilitza transaccions?",
       "options": [
         {
           "letter": "A",
@@ -3574,7 +3574,7 @@
       "id": "q_149",
       "number": 149,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema té consultes més complexes?",
+      "text": "Quin tipus de sistema té consultes més complexes?",
       "options": [
         {
           "letter": "A",
@@ -3596,7 +3596,7 @@
       "id": "q_150",
       "number": 150,
       "topicId": "4.1",
-      "text": "¿En quin tipus de sistema és més important el seu rendiment?",
+      "text": "En quin tipus de sistema és més important el seu rendiment?",
       "options": [
         {
           "letter": "A",
@@ -3618,7 +3618,7 @@
       "id": "q_151",
       "number": 151,
       "topicId": "4.1",
-      "text": "¿Quin tipus de sistema emmagatzema més dades?",
+      "text": "Quin tipus de sistema emmagatzema més dades?",
       "options": [
         {
           "letter": "A",
@@ -3640,7 +3640,7 @@
       "id": "q_152",
       "number": 152,
       "topicId": "4.2",
-      "text": "¿Quina NO és una de les quatre característiques d’un magatzem de dades?",
+      "text": "Quina NO és una de les quatre característiques d’un magatzem de dades?",
       "options": [
         {
           "letter": "A",
@@ -3670,7 +3670,7 @@
       "id": "q_153",
       "number": 153,
       "topicId": "4.2",
-      "text": "¿Quin tipus de temps ha de gestionar un magatzem de dades?",
+      "text": "Quin tipus de temps ha de gestionar un magatzem de dades?",
       "options": [
         {
           "letter": "A",
@@ -3696,7 +3696,7 @@
       "id": "q_154",
       "number": 154,
       "topicId": "4.2",
-      "text": "¿Quina característica té un magatzem de dades?",
+      "text": "Quina característica té un magatzem de dades?",
       "options": [
         {
           "letter": "A",
@@ -3776,7 +3776,7 @@
       "id": "q_158",
       "number": 158,
       "topicId": "4.3",
-      "text": "¿Quina diferència hi ha entre una arquitectura d’un sol nivell i una de dos d’emmagatzemament de dades (data warehousing)?",
+      "text": "Quina diferència hi ha entre una arquitectura d’un sol nivell i una de dos d’emmagatzemament de dades (data warehousing)?",
       "options": [
         {
           "letter": "A",
@@ -3838,7 +3838,7 @@
       "id": "q_161",
       "number": 161,
       "topicId": "4.3",
-      "text": "¿Quin tipus de tasca NO fa un procés ETL?",
+      "text": "Quin tipus de tasca NO fa un procés ETL?",
       "options": [
         {
           "letter": "A",
@@ -3918,7 +3918,7 @@
       "id": "q_165",
       "number": 165,
       "topicId": "4.4",
-      "text": "¿Quina NO es considera una limitació dels fulls de càlcul per analitzar dades multidimension- als?",
+      "text": "Quina NO es considera una limitació dels fulls de càlcul per analitzar dades multidimensionals?",
       "options": [
         {
           "letter": "A",
@@ -3948,7 +3948,7 @@
       "id": "q_166",
       "number": 166,
       "topicId": "4.4",
-      "text": "¿Quina NO és una característica de les eines OLAP?",
+      "text": "Quina NO és una característica de les eines OLAP?",
       "options": [
         {
           "letter": "A",
@@ -3978,7 +3978,7 @@
       "id": "q_167",
       "number": 167,
       "topicId": "4.4",
-      "text": "Les eines OLAP guarden les dades en una estructura de dades física en forma de cub n- dimensional.",
+      "text": "Les eines OLAP guarden les dades en una estructura de dades física en forma de cub n-dimensional.",
       "options": [
         {
           "letter": "A",
@@ -4032,7 +4032,7 @@
       "id": "q_170",
       "number": 170,
       "topicId": "4.5",
-      "text": "¿Quina NO és una operació de les eines OLAP?",
+      "text": "Quina NO és una operació de les eines OLAP?",
       "options": [
         {
           "letter": "A",
@@ -4098,7 +4098,7 @@
       "id": "q_173",
       "number": 173,
       "topicId": "4.6",
-      "text": "¿Quin avantatge de la modelització de dades operacionals ens és útil també per modelitzar dades decisionals?",
+      "text": "Quin avantatge de la modelització de dades operacionals ens és útil també per modelitzar dades decisionals?",
       "options": [
         {
           "letter": "A",
@@ -4124,7 +4124,7 @@
       "id": "q_174",
       "number": 174,
       "topicId": "4.6",
-      "text": "¿Què busquem quan fem un esquema en estrella?",
+      "text": "Què busquem quan fem un esquema en estrella?",
       "options": [
         {
           "letter": "A",
@@ -4150,7 +4150,7 @@
       "id": "q_175",
       "number": 175,
       "topicId": "4.6",
-      "text": "¿Quina multiplicitat permet un esquema en estrella entre el fet i les dimensions?",
+      "text": "Quina multiplicitat permet un esquema en estrella entre el fet i les dimensions?",
       "options": [
         {
           "letter": "A",
@@ -4212,7 +4212,7 @@
       "id": "q_178",
       "number": 178,
       "topicId": "4.7",
-      "text": "¿Quins nivells té una eina ROLAP?",
+      "text": "Quins nivells té una eina ROLAP?",
       "options": [
         {
           "letter": "A",
@@ -4238,7 +4238,7 @@
       "id": "q_179",
       "number": 179,
       "topicId": "4.7",
-      "text": "¿Quin tipus de SGBD utilitzen les eines ROLAP?",
+      "text": "Quin tipus de SGBD utilitzen les eines ROLAP?",
       "options": [
         {
           "letter": "A",
@@ -4282,7 +4282,7 @@
       "id": "q_181",
       "number": 181,
       "topicId": "4.7",
-      "text": "El principal problema de les eines ROLAP és que generen massajoins.",
+      "text": "El principal problema de les eines ROLAP és que generen massa joins.",
       "options": [
         {
           "letter": "A",
@@ -4318,7 +4318,7 @@
       "id": "q_183",
       "number": 183,
       "topicId": "4.7",
-      "text": "¿Quantes claus primàries té la taula de fets d’un esquema en estrella?",
+      "text": "Quantes claus primàries té la taula de fets d’un esquema en estrella?",
       "options": [
         {
           "letter": "A",
@@ -4344,7 +4344,7 @@
       "id": "q_184",
       "number": 184,
       "topicId": "4.7",
-      "text": "¿Quants atributs té la clau primària de la taula de fets d’un esquema en estrella?",
+      "text": "Quants atributs té la clau primària de la taula de fets d’un esquema en estrella?",
       "options": [
         {
           "letter": "A",
@@ -4388,7 +4388,7 @@
       "id": "q_186",
       "number": 186,
       "topicId": "4.7",
-      "text": "UnaCube-Querysobre una eina ROLAP retorna una taula relacional.",
+      "text": "Una Cube-Query sobre una eina ROLAP retorna una taula relacional.",
       "options": [
         {
           "letter": "A",
@@ -4406,7 +4406,7 @@
       "id": "q_187",
       "number": 187,
       "topicId": "4.8",
-      "text": "¿De quin tipus de valors faciliten el càlcul les clàusules ”GROUPING SETS”?",
+      "text": "De quin tipus de valors faciliten el càlcul les clàusules ”GROUPING SETS”?",
       "options": [
         {
           "letter": "A",
@@ -4432,7 +4432,7 @@
       "id": "q_188",
       "number": 188,
       "topicId": "4.8",
-      "text": "¿Quin NO és un possible significat del valornull?",
+      "text": "Quin NO és un possible significat del valor null?",
       "options": [
         {
           "letter": "A",
@@ -4512,7 +4512,7 @@
       "id": "q_192",
       "number": 192,
       "topicId": "5.1",
-      "text": "Els sistemes NOSQL sónschemaless.",
+      "text": "Els sistemes NOSQL són schemaless.",
       "options": [
         {
           "letter": "A",
@@ -4530,7 +4530,7 @@
       "id": "q_193",
       "number": 193,
       "topicId": "5.1",
-      "text": "Els sistemes NOSQL garanteixes les restriccions d’integritat, tal com fan els sistemes relation- als.",
+      "text": "Els sistemes NOSQL garanteixen les restriccions d’integritat, tal com fan els sistemes relacionals.",
       "options": [
         {
           "letter": "A",
@@ -4584,7 +4584,7 @@
       "id": "q_196",
       "number": 196,
       "topicId": "5.2",
-      "text": "¿Quina NO és una conseqüència d’acceptar la variabilitat de l’esquema?",
+      "text": "Quina NO és una conseqüència d’acceptar la variabilitat de l’esquema?",
       "options": [
         {
           "letter": "A",
@@ -4682,7 +4682,7 @@
       "id": "q_201",
       "number": 201,
       "topicId": "5.3",
-      "text": "En PostgreSQL, per canviar el valor d’una posició concreta d’unarray, hem de reassignar tot l’arraycomplet a la fila corresponent.",
+      "text": "En PostgreSQL, per canviar el valor d’una posició concreta d’un array, hem de reassignar tot l’array complet a la fila corresponent.",
       "options": [
         {
           "letter": "A",
@@ -4700,7 +4700,7 @@
       "id": "q_202",
       "number": 202,
       "topicId": "5.3",
-      "text": "Unarrayen PostgreSQL té un nombre fix de valors, indicat en la seva declaració.",
+      "text": "Un array en PostgreSQL té un nombre fix de valors, indicat en la seva declaració.",
       "options": [
         {
           "letter": "A",
@@ -4718,7 +4718,7 @@
       "id": "q_203",
       "number": 203,
       "topicId": "5.3",
-      "text": "Unarrayen PostgreSQL pot contenir valorsnulls.",
+      "text": "Un array en PostgreSQL pot contenir valors nulls.",
       "options": [
         {
           "letter": "A",
@@ -4772,7 +4772,7 @@
       "id": "q_206",
       "number": 206,
       "topicId": "5.3",
-      "text": "En general, la funció per calcular agregats a partir d’unarray, l’ha de definir l’usuari.",
+      "text": "En general, la funció per calcular agregats a partir d’un array, l’ha de definir l’usuari.",
       "options": [
         {
           "letter": "A",
@@ -4790,7 +4790,7 @@
       "id": "q_207",
       "number": 207,
       "topicId": "5.3",
-      "text": "PostgreSQL disposa de funcions booleanes específiques que permeten definir fàcilment restric- cions d’integritat sobre cadascun dels elements d’unarray.",
+      "text": "PostgreSQL disposa de funcions booleanes específiques que permeten definir fàcilment restriccions d’integritat sobre cadascun dels elements d’un array.",
       "options": [
         {
           "letter": "A",
@@ -4808,7 +4808,7 @@
       "id": "q_208",
       "number": 208,
       "topicId": "5.3",
-      "text": "El nivell de concurrència que permet guardar un atribut multivaluat en unarrayés el mateix que si el guardem per columnes.",
+      "text": "El nivell de concurrència que permet guardar un atribut multivaluat en un array és el mateix que si el guardem per columnes.",
       "options": [
         {
           "letter": "A",
@@ -4898,7 +4898,7 @@
       "id": "q_213",
       "number": 213,
       "topicId": "5.4",
-      "text": "Podem tenir un document JSON que compleixi la mateixa propietat de la BCNF (és a dir, cada determinant determina per ell mateix tots els atributs del document, ja sigui directa o indi- rectament).",
+      "text": "Podem tenir un document JSON que compleixi la mateixa propietat de la BCNF (és a dir, cada determinant determina per ell mateix tots els atributs del document, ja sigui directa o indirectament).",
       "options": [
         {
           "letter": "A",
@@ -5042,7 +5042,7 @@
       "id": "q_221",
       "number": 221,
       "topicId": "6.1",
-      "text": "¿Quin NO és un dels quatre nivells de l’arquitectura ANSI/SPARC?",
+      "text": "Quin NO és un dels quatre nivells de l’arquitectura ANSI/SPARC?",
       "options": [
         {
           "letter": "A",
@@ -5068,7 +5068,7 @@
       "id": "q_222",
       "number": 222,
       "topicId": "6.1",
-      "text": "¿En quin nivell de l’arquitectura ANSI/SPARC trobem més esquemes?",
+      "text": "En quin nivell de l’arquitectura ANSI/SPARC trobem més esquemes?",
       "options": [
         {
           "letter": "A",
@@ -5094,7 +5094,7 @@
       "id": "q_223",
       "number": 223,
       "topicId": "6.1",
-      "text": "¿Quina de les següents possibilitats no existeix en els SGBDs relacionals?",
+      "text": "Quina de les següents possibilitats no existeix en els SGBDs relacionals?",
       "options": [
         {
           "letter": "A",
@@ -5138,7 +5138,7 @@
       "id": "q_225",
       "number": 225,
       "topicId": "6.1",
-      "text": "¿Quin és un exemple paradigmàtic de vistes materialitzades?",
+      "text": "Quin és un exemple paradigmàtic de vistes materialitzades?",
       "options": [
         {
           "letter": "A",
@@ -5164,7 +5164,7 @@
       "id": "q_226",
       "number": 226,
       "topicId": "6.1",
-      "text": "¿Quina NO és una utilitat de les vistes?",
+      "text": "Quina NO és una utilitat de les vistes?",
       "options": [
         {
           "letter": "A",
@@ -5194,7 +5194,7 @@
       "id": "q_227",
       "number": 227,
       "topicId": "6.1",
-      "text": "¿Quin NO és un dels quatre problemes associats a les vistes?",
+      "text": "Quin NO és un dels quatre problemes associats a les vistes?",
       "options": [
         {
           "letter": "A",
@@ -5224,7 +5224,7 @@
       "id": "q_228",
       "number": 228,
       "topicId": "6.1",
-      "text": "¿Quin problema aplica només a vistes no-materialitzades?",
+      "text": "Quin problema aplica només a vistes no-materialitzades?",
       "options": [
         {
           "letter": "A",
@@ -5254,7 +5254,7 @@
       "id": "q_229",
       "number": 229,
       "topicId": "6.1",
-      "text": "¿Quan es dóna el problema deView expansion?",
+      "text": "Quan es dóna el problema de View expansion?",
       "options": [
         {
           "letter": "A",
@@ -5280,7 +5280,7 @@
       "id": "q_230",
       "number": 230,
       "topicId": "6.1",
-      "text": "¿Quan es dóna el problema deQuery rewriting?",
+      "text": "Quan es dóna el problema de Query rewriting?",
       "options": [
         {
           "letter": "A",
@@ -5306,7 +5306,7 @@
       "id": "q_231",
       "number": 231,
       "topicId": "6.1",
-      "text": "¿Quan es dóna el problema deView updating?",
+      "text": "Quan es dóna el problema de View updating?",
       "options": [
         {
           "letter": "A",
@@ -5332,7 +5332,7 @@
       "id": "q_232",
       "number": 232,
       "topicId": "6.1",
-      "text": "¿Quan es dóna el problema deUpdate through views?",
+      "text": "Quan es dóna el problema de Update through views?",
       "options": [
         {
           "letter": "A",
@@ -5358,7 +5358,7 @@
       "id": "q_233",
       "number": 233,
       "topicId": "6.1",
-      "text": "¿Quan es varen introduir les vistes materialitzades a l’estàndard SQL?",
+      "text": "Quan es varen introduir les vistes materialitzades a l’estàndard SQL?",
       "options": [
         {
           "letter": "A",
@@ -5384,7 +5384,7 @@
       "id": "q_234",
       "number": 234,
       "topicId": "6.1",
-      "text": "¿Quants dels tres problemes teòrics que tenen associats a les vistes materialitzades podem veure explícitament reflectits a la seva sentencia de creació d’Oracle?",
+      "text": "Quants dels tres problemes teòrics que tenen associats a les vistes materialitzades podem veure explícitament reflectits a la seva sentència de creació d’Oracle?",
       "options": [
         {
           "letter": "A",
@@ -5500,7 +5500,7 @@
       "id": "q_240",
       "number": 240,
       "topicId": "6.3",
-      "text": "Els SGBDs permeten modificar una taula a través d’una vista independentment del predicat lògic que es posi alWHEREde la definició de la vista, sempre que aquest no contingui cap subconsulta.",
+      "text": "Els SGBDs permeten modificar una taula a través d’una vista independentment del predicat lògic que es posi al WHERE de la definició de la vista, sempre que aquest no contingui cap subconsulta.",
       "options": [
         {
           "letter": "A",
@@ -5608,7 +5608,7 @@
       "id": "q_246",
       "number": 246,
       "topicId": "6.4",
-      "text": "¿Quan NO podem propagar els canvis d’una taula a les seves vistes materialitzades?",
+      "text": "Quan NO podem propagar els canvis d’una taula a les seves vistes materialitzades?",
       "options": [
         {
           "letter": "A",
@@ -5638,7 +5638,7 @@
       "id": "q_247",
       "number": 247,
       "topicId": "6.4",
-      "text": "Per tal que es pugui mantenir una vista materialitzada de forma incremental, només cal crear ellogadequat.",
+      "text": "Per tal que es pugui mantenir una vista materialitzada de forma incremental, només cal crear el log adequat.",
       "options": [
         {
           "letter": "A",
@@ -5782,7 +5782,7 @@
       "id": "q_255",
       "number": 255,
       "topicId": "6.5",
-      "text": "¿Quin NO és un dels requisits per a poder rescriure una consulta en termes d’una vista materialitzada?",
+      "text": "Quin NO és un dels requisits per a poder rescriure una consulta en termes d’una vista materialitzada?",
       "options": [
         {
           "letter": "A",
@@ -5926,7 +5926,7 @@
       "id": "q_261",
       "number": 261,
       "topicId": "6.6",
-      "text": "¿Quina NO és una bona heurística per a triar quines vistes materialitzar en un esquema multidimensional?",
+      "text": "Quina NO és una bona heurística per a triar quines vistes materialitzar en un esquema multidimensional?",
       "options": [
         {
           "letter": "A",
@@ -6028,7 +6028,7 @@
       "id": "q_266",
       "number": 266,
       "topicId": "6.7",
-      "text": "Podem estimar la cardinalitat del resultat d’una consulta amb agregats sobre la taulaT(a1, . . . an) com ...",
+      "text": "Podem estimar la cardinalitat del resultat d’una consulta amb agregats sobre la taula T(a1, ..., an) com ...",
       "options": [
         {
           "letter": "A",
@@ -6036,15 +6036,15 @@
         },
         {
           "letter": "B",
-          "text": "dist(a 1)·. . .·dist(a n)"
+          "text": "dist(a1)·...·dist(an)"
         },
         {
           "letter": "C",
-          "text": "min(|T|, dist(a 1)·. . .·dist(a n))"
+          "text": "min(|T|, dist(a1)·...·dist(an))"
         },
         {
           "letter": "D",
-          "text": "max(|T|, dist(a 1)·. . .·dist(a n))"
+          "text": "max(|T|, dist(a1)·...·dist(an))"
         }
       ],
       "correctLetter": "C",
@@ -6072,7 +6072,7 @@
       "id": "q_268",
       "number": 268,
       "topicId": "7.1",
-      "text": "¿Quina NO és una de les tasques bàsiques del disseny físic?",
+      "text": "Quina NO és una de les tasques bàsiques del disseny físic?",
       "options": [
         {
           "letter": "A",
@@ -6102,7 +6102,7 @@
       "id": "q_269",
       "number": 269,
       "topicId": "7.1",
-      "text": "¿Quin NO és un criteri per prendre decisions sobre el disseny físic?",
+      "text": "Quin NO és un criteri per prendre decisions sobre el disseny físic?",
       "options": [
         {
           "letter": "A",
@@ -6136,7 +6136,7 @@
       "id": "q_270",
       "number": 270,
       "topicId": "7.1",
-      "text": "¿Quina NO és una dificultat en el disseny físic?",
+      "text": "Quina NO és una dificultat en el disseny físic?",
       "options": [
         {
           "letter": "A",
@@ -6170,7 +6170,7 @@
       "id": "q_271",
       "number": 271,
       "topicId": "7.2",
-      "text": "¿Quina afirmació NO és certa respecte al catàleg?",
+      "text": "Quina afirmació NO és certa respecte al catàleg?",
       "options": [
         {
           "letter": "A",
@@ -6186,7 +6186,7 @@
         },
         {
           "letter": "D",
-          "text": "´Es útil per gestionar i afinar el funcionament de la base de dades"
+          "text": "És útil per gestionar i afinar el funcionament de la base de dades"
         }
       ],
       "correctLetter": "C",
@@ -6196,7 +6196,7 @@
       "id": "q_272",
       "number": 272,
       "topicId": "7.2",
-      "text": "¿Quin dels següents continguts del catàleg NO considerem estàtic?",
+      "text": "Quin dels següents continguts del catàleg NO considerem estàtic?",
       "options": [
         {
           "letter": "A",
@@ -6216,7 +6216,7 @@
         },
         {
           "letter": "E",
-          "text": "Paràmetres del sistema, com ara la grandària delpooldebufferso la grandària de pàgina"
+          "text": "Paràmetres del sistema, com ara la grandària del pool de buffers o la grandària de pàgina"
         }
       ],
       "correctLetter": "B",
@@ -6226,7 +6226,7 @@
       "id": "q_273",
       "number": 273,
       "topicId": "7.2",
-      "text": "¿Quin dels següents continguts del catàleg NO considerem dinàmic?",
+      "text": "Quin dels següents continguts del catàleg NO considerem dinàmic?",
       "options": [
         {
           "letter": "A",
@@ -6242,7 +6242,7 @@
         },
         {
           "letter": "D",
-          "text": "Informació dels índexs, com ara la seva al¸ cada o el rang de valors"
+          "text": "Informació dels índexs, com ara la seva alçada o el rang de valors"
         }
       ],
       "correctLetter": "C",
@@ -6270,7 +6270,7 @@
       "id": "q_275",
       "number": 275,
       "topicId": "7.2",
-      "text": "L’estàndard SQL’03 dintingeix entre la informació del catàleg necessària per l’administrador i la necessaria pels usuaris de la base dades.",
+      "text": "L’estàndard SQL’03 distingeix entre la informació del catàleg necessària per l’administrador i la necessària pels usuaris de la base dades.",
       "options": [
         {
           "letter": "A",
@@ -6288,7 +6288,7 @@
       "id": "q_276",
       "number": 276,
       "topicId": "7.3",
-      "text": "Les estructures d’accés (es a dir, els índexs) són ... respecte a les taules.",
+      "text": "Les estructures d’accés (és a dir, els índexs) són ... respecte a les taules.",
       "options": [
         {
           "letter": "A",
@@ -6342,7 +6342,7 @@
       "id": "q_279",
       "number": 279,
       "topicId": "7.3",
-      "text": "¿Què NO podem trobar en una entrada d’un índex?",
+      "text": "Què NO podem trobar en una entrada d’un índex?",
       "options": [
         {
           "letter": "A",
@@ -6354,7 +6354,7 @@
         },
         {
           "letter": "C",
-          "text": "Una adre¸ ca física del registre"
+          "text": "Una adreça física del registre"
         },
         {
           "letter": "D",
@@ -6606,7 +6606,7 @@
       "id": "q_293",
       "number": 293,
       "topicId": "7.4",
-      "text": " | T | representa el nombre de ... de la taula T.",
+      "text": "|T| representa el nombre de ... de la taula T.",
       "options": [
         {
           "letter": "A",
@@ -6632,7 +6632,7 @@
       "id": "q_294",
       "number": 294,
       "topicId": "7.4",
-      "text": "¿Quin és típicament l’ordre (normalment representat per la lletra “d”) d’un índex tipus arbre?",
+      "text": "Quin és típicament l’ordre (normalment representat per la lletra “d”) d’un índex tipus arbre?",
       "options": [
         {
           "letter": "A",
@@ -6946,7 +6946,7 @@
       "id": "q_311",
       "number": 311,
       "topicId": "8.1",
-      "text": "¿En quina posició se situa l’optimització dins del procés de processament de consultes que du a terme el gestor de consultes?",
+      "text": "En quina posició se situa l’optimització dins del procés de processament de consultes que du a terme el gestor de consultes?",
       "options": [
         {
           "letter": "A",
@@ -6962,7 +6962,7 @@
         },
         {
           "letter": "D",
-          "text": "´Ultima"
+          "text": "Última"
         }
       ],
       "correctLetter": "D",
@@ -6990,7 +6990,7 @@
       "id": "q_313",
       "number": 313,
       "topicId": "8.1",
-      "text": "¿Quina NO és una de les tres fases de l’optimització de consultes?",
+      "text": "Quina NO és una de les tres fases de l’optimització de consultes?",
       "options": [
         {
           "letter": "A",
@@ -7124,7 +7124,7 @@
       "id": "q_320",
       "number": 320,
       "topicId": "8.2",
-      "text": "L’optimització semàntica pot fer més curta la clàusulaWHERE.",
+      "text": "L’optimització semàntica pot fer més curta la clàusula WHERE.",
       "options": [
         {
           "letter": "A",
@@ -7142,7 +7142,7 @@
       "id": "q_321",
       "number": 321,
       "topicId": "8.2",
-      "text": "L’optimització semàntica pot fer més llarga la clàusulaWHERE.",
+      "text": "L’optimització semàntica pot fer més llarga la clàusula WHERE.",
       "options": [
         {
           "letter": "A",
@@ -7232,7 +7232,7 @@
       "id": "q_326",
       "number": 326,
       "topicId": "8.3",
-      "text": "¿Quina heurística utilitza l’optimització sintàctica?",
+      "text": "Quina heurística utilitza l’optimització sintàctica?",
       "options": [
         {
           "letter": "A",
@@ -7366,7 +7366,7 @@
       "id": "q_333",
       "number": 333,
       "topicId": "8.4",
-      "text": "La selecció sempre commuta (sense posar ni treure res) amb lajoin.",
+      "text": "La selecció sempre commuta (sense posar ni treure res) amb la join.",
       "options": [
         {
           "letter": "A",
@@ -7384,7 +7384,7 @@
       "id": "q_334",
       "number": 334,
       "topicId": "8.4",
-      "text": "La selecció sempre commuta (sense posar ni treure res) amb qualsevol operació de conjunts (es a dir, unió, intersecció i diferència).",
+      "text": "La selecció sempre commuta (sense posar ni treure res) amb qualsevol operació de conjunts (és a dir, unió, intersecció i diferència).",
       "options": [
         {
           "letter": "A",
@@ -7420,7 +7420,7 @@
       "id": "q_336",
       "number": 336,
       "topicId": "8.4",
-      "text": "La projecció sempre commuta (sense posar ni treure res) amb lajoin.",
+      "text": "La projecció sempre commuta (sense posar ni treure res) amb la join.",
       "options": [
         {
           "letter": "A",
@@ -7438,7 +7438,7 @@
       "id": "q_337",
       "number": 337,
       "topicId": "8.4",
-      "text": "La projecció sempre commuta (sense posar ni treure res) amb qualsevol operació de conjunts (es a dir, unió, intersecció i diferència).",
+      "text": "La projecció sempre commuta (sense posar ni treure res) amb qualsevol operació de conjunts (és a dir, unió, intersecció i diferència).",
       "options": [
         {
           "letter": "A",
@@ -7456,7 +7456,7 @@
       "id": "q_338",
       "number": 338,
       "topicId": "8.4",
-      "text": "¿Quines propietats compleix la join respecte a ella mateixa?",
+      "text": "Quines propietats compleix la join respecte a ella mateixa?",
       "options": [
         {
           "letter": "A",
@@ -7482,7 +7482,7 @@
       "id": "q_339",
       "number": 339,
       "topicId": "8.5",
-      "text": "¿Quin nom NO rep l’algorisme que segueix l’execution managerper obtenir el resultat d’una consulta?",
+      "text": "Quin nom NO rep l’algorisme que segueix l’execution manager per obtenir el resultat d’una consulta?",
       "options": [
         {
           "letter": "A",
@@ -7508,7 +7508,7 @@
       "id": "q_340",
       "number": 340,
       "topicId": "8.5",
-      "text": "¿Què NO considera l’optimització física per a generar el pla d’execució d’una consulta?",
+      "text": "Què NO considera l’optimització física per a generar el pla d’execució d’una consulta?",
       "options": [
         {
           "letter": "A",
@@ -7534,7 +7534,7 @@
       "id": "q_341",
       "number": 341,
       "topicId": "8.5",
-      "text": "¿Quina operació deixa de ser explícita en l’arbre de procés?",
+      "text": "Quina operació deixa de ser explícita en l’arbre de procés?",
       "options": [
         {
           "letter": "A",
@@ -7596,7 +7596,7 @@
       "id": "q_344",
       "number": 344,
       "topicId": "8.5",
-      "text": "¿Què NO genera alternatives en l’espai de cerca de l’optimització basada en costos?",
+      "text": "Què NO genera alternatives en l’espai de cerca de l’optimització basada en costos?",
       "options": [
         {
           "letter": "A",
@@ -7622,7 +7622,7 @@
       "id": "q_345",
       "number": 345,
       "topicId": "8.5",
-      "text": "¿Quines propietats de la join utilitza l’optimització física per a generar possibles alternatives d’execució?",
+      "text": "Quines propietats de la join utilitza l’optimització física per a generar possibles alternatives d’execució?",
       "options": [
         {
           "letter": "A",
@@ -7684,7 +7684,7 @@
       "id": "q_348",
       "number": 348,
       "topicId": "8.5",
-      "text": "Quan fem encarrilament (pipelining), l’ordre de lesjoinsés ...",
+      "text": "Quan fem encarrilament (pipelining), l’ordre de les joins és ...",
       "options": [
         {
           "letter": "A",
@@ -7818,7 +7818,7 @@
       "id": "q_355",
       "number": 355,
       "topicId": "9.1",
-      "text": "El càlcul del factor de selecció de laUNIONés el mateix que el de laUNION ALL.",
+      "text": "El càlcul del factor de selecció de la UNION és el mateix que el de la UNION ALL.",
       "options": [
         {
           "letter": "A",
@@ -7836,7 +7836,7 @@
       "id": "q_356",
       "number": 356,
       "topicId": "9.1",
-      "text": "El càlcul del factor de selecció de lajoinés el mateix que el de la intersecció.",
+      "text": "El càlcul del factor de selecció de la join és el mateix que el de la intersecció.",
       "options": [
         {
           "letter": "A",
@@ -7854,7 +7854,7 @@
       "id": "q_357",
       "number": 357,
       "topicId": "9.1",
-      "text": "Les cardinalitats dels resultats intermitjos es calculentop-downa l’arbre de procés.",
+      "text": "Les cardinalitats dels resultats intermitjos es calculen top-down a l’arbre de procés.",
       "options": [
         {
           "letter": "A",
@@ -8016,7 +8016,7 @@
       "id": "q_366",
       "number": 366,
       "topicId": "9.1",
-      "text": "¿Què NO afecta al factor de selecció d’unajoin?.",
+      "text": "Què NO afecta al factor de selecció d’una join?",
       "options": [
         {
           "letter": "A",
@@ -8204,7 +8204,7 @@
       "id": "q_376",
       "number": 376,
       "topicId": "9.2",
-      "text": "Els index tipus arbre serveixen per avaluar clàusules lògiques amb qualsevol tipus de com- paració.",
+      "text": "Els índexs tipus arbre serveixen per avaluar clàusules lògiques amb qualsevol tipus de comparació.",
       "options": [
         {
           "letter": "A",
@@ -8222,7 +8222,7 @@
       "id": "q_377",
       "number": 377,
       "topicId": "9.2",
-      "text": "Els index tipus hash serveixen per avaluar clàusules lògiques només amb comparacions per igualtat.",
+      "text": "Els índexs tipus hash serveixen per avaluar clàusules lògiques només amb comparacions per igualtat.",
       "options": [
         {
           "letter": "A",
@@ -8276,7 +8276,7 @@
       "id": "q_380",
       "number": 380,
       "topicId": "9.2",
-      "text": "Les operacions ambbitmapssón equivalents a les operacions de llistes de RIDs.",
+      "text": "Les operacions amb bitmaps són equivalents a les operacions de llistes de RIDs.",
       "options": [
         {
           "letter": "A",
@@ -8294,7 +8294,7 @@
       "id": "q_381",
       "number": 381,
       "topicId": "9.2",
-      "text": "Els index tipus bitmaps serveixen per avaluar clàusules lògiques amb qualsevol tipus de com- paració.",
+      "text": "Els índexs tipus bitmaps serveixen per avaluar clàusules lògiques amb qualsevol tipus de comparació.",
       "options": [
         {
           "letter": "A",
@@ -8402,7 +8402,7 @@
       "id": "q_387",
       "number": 387,
       "topicId": "9.3",
-      "text": "Un índex tipushashes pot utilitzar per ordenar les dades.",
+      "text": "Un índex tipus hash es pot utilitzar per ordenar les dades.",
       "options": [
         {
           "letter": "A",
@@ -8420,7 +8420,7 @@
       "id": "q_388",
       "number": 388,
       "topicId": "9.3",
-      "text": "¿Quin algorisme d’ordenació a memòria utilitza elExternal Merge Sort?",
+      "text": "Quin algorisme d’ordenació a memòria utilitza el External Merge Sort?",
       "options": [
         {
           "letter": "A",
@@ -8436,7 +8436,7 @@
         },
         {
           "letter": "D",
-          "text": "´Es irrellevant"
+          "text": "És irrellevant"
         }
       ],
       "correctLetter": "D",
@@ -8446,7 +8446,7 @@
       "id": "q_389",
       "number": 389,
       "topicId": "9.3",
-      "text": "ElExternal Merge Sortrequereix d’una zona d’espai temporal per a realitzar l’ordenació, de l’ordre de la grandària de la pròpia taula.",
+      "text": "El External Merge Sort requereix d’una zona d’espai temporal per a realitzar l’ordenació, de l’ordre de la grandària de la pròpia taula.",
       "options": [
         {
           "letter": "A",
@@ -8554,7 +8554,7 @@
       "id": "q_395",
       "number": 395,
       "topicId": "10.1",
-      "text": "L’opció que dona el cost més baix per a fer unajoines sempre tenir les dues taules en una estructura cluster.",
+      "text": "L’opció que dona el cost més baix per a fer una join és sempre tenir les dues taules en una estructura cluster.",
       "options": [
         {
           "letter": "A",
@@ -8572,7 +8572,7 @@
       "id": "q_396",
       "number": 396,
       "topicId": "10.2",
-      "text": "L’algorisme deRow Nested Loopsés simètric.",
+      "text": "L’algorisme de Row Nested Loops és simètric.",
       "options": [
         {
           "letter": "A",
@@ -8608,7 +8608,7 @@
       "id": "q_398",
       "number": 398,
       "topicId": "10.2",
-      "text": "L’algorisme deRow Nested Loopsnomés es pot utilitzar si, en l’arbre de procés, l’operació de joinesta situada directament sobre la taula de l’índex utilitzat.",
+      "text": "L’algorisme de Row Nested Loops només es pot utilitzar si, en l’arbre de procés, l’operació de join està situada directament sobre la taula de l’índex utilitzat.",
       "options": [
         {
           "letter": "A",
@@ -8626,7 +8626,7 @@
       "id": "q_399",
       "number": 399,
       "topicId": "10.2",
-      "text": "L’algorisme deRow Nested Loopsnomés es pot utilitzar si la comparació de lajoinés la igualtat.",
+      "text": "L’algorisme de Row Nested Loops només es pot utilitzar si la comparació de la join és la igualtat.",
       "options": [
         {
           "letter": "A",
@@ -8644,7 +8644,7 @@
       "id": "q_400",
       "number": 400,
       "topicId": "10.2",
-      "text": "El cost de l’algorisme deRow Nested Loopsés sempre més baix si no hem d’accedir atributs de la taula interna que no siguin els del propi índex utilitzat per l’algorisme.",
+      "text": "El cost de l’algorisme de Row Nested Loops és sempre més baix si no hem d’accedir atributs de la taula interna que no siguin els del propi índex utilitzat per l’algorisme.",
       "options": [
         {
           "letter": "A",
@@ -8662,7 +8662,7 @@
       "id": "q_401",
       "number": 401,
       "topicId": "10.2",
-      "text": "L’algorisme deRow Nested Loopsnomés permet utilitzar un índex tipus cluster si requerim atributs de la taula interna que no siguin els del propi índex.",
+      "text": "L’algorisme de Row Nested Loops només permet utilitzar un índex tipus cluster si requerim atributs de la taula interna que no siguin els del propi índex.",
       "options": [
         {
           "letter": "A",
@@ -8680,7 +8680,7 @@
       "id": "q_402",
       "number": 402,
       "topicId": "10.2",
-      "text": "L’algorisme deBlock Nested Loopssempre es pot utilitzar.",
+      "text": "L’algorisme de Block Nested Loops sempre es pot utilitzar.",
       "options": [
         {
           "letter": "A",
@@ -8698,7 +8698,7 @@
       "id": "q_403",
       "number": 403,
       "topicId": "10.2",
-      "text": "L’algorisme deBlock Nested Loopsés simètric.",
+      "text": "L’algorisme de Block Nested Loops és simètric.",
       "options": [
         {
           "letter": "A",
@@ -8716,7 +8716,7 @@
       "id": "q_404",
       "number": 404,
       "topicId": "10.2",
-      "text": "L’algorisme deBlock Nested Loopssempre té un cost més baix si posem la taula més gran al bucle extern.",
+      "text": "L’algorisme de Block Nested Loops sempre té un cost més baix si posem la taula més gran al bucle extern.",
       "options": [
         {
           "letter": "A",
@@ -8752,7 +8752,7 @@
       "id": "q_406",
       "number": 406,
       "topicId": "10.3",
-      "text": "L’algorisme deHash-joinrequereix l’existència d’un índex tipushasha priori.",
+      "text": "L’algorisme de Hash-join requereix l’existència d’un índex tipus hash a priori.",
       "options": [
         {
           "letter": "A",
@@ -8770,7 +8770,7 @@
       "id": "q_407",
       "number": 407,
       "topicId": "10.3",
-      "text": "L’algorisme deHash-joinnomés es pot utilitzar si la comparació de lajoinés la igualtat.",
+      "text": "L’algorisme de Hash-join només es pot utilitzar si la comparació de la join és la igualtat.",
       "options": [
         {
           "letter": "A",
@@ -8788,7 +8788,7 @@
       "id": "q_408",
       "number": 408,
       "topicId": "10.3",
-      "text": "L’algorisme deHash-joinés simètric.",
+      "text": "L’algorisme de Hash-join és simètric.",
       "options": [
         {
           "letter": "A",
@@ -8806,7 +8806,7 @@
       "id": "q_409",
       "number": 409,
       "topicId": "10.3",
-      "text": "L’algorisme deHash-joinrequereix que una de les taules càpigui a memòria.",
+      "text": "L’algorisme de Hash-join requereix que una de les taules càpigui a memòria.",
       "options": [
         {
           "letter": "A",
@@ -8824,7 +8824,7 @@
       "id": "q_410",
       "number": 410,
       "topicId": "10.3",
-      "text": "L’algorisme deHash-joinrequereix dues passades si una de les taules no hi cap a memòria.",
+      "text": "L’algorisme de Hash-join requereix dues passades si una de les taules no hi cap a memòria.",
       "options": [
         {
           "letter": "A",
@@ -8860,7 +8860,7 @@
       "id": "q_412",
       "number": 412,
       "topicId": "10.4",
-      "text": "L’algorisme deSort-Matchnomés es pot utilitzar si la comparació de lajoinés la igualtat.",
+      "text": "L’algorisme de Sort-Match només es pot utilitzar si la comparació de la join és la igualtat.",
       "options": [
         {
           "letter": "A",
@@ -8878,7 +8878,7 @@
       "id": "q_413",
       "number": 413,
       "topicId": "10.4",
-      "text": "El cost de l’algorisme deSort-Matchdepèn de la comparació de lajoin.",
+      "text": "El cost de l’algorisme de Sort-Match depèn de la comparació de la join.",
       "options": [
         {
           "letter": "A",
@@ -8932,7 +8932,7 @@
       "id": "q_416",
       "number": 416,
       "topicId": "10.4",
-      "text": "L’algorisme deSort-Matchdeixa el resultat ordenat per l’atribut dejoin.",
+      "text": "L’algorisme de Sort-Match deixa el resultat ordenat per l’atribut de join.",
       "options": [
         {
           "letter": "A",
@@ -8976,7 +8976,7 @@
       "id": "q_418",
       "number": 418,
       "topicId": "10.5",
-      "text": "Qui domina el cost d’execució de la consulta quan utilitzem la técnica d’encarrilament (pipelin- ing)?",
+      "text": "Qui domina el cost d’execució de la consulta quan utilitzem la tècnica d’encarrilament (pipelining)?",
       "options": [
         {
           "letter": "A",
@@ -9002,7 +9002,7 @@
       "id": "q_419",
       "number": 419,
       "topicId": "11.1",
-      "text": "¿Quin NO és un dels tres espais d’un SGBD?",
+      "text": "Quin NO és un dels tres espais d’un SGBD?",
       "options": [
         {
           "letter": "A",
@@ -9028,7 +9028,7 @@
       "id": "q_420",
       "number": 420,
       "topicId": "11.1",
-      "text": "¿Què NO hi ha a l’espai lògic d’un SGBD?",
+      "text": "Què NO hi ha a l’espai lògic d’un SGBD?",
       "options": [
         {
           "letter": "A",
@@ -9054,7 +9054,7 @@
       "id": "q_421",
       "number": 421,
       "topicId": "11.1",
-      "text": "¿Què NO hi ha a l’espai virtual d’un SGBD?",
+      "text": "Què NO hi ha a l’espai virtual d’un SGBD?",
       "options": [
         {
           "letter": "A",
@@ -9066,7 +9066,7 @@
         },
         {
           "letter": "C",
-          "text": "´Indexs"
+          "text": "Índexs"
         },
         {
           "letter": "D",
@@ -9088,7 +9088,7 @@
       "id": "q_422",
       "number": 422,
       "topicId": "11.1",
-      "text": "¿Què NO hi ha a l’espai físic d’un SGBD?",
+      "text": "Què NO hi ha a l’espai físic d’un SGBD?",
       "options": [
         {
           "letter": "A",
@@ -9096,7 +9096,7 @@
         },
         {
           "letter": "B",
-          "text": "´Indexs"
+          "text": "Índexs"
         },
         {
           "letter": "C",
@@ -9114,7 +9114,7 @@
       "id": "q_423",
       "number": 423,
       "topicId": "11.1",
-      "text": "Les extensions serveixen per a garantir que el sistema operatiu assigni espai físicament conse- cutiu al disc.",
+      "text": "Les extensions serveixen per a garantir que el sistema operatiu assigni espai físicament consecutiu al disc.",
       "options": [
         {
           "letter": "A",
@@ -9294,7 +9294,7 @@
       "id": "q_433",
       "number": 433,
       "topicId": "11.3",
-      "text": "Un cop s’ha creat un índex tipusbitmap, es poden continuar fent insercions a la taula, però no de valors nous de l’atribut indexat.",
+      "text": "Un cop s’ha creat un índex tipus bitmap, es poden continuar fent insercions a la taula, però no de valors nous de l’atribut indexat.",
       "options": [
         {
           "letter": "A",
@@ -9348,7 +9348,7 @@
       "id": "q_436",
       "number": 436,
       "topicId": "11.3",
-      "text": "En el cas de l’índexbitmap, el factor de selecció indica el percentatge de blocs de la taula que caldrà accedir.",
+      "text": "En el cas de l’índex bitmap, el factor de selecció indica el percentatge de blocs de la taula que caldrà accedir.",
       "options": [
         {
           "letter": "A",
@@ -9384,7 +9384,7 @@
       "id": "q_438",
       "number": 438,
       "topicId": "11.3",
-      "text": "¿Quin tipus d’índex és millor en cas de consultes que involucrin múltiples valors d’un atribut?",
+      "text": "Quin tipus d’índex és millor en cas de consultes que involucrin múltiples valors d’un atribut?",
       "options": [
         {
           "letter": "A",
@@ -9410,7 +9410,7 @@
       "id": "q_439",
       "number": 439,
       "topicId": "11.3",
-      "text": "¿Quin tipus d’índex es millor en cas que l’atribut indexat tingui moltes repeticions?",
+      "text": "Quin tipus d’índex és millor en cas que l’atribut indexat tingui moltes repeticions?",
       "options": [
         {
           "letter": "A",
@@ -9472,7 +9472,7 @@
       "id": "q_442",
       "number": 442,
       "topicId": "11.3",
-      "text": "L’índex tipusbitmapno es pot utilitzar si l’atribut indexat conté valorsnull.",
+      "text": "L’índex tipus bitmap no es pot utilitzar si l’atribut indexat conté valors null.",
       "options": [
         {
           "letter": "A",
@@ -9508,7 +9508,7 @@
       "id": "q_444",
       "number": 444,
       "topicId": "11.4",
-      "text": "¿Quin tipus d’usuari s’encarrega deltuningde la base de dades?",
+      "text": "Quin tipus d’usuari s’encarrega del tuning de la base de dades?",
       "options": [
         {
           "letter": "A",
@@ -9534,7 +9534,7 @@
       "id": "q_445",
       "number": 445,
       "topicId": "11.4",
-      "text": "¿Què NO forma part de l’entrada del procés de millora del rendiment del sistema?",
+      "text": "Què NO forma part de l’entrada del procés de millora del rendiment del sistema?",
       "options": [
         {
           "letter": "A",
@@ -9564,7 +9564,7 @@
       "id": "q_446",
       "number": 446,
       "topicId": "11.4",
-      "text": "¿Què NO forma part de la sortida del procés de millora del rendiment del sistema?",
+      "text": "Què NO forma part de la sortida del procés de millora del rendiment del sistema?",
       "options": [
         {
           "letter": "A",
@@ -9594,7 +9594,7 @@
       "id": "q_447",
       "number": 447,
       "topicId": "11.4",
-      "text": "¿Quina dada de les que no trobem al pla d’accés NO es rellevant per a fertuningde l’execució de les consultes?",
+      "text": "Quina dada de les que no trobem al pla d’accés NO és rellevant per a fer tuning de l’execució de les consultes?",
       "options": [
         {
           "letter": "A",
@@ -9602,7 +9602,7 @@
         },
         {
           "letter": "B",
-          "text": "Nombre d’abra¸ cades mortals (deadlocks)"
+          "text": "Nombre d’abraçades mortals (deadlocks)"
         },
         {
           "letter": "C",
@@ -9750,7 +9750,7 @@
       "id": "q_455",
       "number": 455,
       "topicId": "11.4",
-      "text": "Una taula pot tenir com a màxim un índex tipuscluster.",
+      "text": "Una taula pot tenir com a màxim un índex tipus cluster.",
       "options": [
         {
           "letter": "A",
@@ -9768,7 +9768,7 @@
       "id": "q_456",
       "number": 456,
       "topicId": "11.4",
-      "text": "Com més repeticions tingui un atribut, millor serà posar un índex tipushashen comptes d’un arbre.",
+      "text": "Com més repeticions tingui un atribut, millor serà posar un índex tipus hash en comptes d’un arbre.",
       "options": [
         {
           "letter": "A",
@@ -9786,7 +9786,7 @@
       "id": "q_457",
       "number": 457,
       "topicId": "11.4",
-      "text": "Com més repeticions tingui un atribut, millor serà posar un índex tipusbitmapen comptes d’un arbre.",
+      "text": "Com més repeticions tingui un atribut, millor serà posar un índex tipus bitmap en comptes d’un arbre.",
       "options": [
         {
           "letter": "A",
@@ -9948,7 +9948,7 @@
       "id": "q_466",
       "number": 466,
       "topicId": "12.1",
-      "text": "¿Quin dels següents conceptes NO afecta al temps d’execució de la transacció?",
+      "text": "Quin dels següents conceptes NO afecta al temps d’execució de la transacció?",
       "options": [
         {
           "letter": "A",
@@ -9956,7 +9956,7 @@
         },
         {
           "letter": "B",
-          "text": "Moment d’assignació deltimestamp"
+          "text": "Moment d’assignació del timestamp"
         },
         {
           "letter": "C",
@@ -9974,15 +9974,15 @@
       "id": "q_467",
       "number": 467,
       "topicId": "12.1",
-      "text": "¿Quina de les següents accions NO serveix per millorar el rendiment de les transaccions?",
+      "text": "Quina de les següents accions NO serveix per millorar el rendiment de les transaccions?",
       "options": [
         {
           "letter": "A",
-          "text": "Relaxar el nivell d’a¨ ıllament"
+          "text": "Relaxar el nivell d’aïllament"
         },
         {
           "letter": "B",
-          "text": "Configurar l’interval de detecció dedeadlockadequat"
+          "text": "Configurar l’interval de detecció de deadlock adequat"
         },
         {
           "letter": "C",
@@ -9998,7 +9998,7 @@
         },
         {
           "letter": "F",
-          "text": "Assignar eltimestampel més tard possible G. Utilitzar les sentencies de DDL quan hi hagi pocs usuaris"
+          "text": "Assignar el timestamp el més tard possible G. Utilitzar les sentències de DDL quan hi hagi pocs usuaris"
         }
       ],
       "correctLetter": "F",
@@ -10098,7 +10098,7 @@
       "id": "q_473",
       "number": 473,
       "topicId": "12.2",
-      "text": "Amb control de concurrència multi-versió, ferrollbackd’una transacció és equivalent a eliminar les versions generades per la transacció.",
+      "text": "Amb control de concurrència multi-versió, fer rollback d’una transacció és equivalent a eliminar les versions generades per la transacció.",
       "options": [
         {
           "letter": "A",
@@ -10134,7 +10134,7 @@
       "id": "q_475",
       "number": 475,
       "topicId": "12.2",
-      "text": "Fentvacuum, eliminem les versions obsoletes de les dades en el control de concurrència multi- versió.",
+      "text": "Fent vacuum, eliminem les versions obsoletes de les dades en el control de concurrència multi-versió.",
       "options": [
         {
           "letter": "A",
@@ -10206,7 +10206,7 @@
       "id": "q_479",
       "number": 479,
       "topicId": "12.2",
-      "text": "Amb un control de concurrència multi-versió basat en bloquejos, s’aplica un control de con- currència diferent depenent de si la transacció ésread-onlyoread-write.",
+      "text": "Amb un control de concurrència multi-versió basat en bloquejos, s’aplica un control de concurrència diferent depenent de si la transacció és read-only o read-write.",
       "options": [
         {
           "letter": "A",
@@ -10374,11 +10374,11 @@
       "options": [
         {
           "letter": "A",
-          "text": "... eltimestampd’inici"
+          "text": "... el timestamp d’inici"
         },
         {
           "letter": "B",
-          "text": "... eltimestampde final"
+          "text": "... el timestamp de final"
         },
         {
           "letter": "C",
@@ -10404,7 +10404,7 @@
         },
         {
           "letter": "B",
-          "text": "... que farollback"
+          "text": "... que fa rollback"
         },
         {
           "letter": "C",
@@ -10458,7 +10458,7 @@
       "id": "q_491",
       "number": 491,
       "topicId": "12.3",
-      "text": "¿Quina NO és una raó per a necessitar una reconstrucció?",
+      "text": "Quina NO és una raó per a necessitar una reconstrucció?",
       "options": [
         {
           "letter": "A",
@@ -10484,7 +10484,7 @@
       "id": "q_492",
       "number": 492,
       "topicId": "12.3",
-      "text": "¿Quina de les quatre propietats ACID està relacionada principalment amb la restauració?",
+      "text": "Quina de les quatre propietats ACID està relacionada principalment amb la restauració?",
       "options": [
         {
           "letter": "A",
@@ -10496,7 +10496,7 @@
         },
         {
           "letter": "C",
-          "text": "a ¨Illament"
+          "text": "aïllament"
         },
         {
           "letter": "D",
@@ -10510,7 +10510,7 @@
       "id": "q_493",
       "number": 493,
       "topicId": "12.3",
-      "text": "¿Quina de les quatre propietats ACID està relacionada principalment amb la reconstrucció?",
+      "text": "Quina de les quatre propietats ACID està relacionada principalment amb la reconstrucció?",
       "options": [
         {
           "letter": "A",
@@ -10522,7 +10522,7 @@
         },
         {
           "letter": "C",
-          "text": "a ¨Illament"
+          "text": "aïllament"
         },
         {
           "letter": "D",
@@ -10536,7 +10536,7 @@
       "id": "q_494",
       "number": 494,
       "topicId": "12.3",
-      "text": "¿Què fa el gestor de la cache quan rep una petició deFetch?",
+      "text": "Què fa el gestor de la cache quan rep una petició de Fetch?",
       "options": [
         {
           "letter": "A",
@@ -10562,7 +10562,7 @@
       "id": "q_495",
       "number": 495,
       "topicId": "12.3",
-      "text": "¿Què fa el gestor de la cache quan rep una petició deFlush?",
+      "text": "Què fa el gestor de la cache quan rep una petició de Flush?",
       "options": [
         {
           "letter": "A",
@@ -10588,7 +10588,7 @@
       "id": "q_496",
       "number": 496,
       "topicId": "12.3",
-      "text": "¿Què NO es guarda al dietari?",
+      "text": "Què NO es guarda al dietari?",
       "options": [
         {
           "letter": "A",
@@ -10622,7 +10622,7 @@
       "id": "q_497",
       "number": 497,
       "topicId": "12.3",
-      "text": "¿Quan NO es fa unflushdels buffers del SGBD?",
+      "text": "Quan NO es fa un flush dels buffers del SGBD?",
       "options": [
         {
           "letter": "A",
@@ -10670,7 +10670,7 @@
       "id": "q_499",
       "number": 499,
       "topicId": "12.3",
-      "text": "¿Com evita el SGBD que s’ompli el dietari (log)?",
+      "text": "Com evita el SGBD que s’ompli el dietari (log)?",
       "options": [
         {
           "letter": "A",
@@ -10696,7 +10696,7 @@
       "id": "q_500",
       "number": 500,
       "topicId": "12.3",
-      "text": "Si fembackupsde forma regular, no ens cal el dietari (log) per a reconstruir la base de dades.",
+      "text": "Si fem backups de forma regular, no ens cal el dietari (log) per a reconstruir la base de dades.",
       "options": [
         {
           "letter": "A",
@@ -10732,7 +10732,7 @@
       "id": "q_502",
       "number": 502,
       "topicId": "12.3",
-      "text": "Si configurem de forma adequada el dietari (log), no ens cal ferbackups.",
+      "text": "Si configurem de forma adequada el dietari (log), no ens cal fer backups.",
       "options": [
         {
           "letter": "A",
@@ -10786,7 +10786,7 @@
       "id": "q_505",
       "number": 505,
       "topicId": "12.3",
-      "text": "Endarrerir elsflushtan com sigui possible millora el rendiment del sistema.",
+      "text": "Endarrerir els flush tan com sigui possible millora el rendiment del sistema.",
       "options": [
         {
           "letter": "A",
@@ -10804,7 +10804,7 @@
       "id": "q_506",
       "number": 506,
       "topicId": "12.4",
-      "text": "¿Quin NO és un problema provocat per que les transaccions read-write siguin innecessàriament llargues?",
+      "text": "Quin NO és un problema provocat per que les transaccions read-write siguin innecessàriament llargues?",
       "options": [
         {
           "letter": "A",
@@ -10816,7 +10816,7 @@
         },
         {
           "letter": "C",
-          "text": "´Es més probable que el sistema falli durant la seva execució"
+          "text": "És més probable que el sistema falli durant la seva execució"
         },
         {
           "letter": "D",
@@ -10906,7 +10906,7 @@
       "id": "q_511",
       "number": 511,
       "topicId": "12.4",
-      "text": "Si concatenem (chain) dues transaccions, no s’alliberen els recursos (p.e., memoria) de la primera i aquests es reutilitzen en la segona, que manté la mateixa configuració (p.e., nivell d’aïllament).",
+      "text": "Si concatenem (chain) dues transaccions, no s’alliberen els recursos (p.e., memòria) de la primera i aquests es reutilitzen en la segona, que manté la mateixa configuració (p.e., nivell d’aïllament).",
       "options": [
         {
           "letter": "A",
